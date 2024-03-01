@@ -1,0 +1,236 @@
+/* Importing Fonts */
+@font-face {
+    font-family: Norse;
+    src: url(./fonts/Norse.otf);
+}
+
+@font-face {
+    font-family: NorseBold;
+    src: url(./fonts/Norsebold.otf);
+}
+
+/* Global Properties */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-attachment: scroll;
+    background-image: url(./images/backgound.jpg);
+    /* scrollbar-width: none;
+    -ms-overflow-style: none; */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header Bar */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 16px;
+    background-color: #e7c60bd0;
+    backdrop-filter: blur(5px);
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: large;
+    font-family: "Norse";
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    gap: 16px;
+    font-size: xx-large;
+}
+
+.links ul,.links a{
+    display: flex;
+    gap: 32px;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.links li:hover a{
+    background-color: white;
+    padding: 8px 16px;
+    color: #e7c60b;
+    font-weight: bold;
+    font-family: NorseBold;
+    transition-duration: 0.3s;
+}
+
+.links li:not(:hover) a{
+    transition-duration: 0.3s;
+}
+
+.header .tryit {
+    background-color: rgb(39, 110, 216);
+    padding: 8px 16px;
+}
+
+.header .tryit:hover {
+    font-family: NorseBold;
+    font-weight: bold;
+    background-color: rgb(47, 130, 255);
+    color: white;
+    transition-duration: 0.3s;
+}
+
+/* Main Body */
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .intro {
+    display: flex;
+    padding: 80px 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .intro .intro-card {
+    background-color: rgba(39, 110, 216, 0.788);
+    backdrop-filter: blur(5px);
+    padding: 48px;
+    display: flex;
+    gap: 48px;
+    color: white;
+    justify-content: space-evenly;
+    flex-grow: 0;
+    flex-basis: 1200px;
+}
+
+.main .intro .intro-card .content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 500px;
+    flex-grow: 0;
+    gap: 16px;
+}
+
+.intro-card .content .heading {
+    font-family: NorseBold;
+    font-size: 64px;
+}
+
+.intro-card img {
+    width: 38%;
+    height: 38%;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 48px;
+    padding: 48px;
+}
+
+.feature {
+    background-color: #e7c60bd0;
+    color: white;
+    padding: 16px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tryit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+
+.tryit-container .tryit a{
+    text-decoration: none;
+    background-color: rgb(39, 110, 216);
+    padding: 8px 16px;
+    color: white;
+    font-family: NorseBold;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.college-list-container {
+    padding: 100px 0px 200px;
+}
+
+.college-list-container .college-list img {
+    padding: 16px;
+}
+
+/* Footer Bar */
+
+.footer {
+    display: flex;
+    padding: 80px 0px;
+    gap: 80px;
+    justify-content: center;
+    background-color: rgba(211, 211, 211, 0.267);
+    bottom: 0;
+    backdrop-filter: blur(5px);
+}
+
+.footer .about-card, .footer .contact-card {
+    display: flex;
+    max-width: 600px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(169, 169, 169, 0.37);
+    gap: 16px;
+    padding: 16px;
+    backdrop-filter: blur(5px);
+
+}
+
+.footer .about-card .heading, .footer .contact-card .heading {
+    font-size: x-large;
+    font-weight: 700;
+    font-family: Norse;
+}
+
+.footer .about-card .about a {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+.about-card .about a:hover {
+    text-decoration: underline;
+    font-weight: 700;
+    color: rgb(66, 66, 66);
+}
+
+.contact-card ul, .contact-card {
+    list-style-type: none;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+    color: rgb(66, 66, 66);
+}
+
