@@ -14,6 +14,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Iosevka Web";
 }
 
 body {
@@ -38,7 +39,7 @@ body::-webkit-scrollbar {
     right: 0;
     display: flex;
     padding: 16px;
-    background-color: #e7c60bd0;
+    background-color: #ffca37c0;
     backdrop-filter: blur(5px);
     justify-content: space-between;
     align-items: center;
@@ -49,10 +50,12 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-.logo {
+.header .logo .name{
     display: flex;
     gap: 16px;
     font-size: xx-large;
+    font-family: "NorseBold";
+    font-weight: bold;
 }
 
 .links ul,.links a{
@@ -61,6 +64,7 @@ body::-webkit-scrollbar {
     list-style-type: none;
     text-decoration: none;
     color: white;
+    font-family: "Norse";
     align-items: center;
     justify-content: flex-end;
 }
@@ -68,7 +72,7 @@ body::-webkit-scrollbar {
 .links li:hover a{
     background-color: white;
     padding: 8px 16px;
-    color: #e7c60b;
+    color: #ffca37;
     font-weight: bold;
     font-family: NorseBold;
     transition-duration: 0.3s;
@@ -101,7 +105,7 @@ body::-webkit-scrollbar {
 .main .intro {
     display: flex;
     padding: 80px 40px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -112,17 +116,21 @@ body::-webkit-scrollbar {
     display: flex;
     gap: 48px;
     color: white;
-    justify-content: space-evenly;
-    flex-grow: 0;
+    justify-content: space-between;
+    /* align-items: center; */
     flex-basis: 1200px;
+    border-radius: 15px;
+    margin: auto;
 }
 
 .main .intro .intro-card .content {
     display: flex;
     flex-direction: column;
-    flex-basis: 500px;
+    justify-content: flex-start;
+    flex-basis: 600px;
     flex-grow: 0;
     gap: 16px;
+    font-size: 20px;
 }
 
 .intro-card .content .heading {
@@ -133,6 +141,7 @@ body::-webkit-scrollbar {
 .intro-card img {
     width: 38%;
     height: 38%;
+    border-radius: 5px;
 }
 
 .features {
@@ -144,13 +153,52 @@ body::-webkit-scrollbar {
 }
 
 .feature {
-    background-color: #e7c60bd0;
+    background-color: #ffca37c0;
     color: white;
     padding: 16px;
     gap: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 0;
+    border-radius: 15px;
+    font-weight: 500;
+    transition-duration: 0.3s;
+}
+
+.feature p {
+    max-width: 400px;
+}
+
+.feature:hover .feature-img {
+    display: none;
+    transition-duration: 0.3s;
+}
+
+.feature:hover .feature-p {
+    display: block;
+    transition-duration: 0.3s;
+
+}
+
+.feature:hover {
+    box-shadow: -5px -5px 15px #ffca37c0, 5px -5px 15px #ffca37c0, -5px 5px 15px #ffca37c0, 5px 5px 15px #ffca37c0;
+    flex-grow: 0.05;
+    transition-duration: 0.3s;
+}
+
+.feature:not(:hover) {
+    transition-duration: 0.3s;
+}
+
+.feature:not(:hover) .feature-img {
+    display: block;
+    transition-duration: 0.3s;
+}
+
+.feature:not(:hover) .feature-p {
+    display: none;
+    transition-duration: 0.3s;
 }
 
 .tryit-container {
@@ -183,22 +231,26 @@ body::-webkit-scrollbar {
 .footer {
     display: flex;
     padding: 80px 0px;
-    gap: 80px;
+    gap: 180px;
     justify-content: center;
-    background-color: rgba(211, 211, 211, 0.267);
+    background-color: #323232bb;
     bottom: 0;
     backdrop-filter: blur(5px);
 }
 
 .footer .about-card, .footer .contact-card {
     display: flex;
-    max-width: 600px;
+    max-width: 800px;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: rgba(169, 169, 169, 0.37);
-    gap: 16px;
-    padding: 16px;
+    background-color: #37373700;
+    color: white;
+    gap: 24px;
+    padding: 24px;
+    border-radius: 20px;
     backdrop-filter: blur(5px);
+    font-size: 20px;
+    box-shadow: 1px 1px 15px #0000006e;
 
 }
 
@@ -206,18 +258,19 @@ body::-webkit-scrollbar {
     font-size: x-large;
     font-weight: 700;
     font-family: Norse;
+    font-size: 28px;
 }
 
 .footer .about-card .about a {
     text-decoration: none;
     font-weight: 700;
-    color: black;
+    color: rgb(141, 141, 141);
 }
 
 .about-card .about a:hover {
     text-decoration: underline;
     font-weight: 700;
-    color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
 }
 
 .contact-card ul, .contact-card {
@@ -226,11 +279,11 @@ body::-webkit-scrollbar {
 
 .contact-card a {
     text-decoration: none;
-    color: black;
+    color: rgb(141, 141, 141);
 }
 
 .contact-card a:hover {
     text-decoration: underline;
-    color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
 }
 
