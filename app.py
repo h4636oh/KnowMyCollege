@@ -23,3 +23,7 @@ if __name__=='__main__':
 
 # to activiate Virtual Env in Windows 
 # .\env\Scripts\activate 
+
+# to run the app use following command on windows 
+# set FLASK_APP=app.py
+# flask run
