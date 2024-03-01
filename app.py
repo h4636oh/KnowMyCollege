@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 
@@ -14,6 +14,11 @@ def college_page():
         'college':"IITB", 'placement':20000
     }]
     return render_template('college.html', items=items)
+
+
+#app runining with debug mode on 
+if __name__=='__main__':
+    app.run(debug=True)
 
 
 # to activiate Virtual Env in Windows 
