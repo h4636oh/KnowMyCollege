@@ -1,289 +1,373 @@
 /* Importing Fonts */
 @font-face {
-    font-family: Norse;
-    src: url(./fonts/Norse.otf);
+	font-family: Norse;
+	src: url(./fonts/Norse.otf);
 }
 
 @font-face {
-    font-family: NorseBold;
-    src: url(./fonts/Norsebold.otf);
+	font-family: NorseBold;
+	src: url(./fonts/Norsebold.otf);
 }
 
 /* Global Properties */
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Iosevka Web";
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Iosevka Web";
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-attachment: scroll;
-    background-image: url(./images/backgound.jpg);
-    /* scrollbar-width: none;
+	display: flex;
+	flex-direction: column;
+	background-color: #030303;
+	/* scrollbar-width: none;
     -ms-overflow-style: none; */
 }
 
 body::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 /* Header Bar */
 
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    padding: 16px;
-    background-color: #ffca37c0;
-    backdrop-filter: blur(5px);
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-weight: 700;
-    font-size: large;
-    font-family: "Norse";
-    z-index: 1;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	padding: 16px;
+	background-color: #ffca37c0;
+	backdrop-filter: blur(5px);
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	font-weight: 700;
+	font-size: large;
+	font-family: "Norse";
+	z-index: 1;
 }
 
-.header .logo .name{
-    display: flex;
-    gap: 16px;
-    font-size: xx-large;
-    font-family: "NorseBold";
-    font-weight: bold;
+.header .logo .name {
+	display: flex;
+	gap: 4px;
+	font-size: xx-large;
+	font-family: "NorseBold";
+	font-weight: bold;
 }
 
-.links ul,.links a{
-    display: flex;
-    gap: 32px;
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
-    font-family: "Norse";
-    align-items: center;
-    justify-content: flex-end;
+.logo .name .logo-circle {
+	background-color: white;
+	color: #ffca37;
+	font-family: "NorseBold";
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	width: 30px;
 }
 
-.links li:hover a{
-    background-color: white;
-    padding: 8px 16px;
-    color: #ffca37;
-    font-weight: bold;
-    font-family: NorseBold;
-    transition-duration: 0.3s;
+.links ul,
+.links a {
+	display: flex;
+	gap: 32px;
+	list-style-type: none;
+	text-decoration: none;
+	color: white;
+	font-family: "Norse";
+	align-items: center;
+	justify-content: flex-end;
 }
 
-.links li:not(:hover) a{
-    transition-duration: 0.3s;
+.links li:hover a {
+	background-color: white;
+	padding: 8px 16px;
+	color: #ffca37;
+	font-weight: bold;
+	font-family: NorseBold;
+	transition-duration: 0.3s;
+}
+
+.links li:not(:hover) a {
+	transition-duration: 0.3s;
 }
 
 .header .tryit {
-    background-color: rgb(39, 110, 216);
-    padding: 8px 16px;
+	background-color: white;
+	color: #ffca37;
+	padding: 8px 16px;
+	font-family: NorseBold;
+	font-weight: bold;
 }
 
 .header .tryit:hover {
-    font-family: NorseBold;
-    font-weight: bold;
-    background-color: rgb(47, 130, 255);
-    color: white;
-    transition-duration: 0.3s;
+	font-weight: bold;
+	background-color: rgb(47, 130, 255);
+	color: white;
+	transition-duration: 0.3s;
+	box-shadow: 0px 0px 10px #fff;
 }
 
 /* Main Body */
 
-.main {
-    display: flex;
-    flex-direction: column;
+.space-region-container {
+	background-image: url(./images/backgound.jpg);
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
 }
 
-.main .intro {
-    display: flex;
-    padding: 80px 40px;
-    justify-content: space-evenly;
-    align-items: center;
+.space-region {
+	display: flex;
+	flex-direction: column;
+	background-attachment: scroll;
+	backdrop-filter: blur(5px);
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	/* background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 100%,
+        rgba(0, 0, 0, 1) 0%); */
 }
 
-.main .intro .intro-card {
-    background-color: rgba(39, 110, 216, 0.788);
-    backdrop-filter: blur(5px);
-    padding: 48px;
-    display: flex;
-    gap: 48px;
-    color: white;
-    justify-content: space-between;
-    /* align-items: center; */
-    flex-basis: 1200px;
-    border-radius: 15px;
-    margin: auto;
+.main-1 {
+	display: flex;
+	flex-direction: column;
 }
 
-.main .intro .intro-card .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 600px;
-    flex-grow: 0;
-    gap: 16px;
-    font-size: 20px;
+.main-1 .intro {
+	display: flex;
+	padding: 80px 40px;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.main-1 .intro .intro-card {
+	background-color: rgba(39, 110, 216, 0.788);
+	backdrop-filter: blur(5px);
+	padding: 48px;
+	display: flex;
+	gap: 48px;
+	color: white;
+	justify-content: space-between;
+	/* align-items: center; */
+	flex-basis: 1200px;
+	border-radius: 15px;
+	margin: auto;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.main-1 .intro .intro-card .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-basis: 600px;
+	flex-grow: 0;
+	gap: 16px;
+	font-size: 22px;
 }
 
 .intro-card .content .heading {
-    font-family: NorseBold;
-    font-size: 64px;
+	font-family: NorseBold;
+	font-size: 64px;
 }
 
 .intro-card img {
-    width: 38%;
-    height: 38%;
-    border-radius: 5px;
+	width: 38%;
+	height: 38%;
+	border-radius: 5px;
 }
 
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 48px;
-    padding: 48px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 48px;
+	padding: 48px;
 }
 
 .feature {
-    background-color: #ffca37c0;
-    color: white;
-    padding: 16px;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 0;
-    border-radius: 15px;
-    font-weight: 500;
-    transition-duration: 0.3s;
+	background-color: #ffca37c0;
+	color: white;
+	padding: 16px;
+	gap: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 0;
+	border-radius: 15px;
+	font-weight: 500;
+	transition-duration: 0.3s;
 }
 
-.feature p {
-    max-width: 400px;
+.feature .front {
+	text-align: center;
+	padding: 48px;
+	font-size: xx-large;
+	font-family: NorseBold;
+	text-shadow: 1px 1px 2px #000;
+	line-height: 40px;
 }
 
-.feature:hover .feature-img {
-    display: none;
-    transition-duration: 0.3s;
+.feature .back {
+	text-align: center;
+	padding: 12px;
+	width: 300px;
+	font-size: 20px;
+	text-shadow: 1px 1px 2px #000;
 }
 
-.feature:hover .feature-p {
-    display: block;
-    transition-duration: 0.3s;
+.feature.f1 {
+	background-image: linear-gradient(#fabceb, #e481cb, #e481cb);
+	border: 3px #e481cb solid;
+}
 
+.feature.f2 {
+	background-image: linear-gradient(#fceca4, #f8db58, #f8db58);
+	border: 3px #f8db58 solid;
+}
+
+.feature.f3 {
+	background-image: linear-gradient(#b1f0af, #74db70, #74db70);
+	border: 3px #74db70 solid;
+}
+
+.feature.f4 {
+	background-image: linear-gradient(#b5e8f8, #81cde4, #81cde4);
+	border: 3px #81cde4 solid;
 }
 
 .feature:hover {
-    box-shadow: -5px -5px 15px #ffca37c0, 5px -5px 15px #ffca37c0, -5px 5px 15px #ffca37c0, 5px 5px 15px #ffca37c0;
-    flex-grow: 0.05;
-    transition-duration: 0.3s;
+	box-shadow: 0px 0px 10px #fff;
+	transition-duration: 0.3s;
+	flex-grow: 0.09;
 }
 
 .feature:not(:hover) {
-    transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
-.feature:not(:hover) .feature-img {
-    display: block;
-    transition-duration: 0.3s;
+.feature:hover .front,
+.feature:not(:hover) .back {
+	display: none;
+	transition-duration: 0.3s;
 }
 
-.feature:not(:hover) .feature-p {
-    display: none;
-    transition-duration: 0.3s;
+.feature:hover .back,
+.feature:not(:hover) .front {
+	display: block;
+	transition-duration: 0.3s;
 }
 
 .tryit-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px 0px;
 }
 
-.tryit-container .tryit a{
-    text-decoration: none;
-    background-color: rgb(39, 110, 216);
-    padding: 8px 16px;
-    color: white;
-    font-family: NorseBold;
-    font-weight: bold;
-    font-size: 48px;
+.tryit-container .tryit a {
+	text-decoration: none;
+	background-color: rgb(39, 110, 216);
+	padding: 8px 16px;
+	color: white;
+	font-family: "NorseBold";
+	font-weight: bold;
+	font-size: 48px;
+	border-radius: 20px;
+}
+
+.tryit-container .tryit:hover a {
+	padding: 12px 24px;
+	font-size: 56px;
+	transition-duration: 0.3s;
+	box-shadow: inset 0px 0px 10px #fff, 0px 0px 10px #fff;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+.tryit-container .tryit:not(:hover) a {
+	transition-duration: 0.3s;
 }
 
 .college-list-container {
-    padding: 100px 0px 200px;
+	padding: 100px 0px 200px;
 }
 
 .college-list-container .college-list img {
-    padding: 16px;
+	padding: 16px;
 }
 
 /* Footer Bar */
 
+.footer-container {
+	background-image: url(./images/backgound.jpg);
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+
 .footer {
-    display: flex;
-    padding: 80px 0px;
-    gap: 180px;
-    justify-content: center;
-    background-color: #323232bb;
-    bottom: 0;
-    backdrop-filter: blur(5px);
+	display: flex;
+	padding: 80px 0px;
+	gap: 180px;
+	justify-content: center;
+	background-color: #323232bb;
+	bottom: 0;
+	backdrop-filter: blur(5px);
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
 }
 
-.footer .about-card, .footer .contact-card {
-    display: flex;
-    max-width: 800px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: #37373700;
-    color: white;
-    gap: 24px;
-    padding: 24px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    font-size: 20px;
-    box-shadow: 1px 1px 15px #0000006e;
-
+.footer .about-card,
+.footer .contact-card {
+	display: flex;
+	max-width: 800px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: #37373700;
+	color: white;
+	gap: 24px;
+	padding: 24px;
+	border-radius: 20px;
+	backdrop-filter: blur(5px);
+	font-size: 20px;
+	box-shadow: 1px 1px 15px #0000006e;
 }
 
-.footer .about-card .heading, .footer .contact-card .heading {
-    font-size: x-large;
-    font-weight: 700;
-    font-family: Norse;
-    font-size: 28px;
+.footer .about-card .heading,
+.footer .contact-card .heading {
+	font-size: x-large;
+	font-weight: 700;
+	font-family: Norse;
+	font-size: 28px;
 }
 
 .footer .about-card .about a {
-    text-decoration: none;
-    font-weight: 700;
-    color: rgb(141, 141, 141);
+	text-decoration: none;
+	font-weight: 700;
+	color: rgb(141, 141, 141);
 }
 
 .about-card .about a:hover {
-    text-decoration: underline;
-    font-weight: 700;
-    color: rgb(255, 255, 255);
+	text-decoration: underline;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
 }
 
-.contact-card ul, .contact-card {
-    list-style-type: none;
+.contact-card ul,
+.contact-card {
+	list-style-type: none;
 }
 
 .contact-card a {
-    text-decoration: none;
-    color: rgb(141, 141, 141);
+	text-decoration: none;
+	color: rgb(141, 141, 141);
 }
 
 .contact-card a:hover {
-    text-decoration: underline;
-    color: rgb(255, 255, 255);
+	text-decoration: underline;
+	color: rgb(255, 255, 255);
 }
-
