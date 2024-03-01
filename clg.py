@@ -14,3 +14,7 @@ def college_page():
         'college':"IITB", 'placement':20000
     }]
     return render_template('college.html', items=items)
+
+
+# to activiate Virtual Env in Windows 
+# .\env\Scripts\activate 
