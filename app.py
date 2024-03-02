@@ -39,7 +39,7 @@ def Value(df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,st
 
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 @app.route('/home')
