@@ -44,8 +44,11 @@ html {
 }
 
 body {
+	color: var(--n6);
 	display: flex;
 	flex-direction: column;
+	height: 100vh;
+	background-image: url(./images/backgound.jpg);
 	/* scrollbar-width: none;
     -ms-overflow-style: none; */
 }
@@ -142,4 +145,205 @@ body::-webkit-scrollbar {
 	color: var(--n6);
 	transition-duration: 0.3s;
 	box-shadow: 0px 0px 10px var(--n0);
+}
+
+/* Main Area */
+
+.body {
+	background-color: var(--n0-tp);
+	backdrop-filter: blur(5px);
+}
+
+.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px 100px;
+}
+
+.form {
+	padding: 32px;
+	gap: 32px;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--n3);
+	border: 3px var(--n3) solid;
+	border-radius: 15px;
+	box-shadow: inset 0px 0px 10px var(--n0);
+	font-size: 18px;
+	width: 900px;
+	font-weight: 600;
+}
+
+.form .heading {
+	font-family: "NorseBold";
+	font-weight: bold;
+	font-size: 48px;
+	text-shadow: 1px 1px 2px var(--n0);
+	text-align: center;
+}
+
+.form .rank, .form .zth, .form .highstd, .form .preflist {
+	background-color: var(--n2);
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	gap: 16px;
+	border: 3px var(--n2) solid;
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 10px var(--n0);
+}
+
+.form .rank input[type=number] {
+	background-color: transparent;
+	font-size: 18px;
+	outline: none;
+	border: none;
+	border-bottom: 2px var(--n6) solid;
+	padding-bottom: 2px;
+	height: min-content;
+	width: 100%;
+	color: var(--n6);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form .zth input[type=range] {
+	-webkit-appearance: none;
+	background: linear-gradient(-90deg ,var(--n14), var(--n11));
+	height: 5px;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	border-radius: 2px;
+	box-shadow: 0px 0px 10px var(--n0);
+}
+
+.form .zth input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	background: var(--n0-tp);
+	box-shadow: 0px 0px 2px var(--n0);
+	border: 3px var(--n3) solid;
+	cursor: pointer;
+}
+
+.form .preflist-container {
+	display: flex;
+	gap: 32px;
+}
+
+.form .preflist {
+	width: calc(100%/2);
+}
+
+.form .submit-container {
+	display: flex;
+	justify-content: center;
+}
+
+.submit {
+	background-color: var(--n14);
+	font-family: "NorseBold";
+	font-size: 24px;
+	color: var(--n6);
+	padding: 16px;
+	border: 3px var(--n14) solid;
+	border-radius: 10px;
+	transition-duration: 0.3s;
+}
+
+.submits {
+	box-shadow: 0px 0px 10px var(--n6);
+	border-radius: 10px;
+}
+
+.submits:hover .submit{
+	box-shadow: inset 0px 0px 10px var(--n0);
+	transition-duration: 0.3s;
+}
+
+.submits:hover {
+	box-shadow: none;
+	transition-duration: 0.3s;
+}
+
+
+.submits:not(:hover) .submit{
+	transition-duration: 0.3s;
+}
+
+/* Footer Bar */
+
+.footer-container {
+	background-image: url(./images/backgound.jpg);
+}
+
+.footer {
+	display: flex;
+	padding: 80px 0px;
+	gap: 180px;
+	justify-content: center;
+	background-color: var(--n0-ltp);
+	bottom: 0;
+	backdrop-filter: blur(5px);
+
+}
+
+.footer .about-card,
+.footer .contact-card {
+	display: flex;
+	max-width: 800px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: var(--n2);
+	color: var(--n6);
+	gap: 24px;
+	padding: 24px;
+	border-radius: 20px;
+	font-size: 20px;
+	box-shadow: inset 0px 0px 10px var(--n0);
+	border: 3px var(--n2) solid;
+	text-shadow: 1px 1px 2px var(--n0);
+}
+
+.footer .about-card .heading,
+.footer .contact-card .heading {
+	font-size: x-large;
+	font-weight: 700;
+	font-family: Norse;
+	font-size: 28px;
+}
+
+.footer .about-card .about a {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--n4);
+}
+
+.about-card .about a:hover {
+	text-decoration: underline;
+	font-weight: 700;
+	color: var(--n6);
+}
+
+.contact-card ul,
+.contact-card {
+	list-style-type: none;
+}
+
+.contact-card a {
+	text-decoration: none;
+	color: var(--n4);
+}
+
+.contact-card a:hover {
+	text-decoration: underline;
+	color: var(--n6);
 }
