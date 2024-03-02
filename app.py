@@ -89,7 +89,7 @@ def form():
             print(state)
 
 
-        preferences = []  # Initialize an empty list to store preferences
+    preferences = []  # Initialize an empty list to store preferences
 
     # Retrieve and store preferences 1 to 8
     for i in range(1, 9):
@@ -98,7 +98,8 @@ def form():
             preferences.append(preference)
 
     # Process the preferences as needed
-    print("Selected Preferences:", preferences)
+    for pr in preferences:
+        print(pr)
 
     return render_template('form.html')
 # Run the Flask application
