@@ -44,15 +44,15 @@ def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pre
                    
         
 
-        total += placement_pref * value1
-        total += coding_pref * value2
-        total += campus_size_value * value3
-        total += value4_temp * value4
-        total += value5
-        total += value6*Cultural_Pref
+        total += int(placement_pref) * int(value1)
+        total += int(coding_pref) * value2
+        total += int(campus_size_value) * value3
+        total += int(value4_temp) * value4
+        total += int(value5)
+        total += int(value6)*int(Cultural_Pref)
         total += value7_f
-        total += value8*brand_value
-        total += value9*Entra
+        total += value8*int(brand_value)
+        total += value9*int(Entra)
         totals.append(total)
     LIST=[]
     df['Total'] = totals
@@ -80,12 +80,11 @@ app = Flask(__name__, static_folder='static')
 def home_page():
     return render_template('./index.html')
 
-@app.route('/college')
-def college_page():
-    items = [{'college': "IITB", 'placement': 20000}]
-    return render_template('college.html', items=items)
+
 
 campus_size_value = None  # Define a global variable
+
+Final_List = [[],[]]
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
@@ -136,9 +135,22 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        Final_List=Value(df,placement_pref,coding_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preference,tag_pref,startupPref)
+        TEMP=Value(df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        Final_List.clear()
+        ctt = 1
+        for i in TEMP:
+            tempo = [ctt, i]
+            Final_List.append(tempo)
+            ctt+=1
 
     return render_template('form.html')
+
+@app.route('/college')
+
+def college_page():
+    my_list = Final_List
+    return render_template('college.html', my_list=my_list)
+
 # Run the Flask application
 if __name__ == '__main__':
     app.run(debug=True)
