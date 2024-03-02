@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 
 # Taking the Data Base
@@ -147,13 +147,16 @@ def form():
             Final_List.append(tempo)
             ctt+=1
 
-    return render_template('form.html')
+        return redirect('/college')
+    return render_template('/form.html')
+
 
 @app.route('/college')
-
 def college_page():
     my_list = Final_List
     return render_template('college.html', my_list=my_list)
+
+
 
 # Run the Flask application
 if __name__ == '__main__':
