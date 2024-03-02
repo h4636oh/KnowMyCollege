@@ -22,8 +22,8 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
             value4 += 0
 
         value5 = 0
-        arr = [100, 90, 80, 70, 60]
-        for i in range(5):
+        arr = [100, 90, 80, 70, 60,50,40,30]
+        for i in range(8):
             if states[i] == row['STATE']:
                 value5 = arr[i]
                 
@@ -64,7 +64,9 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         V1 = row['collage name']
         V2 = row['Branch']
         V3 = f"{V1} {V2}"  # Concatenating strings using f-string
-        LIST.append(V3)
+        V4= row['CLOSING']
+        if rankAIR-2000<= V4:
+            LIST.append(V3)
     return LIST
 #Sta = ['Chhattisgarh', 'Uttar Pradesh', 'Odisha', 'Maharashtra', 'Jharkhand']
 #bra=['COMPUTER SCIENCE AND ENGINEERING','None','None','None','None','None','None','None']
@@ -118,7 +120,7 @@ def form():
         print("startupPref:", startupPref) 
 
         states = []
-        for i in range(1, 6):
+        for i in range(1, 9):
             state = request.form.get(f'choice{i}')
             if state:
                 states.append(state)
