@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import pandas as pd
 
 # Taking the Data Base
-file_path = 'D:\DEV\KnowMyCollege\static\DataBase.csv'
+file_path = 'static/DataBase.csv'
 df = pd.read_csv(file_path)
 
 # function for Data Base
@@ -116,17 +116,17 @@ def form():
             print(state)
 
 
-    preferences = []  # Initialize an empty list to store preferences
+        preferences = []  # Initialize an empty list to store preferences
 
-    # Retrieve and store preferences 1 to 8
-    for i in range(1, 9):
-        preference = request.form.get(f"preference{i}")
-        if preference:
-            preferences.append(preference)
+        # Retrieve and store preferences 1 to 8
+        for i in range(1, 9):
+            preference = request.form.get(f"preference{i}")
+            if preference:
+                preferences.append(preference)
 
-    # Process the preferences as needed
-    for pr in preferences:
-        print(pr)
+        # Process the preferences as needed
+        for pr in preferences:
+            print(pr)
 
     return render_template('form.html')
 # Run the Flask application
