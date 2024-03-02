@@ -13,7 +13,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         value1 = row['Placement ']
         value2 = row['Coding_Culture']
         value3 = row['Campus']
-        value4_temp = row['Higher Eduction']
+        value4_temp = row['Higher Education']
         
         value4=0
         if higher_studies_pref == 'y':
@@ -23,7 +23,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
 
         value5 = 0
         arr = [100, 90, 80, 70, 60,50,40,30]
-        for i in range(8):
+        for i in range(5):
             if states[i] == row['STATE']:
                 value5 = arr[i]
                 
@@ -61,11 +61,11 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
     # sorted_df = df.sort_values(by='Total', ascending=False)
     
     for index, row in sorted_df.iterrows():
-        V1 = row['collage name']
+        V1 = row['College Name']
         V2 = row['Branch']
         V3 = f"{V1} {V2}"  # Concatenating strings using f-string
         V4= row['CLOSING']
-        if rankAIR-2000<= V4:
+        if int(rankAIR)-2000<= V4:
             LIST.append(V3)
     return LIST
 #Sta = ['Chhattisgarh', 'Uttar Pradesh', 'Odisha', 'Maharashtra', 'Jharkhand']
