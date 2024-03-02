@@ -72,7 +72,7 @@ body::-webkit-scrollbar {
 	font-size: large;
 	font-family: "Norse";
 	z-index: 1;
-	box-shadow: 0px 10px 10px var(--n0);
+	box-shadow: 0px 5px 10px var(--n0);
 }
 
 .header .logo .name {
@@ -312,7 +312,7 @@ body::-webkit-scrollbar {
 }
 
 .feature {
-	color: var(--n6);
+	color: var(--n4);
 	padding: 16px;
 	gap: 16px;
 	display: flex;
@@ -323,7 +323,6 @@ body::-webkit-scrollbar {
 	border-radius: 15px;
 	font-weight: 500;
 	transition-duration: 0.3s;
-	box-shadow: inset 0px 0px 10px var(--n0);
 }
 
 .feature .front {
@@ -331,7 +330,6 @@ body::-webkit-scrollbar {
 	padding: 48px;
 	font-size: xx-large;
 	font-family: NorseBold;
-	text-shadow: 1px 1px 2px var(--n0);
 	line-height: 40px;
 }
 
@@ -341,31 +339,38 @@ body::-webkit-scrollbar {
 	width: 300px;
 	font-size: 20px;
 	font-weight: 500;
-	text-shadow: 1px 1px 2px var(--n0);
 }
 
 .feature.f1 {
 	/* background-image: linear-gradient(#fabceb, #e481cb, #e481cb); */
-	background-color: var(--n15);
+	background-color: var(--n3);
 	border: 3px var(--n15) solid;
+	box-shadow: inset 0px 0px 10px var(--n0), 0px 0px 10px var(--n0);
+	color: var(--n15);
 }
 
 .feature.f2 {
 	/* background-image: linear-gradient(#fceca4, #f8db58, #f8db58); */
-	background-color: var(--n13);
+	background-color: var(--n3);
 	border: 3px var(--n13) solid;
+	box-shadow: inset 0px 0px 10px var(--n0), 0px 0px 10px var(--n0);
+	color: var(--n13);
 }
 
 .feature.f3 {
 	/* background-image: linear-gradient(#b1f0af, #74db70, #74db70); */
-	background-color: var(--n14);
+	background-color: var(--n3);
 	border: 3px var(--n14) solid;
+	box-shadow: inset 0px 0px 10px var(--n0), 0px 0px 10px var(--n0);
+	color: var(--n14);
 }
 
 .feature.f4 {
 	/* background-image: linear-gradient(#b5e8f8, #81cde4, #81cde4); */
-	background-color: var(--n8);
+	background-color: var(--n3);
 	border: 3px var(--n8) solid;
+	box-shadow: inset 0px 0px 10px var(--n0), 0px 0px 10px var(--n0);
+	color: var(--n8);
 }
 
 .feature:hover {
@@ -546,8 +551,8 @@ body::-webkit-scrollbar {
 	border-radius: 20px;
 	font-size: 20px;
 	box-shadow: inset 0px 0px 10px var(--n0);
-	text-shadow: 1px 1px 2px var(--n0);
 	border: 3px var(--n2) solid;
+	text-shadow: 1px 1px 2px var(--n0);
 }
 
 .footer .about-card .heading,
