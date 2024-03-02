@@ -81,7 +81,7 @@
     <form method="post">
 
         <label for="rankAIR" required>What is your rank?</label><br>
-        <input type="number" id="rankAIR" name="rankAIR" >
+        <input type="number" id="rankAIR" name="rankAIR"  required>
         <br>
 
 
@@ -99,6 +99,13 @@
         <input type="range" id="codingPref" name="codingPref" >
         <br>
 
+        <label for="tagPref" required>How much does the "TAG" of the college matter to you?</label><br>
+        <input type="range" id="tagPref" name="tagPref" >
+        <br>
+
+        <label for="startupPref" required>How much does the Startup Environment of the college matter to you?</label><br>
+        <input type="range" id="startupPref" name="startupPref" >
+        <br>
 
         <!-- YES NO  -->
         <label for="higherStudiesPref" required>Do you wish to pursue Higher Education?</label><br> 
@@ -110,6 +117,7 @@
         
 
         <!-- 5 State Choices -->
+        <label for="statePref" required>Rank Your Preferred States:</label><br> 
         <label for="choice1">Choice 1:</label> 
         <select id="choice1" name="choice1" required>
           <option value="">Select your first choice</option>
@@ -181,7 +189,6 @@
         <label for="choice3">Choice 3:</label>
         <select id="choice3" name="choice3"  required>
           <option value="">Select your third choice</option>
-          <option value="">Select your second choice</option>
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
           <option value="Assam">Assam</option>
@@ -216,7 +223,6 @@
         <label for="choice4">Choice 4:</label>
         <select id="choice4" name="choice4" required>
           <option value="">Select your fourth choice</option>
-          <option value="">Select your second choice</option>
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
           <option value="Assam">Assam</option>
@@ -251,7 +257,6 @@
         <label for="choice5">Choice 5:</label>
         <select id="choice5" name="choice5" required>
           <option value="">Select your fifth choice</option>
-          <option value="">Select your second choice</option>
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
           <option value="Assam">Assam</option>
@@ -285,6 +290,121 @@
 
 
 
+        <label for="statePref" required>Rank Your Preferred Branches:</label><br> 
+        <label for="preference1">Preference 1:</label>
+        <select id="preference1" name="preference1" required>
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference2">Preference 2:</label>
+        <select id="preference2" name="preference2">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+
+        <label for="preference3">Preference 3:</label>
+        <select id="preference3" name="preference3">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference4">Preference 4:</label>
+        <select id="preference4" name="preference4">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference5">Preference 5:</label>
+        <select id="preference5" name="preference5">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference6">Preference 6:</label>
+        <select id="preference6" name="preference6">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference7">Preference 7:</label>
+        <select id="preference7" name="preference7">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        <label for="preference8">Preference 8:</label>
+        <select id="preference8" name="preference7">
+            <option value="">None</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+            <option value="BASIC SCIENCES">BASIC SCIENCES</option>
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="COMPUTER SCIENCE & ENGINEERING">COMPUTER SCIENCE & ENGINEERING</option>
+            <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+            <option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.</option>
+            <option value="ECONOMICS">ECONOMICS</option>
+            <option value="METALLURGICAL ENGINEERING">METALLURGICAL ENGINEERING</option>
+        </select><br><br>
+
+        
 
 
         <input type="submit" value="Submit">
