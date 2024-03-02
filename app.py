@@ -54,13 +54,20 @@ def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pre
         total += value8*brand_value
         total += value9*Entra
         totals.append(total)
-
+    LIST=[]
     df['Total'] = totals
-    print(df['Total'])
-
+    sorted_df = df.sort_values(by='Total', ascending=False)
+    
+    for index, row in sorted_df.iterrows():
+        V1 = row['collage name']
+        V2 = row['Branch']
+        V3 = f"{V1} {V2}"  # Concatenating strings using f-string
+        LIST.append(V3)
+    return LIST
 #Sta = ['Chhattisgarh', 'Uttar Pradesh', 'Odisha', 'Maharashtra', 'Jharkhand']
-#Value(df, 100, 100, 10, 'y', Sta)
-#print(df.columns)
+#bra=['COMPUTER SCIENCE AND ENGINEERING','None','None','None','None','None','None','None']
+#A=Value(df, 100, 100, 10, 'y', Sta,100,bra,50,50)
+#print(A)
 
 
 
@@ -102,6 +109,9 @@ def form():
 
         tag_pref = request.form.get("codingPref")
         print("codingPref:", tag_pref) 
+        
+        culturalPref = request.form.get("culturalPref")
+        print("culturalPref:", culturalPref) 
 
         startupPref = request.form.get("startupPref")
         print("startupPref:", startupPref) 
@@ -118,15 +128,15 @@ def form():
 
         preferences = []  # Initialize an empty list to store preferences
 
-        # Retrieve and store preferences 1 to 8
-        for i in range(1, 9):
-            preference = request.form.get(f"preference{i}")
-            if preference:
-                preferences.append(preference)
+    # Retrieve and store preferences 1 to 8
+    for i in range(1, 9):
+        preference = request.form.get(f"preference{i}")
+        if preference:
+            preferences.append(preference)
 
-        # Process the preferences as needed
-        for pr in preferences:
-            print(pr)
+    # Process the preferences as needed
+    print("Selected Preferences:", preferences)
+    Final_List=Value(df,placement_pref,coding_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preference,tag_pref,startupPref)
 
     return render_template('form.html')
 # Run the Flask application
