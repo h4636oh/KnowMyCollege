@@ -54,6 +54,11 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
+::selection {
+	background: var(--n4);
+	color: var(--n0);
+}
+  
 /* Header Bar */
 
 .header {
