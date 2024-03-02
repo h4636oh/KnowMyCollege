@@ -1,33 +1,143 @@
-    {% extends 'base.html' %}
-{% block title %}
-    College Page
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/colleges.css" />
+    <title>College Page</title>
+    
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="logo">
+            <div class="name">
+                <span class="logo-circle">K</span>now
+                <span class="logo-circle">M</span>y
+                <span class="logo-circle">C</span>ollege
+            </div>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li>
+                    <a class="tryit" href="form"
+                        >Refill The Form</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class = "table-container">
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">College</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                
+                {% for college in my_list %}
+                    <tr>
+                        <td>{{ college[0] }}</td>
+                        <td>{{ college[1] }}</td>
 
-{% block content %}
-<h1>College Page</h1>
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <!-- Your Columns HERE -->
-            <th scope="col">College</th>
-            <th scope="col">Placement</th>
-            <th scope="col">More</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script>
+        $(window).on("load resize ", function() {
+        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+        $('.tbl-header').css({'padding-right':scrollWidth});
+        }).resize();
+    </script>
 
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Your rows inside the table HERE: -->
-        {% for item in items %}
-            <tr>
-                <td>{{ item.college }}</td>
-                <td>{{ item.placement }}</td>
-                <td>
-                    <button class="btn btn-outline btn-info">More Info</button>
-                    <button class="btn btn-outline btn-success">Purchase this Item</button>
-                </td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% endblock %}
-   
+
+    <div class="footer-container">
+        <div class="footer" id="footer">
+            <div class="about-card">
+                <div class="heading">About Us</div>
+                <div class="about">
+                    We are a team of 4 people from
+                    <a class="iiitp-link" href="https://iiitp.ac.in"
+                        >IIITP College</a
+                    >.<br />
+                    This project is but as hobby project, but we try
+                    to keep the data up to data. If you find any
+                    bugs or have some improvement suggestion then
+                    open a issue at our
+                    <a
+                        class="github-link"
+                        href="https://github.com/h4636oh/KnowMyCollege/issues/new"
+                        >Github Repo</a
+                    >.<br />
+                    Just to tell you We fucking hate Skiddies, so
+                    don't be one and be respectful.
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="heading">Contact Us</div>
+                <div class="contact">
+                    <ul>
+                        <li>
+                            Email:
+                            <a
+                                href="mailto:fakeh4@tuta.io"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >fakeh4@tuta.io</a
+                            >
+                        </li>
+                        <li>
+                            Github:
+                            <a
+                                href="https://github.com/h4636oh/KnowMyCollege"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >KnowMyCollege</a
+                            >
+                        </li>
+                        <li>
+                            LinkedIn:
+                            <a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >KnowMyCollege</a
+                            >
+                        </li>
+                        <li>
+                            Instagram:
+                            <a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >KnowMyCollege</a
+                            >
+                        </li>
+                        <li>
+                            Twitter:
+                            <a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >KnowMyCollege</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
