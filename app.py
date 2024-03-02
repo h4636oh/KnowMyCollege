@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, jsonify
 import pandas as pd
 
 # Taking the Data Base
-file_path = 'static/DataBase.csv'
+file_path = 'static/DataBase - Sheet1.csv'
 df = pd.read_csv(file_path)
 
 # function for Data Base
-def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pref, states,Cultural_Pref,Branches,brand_value,Entra ):
+def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_studies_pref, states,Cultural_Pref,Branches,brand_value,Entra ):
     totals = []
     for index, row in df.iterrows():
         total = 0
@@ -56,7 +56,9 @@ def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pre
         totals.append(total)
     LIST=[]
     df['Total'] = totals
+    # filtered_df = df[df['Rank_Cutoff'] <= int(rankAIR)]
     sorted_df = df.sort_values(by='Total', ascending=False)
+    # sorted_df = df.sort_values(by='Total', ascending=False)
     
     for index, row in sorted_df.iterrows():
         V1 = row['collage name']
@@ -135,7 +137,7 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        TEMP=Value(df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        TEMP=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
         for i in TEMP:
