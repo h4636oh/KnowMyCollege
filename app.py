@@ -1,6 +1,4 @@
-from flask import Flask, render_template,request
-import pandas as pd
-
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -11,32 +9,37 @@ def home_page():
 
 @app.route('/college')
 def college_page():
-    items=[{
-        'college':"IITB", 'placement':20000
-    }]
+    items = [{'college': "IITB", 'placement': 20000}]
     return render_template('college.html', items=items)
 
-@app.route('/form',method=['GET','POST'])
+campus_size_value = None  # Define a global variable
+
+@app.route('/form', methods=['GET', 'POST'])
 def form():
-    # this is method for taking a input 
-    # just extend it for every parameater
-    # for HTML part of this watch this Video https://www.youtube.com/watch?v=9MHYHgh4jYc
-    
-    if request.method== "POST":
-        placement_pref = request.form["Placment"]
-    else:
-        return render_template("form.html")
-    
+    global campus_size_value  # Access the global variable
+    if request.method == "POST":
+        placement_pref = request.form.get("placementPref")
+        print("Placement Preference:", placement_pref) 
 
+        coding_pref = request.form.get("codingPref")
+        print("Coding Preference:", coding_pref) 
 
-#app runining with debug mode on 
-if __name__=='__main__':
+        campus_size_value = request.form.get("campusSize")
+        print("Campus Size:", campus_size_value) 
+
+        higher_studies_pref = request.form.get("higherStudiesPref")
+        print("Higher Studies Preference:", higher_studies_pref) 
+
+        states = []
+        for i in range(1, 6):
+            state = request.form.get(f'choice{i}')
+            if state:
+                states.append(state)
+        print("Your Selected Indian States:")
+        for state in states:
+            print(state)
+
+    return render_template('form.html')
+# Run the Flask application
+if __name__ == '__main__':
     app.run(debug=True)
-
-
-# to activiate Virtual Env in Windows 
-# .\env\Scripts\activate 
-
-# to run the app use following command on windows 
-# set FLASK_APP=app.py
-# flask run
