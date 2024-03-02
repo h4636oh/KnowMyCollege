@@ -55,8 +55,8 @@ body::-webkit-scrollbar {
 }
 
 ::selection {
-	background: var(--n4);
-	color: var(--n0);
+	background: var(--n0);
+	color: var(--n4);
 }
   
 /* Header Bar */
@@ -324,7 +324,7 @@ body::-webkit-scrollbar {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-grow: 0;
+	flex-grow: 1;
 	border-radius: 15px;
 	font-weight: 500;
 	transition-duration: 0.3s;
