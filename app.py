@@ -84,6 +84,10 @@ campus_size_value = None  # Define a global variable
 def form():
     global campus_size_value  # Access the global variable
     if request.method == "POST":
+
+        rankAIR = placement_pref = request.form.get("rankAIR")
+        print("Rank:", rankAIR) 
+
         placement_pref = request.form.get("placementPref")
         print("Placement Preference:", placement_pref) 
 
@@ -96,6 +100,12 @@ def form():
         higher_studies_pref = request.form.get("higherStudiesPref")
         print("Higher Studies Preference:", higher_studies_pref) 
 
+        tag_pref = request.form.get("codingPref")
+        print("codingPref:", tag_pref) 
+
+        startupPref = request.form.get("startupPref")
+        print("startupPref:", startupPref) 
+
         states = []
         for i in range(1, 6):
             state = request.form.get(f'choice{i}')
@@ -104,6 +114,18 @@ def form():
         print("Your Selected Indian States:")
         for state in states:
             print(state)
+
+
+        preferences = []  # Initialize an empty list to store preferences
+
+    # Retrieve and store preferences 1 to 8
+    for i in range(1, 9):
+        preference = request.form.get(f"preference{i}")
+        if preference:
+            preferences.append(preference)
+
+    # Process the preferences as needed
+    print("Selected Preferences:", preferences)
 
     return render_template('form.html')
 # Run the Flask application
