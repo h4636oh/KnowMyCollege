@@ -11,9 +11,9 @@ def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pre
     for index, row in df.iterrows():
         total = 0
         value1 = row['Placement ']
-        value2 = row['Coding_Cultuter']
+        value2 = row['Coding_Culture']
         value3 = row['Campus']
-        value4_temp = row['Higer Eduction']
+        value4_temp = row['Higher Eduction']
         
         value4=0
         if higher_studies_pref == 'y':
@@ -38,7 +38,7 @@ def Value(df, placement_pref, coding_pref, campus_size_value, higher_studies_pre
                 value7_f+=arr2[i]
                 
         value8= row['Brand_Value']
-        value9= row['Entreaprenurship_Culture']
+        value9= row['Entrepreneurship_Culture']
         
                 
                    
@@ -128,15 +128,15 @@ def form():
 
         preferences = []  # Initialize an empty list to store preferences
 
-    # Retrieve and store preferences 1 to 8
-    for i in range(1, 9):
-        preference = request.form.get(f"preference{i}")
-        if preference:
-            preferences.append(preference)
+        # Retrieve and store preferences 1 to 8
+        for i in range(1, 9):
+            preference = request.form.get(f"preference{i}")
+            if preference:
+                preferences.append(preference)
 
-    # Process the preferences as needed
-    print("Selected Preferences:", preferences)
-    Final_List=Value(df,placement_pref,coding_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preference,tag_pref,startupPref)
+        # Process the preferences as needed
+        print("Selected Preferences:", preferences)
+        Final_List=Value(df,placement_pref,coding_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preference,tag_pref,startupPref)
 
     return render_template('form.html')
 # Run the Flask application
