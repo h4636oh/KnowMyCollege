@@ -311,8 +311,8 @@ body::-webkit-scrollbar {
 .features {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	gap: 48px;
+	justify-content: center;
+	gap: 60px;
 	padding: 48px;
 }
 
@@ -324,7 +324,9 @@ body::-webkit-scrollbar {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-grow: 1;
+	flex-grow: 0;
+	width: 350px;
+	height: 200px;
 	border-radius: 15px;
 	font-weight: 500;
 	transition-duration: 0.3s;
@@ -381,7 +383,7 @@ body::-webkit-scrollbar {
 .feature:hover {
 	box-shadow: inset 0px 0px 10px var(--n0);
 	transition-duration: 0.3s;
-	flex-grow: 0.09;
+	flex-grow: 0.3;
 }
 
 .feature:not(:hover) {
