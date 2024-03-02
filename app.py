@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 
 # Taking the Data Base
-file_path = 'static/DataBase - Sheet1.csv'
+file_path = 'static/Database - Sheet1.csv'
 df = pd.read_csv(file_path)
 
 # function for Data Base
