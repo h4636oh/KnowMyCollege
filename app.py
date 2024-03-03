@@ -157,6 +157,11 @@ def college_page():
     return render_template('college.html', my_list=my_list)
 
 
+@app.route('/ai')
+def ai_page():
+    return render_template('./ai.html')
+
+
 
 # Run the Flask application
 if __name__ == '__main__':

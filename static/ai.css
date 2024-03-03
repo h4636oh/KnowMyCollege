@@ -1,0 +1,52 @@
+
+
+/* Importing Fonts */
+@font-face {
+	font-family: Norse;
+	src: url(./fonts/Norse.otf);
+}
+
+@font-face {
+	font-family: NorseBold;
+	src: url(./fonts/Norsebold.otf);
+}
+
+/* Color Scheme - Nord */
+:root {
+	--n0: #2E3440;
+	--n0-tp: rgba(46, 52, 64, 0.7);
+	--n0-ltp: rgba(46, 52, 64, 0.9);
+	--n1: #3B4252;
+	--n2: #3B4252;
+	--n3: #4C566A;
+	--n4: #D8DEE9;
+	--n5: #E5E9F0;
+	--n6: #ECEFF4;
+	--n7: #8FBCBB;
+	--n8: #88C0D0;
+	--n9: #81A1C1;
+	--n10: #5E81AC;
+	--n11: #BF616A;
+	--n12: #D08770;
+	--n13: #EBCB8B;
+	--n14: #A3BE8C;
+	--n15: #B48EAD;
+}
+
+.absolute{
+    background-color: #BF616A;
+}
+
+body{
+    background-image: url(./images/backgound.jpg);
+}
+
+
+.ai-container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
