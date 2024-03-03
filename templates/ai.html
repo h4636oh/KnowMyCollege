@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KnowMyCollege</title>
+		<link rel="stylesheet" href="static/style.css" />
+		<link
+			href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
+	</head>
+	<body>
+        <flowise-fullchatbot></flowise-fullchatbot>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.initFull({
+        chatflowid: "b76d3360-5763-4b82-a3fb-354e1f25d3f7",
+        apiHost: "https://kmc-gop0.onrender.com",
+        theme: {
+            chatWindow: {
+                welcomeMessage: "Hello! This is custom welcome message",
+                backgroundColor: "#ffffff",
+                height: 700,
+                width: 400,
+                fontSize: 16,
+                poweredByTextColor: "#303235",
+                botMessage: {
+                    backgroundColor: "#f7f8ff",
+                    textColor: "#303235",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                },
+                userMessage: {
+                    backgroundColor: "#3B81F6",
+                    textColor: "#ffffff",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                },
+                textInput: {
+                    placeholder: "Type your question",
+                    backgroundColor: "#ffffff",
+                    textColor: "#303235",
+                    sendButtonColor: "#3B81F6",
+                }
+            }
+        }
+    })
+</script>
+	</body>
+</html>
