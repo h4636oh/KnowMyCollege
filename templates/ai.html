@@ -33,7 +33,6 @@
         </div>
     <div class="main">
         <div class = "ai-container">
-         <div class="box"></div>
          <flowise-fullchatbot>
          <script type="module">
              import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
@@ -43,13 +42,13 @@
                  theme: {
                      chatWindow: {
                          welcomeMessage: "Hello! I am here to assist you at KnowYourCollege :)",
-                         backgroundColor: "rgba(46, 52, 64, 0.7)",
+                         backgroundColor: "rgb(46, 52, 64)",
                          height: 700,
                          width: 1800,
                          fontSize: 18,
                          poweredByTextColor: "rgba(46, 52, 64, 1)",
                          botMessage: {
-                             backgroundColor: "rgb(46, 52, 64)",
+                             backgroundColor: "#3B4252",
                              textColor: "#ECEFF4",
                              showAvatar: false,
                              // avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
@@ -72,6 +71,13 @@
          </script>
          </flowise-fullchatbot>
          </div>        
+
+         <script>
+            box = document.getElementsByTagNameNS("div.flex.flex-row.items-center.w-full.h-[50px].absolute.top-0.left-0.z-10");
+            box.style.backgroundColor = "#4C566A";
+         </script>
+
+
     </div>
         <div class="footer-container">
             <div class="footer" id="footer">

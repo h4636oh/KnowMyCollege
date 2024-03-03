@@ -54,5 +54,9 @@ body{
 }
 
 .box {
-
+	position: absolute;
+	margin: 75px;
+	width: 1800;
+	height: 200px;
+	z-index: 10;
 }
