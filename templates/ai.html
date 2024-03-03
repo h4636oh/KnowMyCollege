@@ -9,44 +9,144 @@
 			href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css"
 			rel="stylesheet"
 		/>
+        <link rel="stylesheet" href="static/ai.css">
 		<link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
 	</head>
 	<body>
-        <flowise-fullchatbot></flowise-fullchatbot>
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.initFull({
-        chatflowid: "b76d3360-5763-4b82-a3fb-354e1f25d3f7",
-        apiHost: "https://kmc-gop0.onrender.com",
-        theme: {
-            chatWindow: {
-                welcomeMessage: "Hello! This is custom welcome message",
-                backgroundColor: "#ffffff",
-                height: 700,
-                width: 400,
-                fontSize: 16,
-                poweredByTextColor: "#303235",
-                botMessage: {
-                    backgroundColor: "#f7f8ff",
-                    textColor: "#303235",
-                    showAvatar: true,
-                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
-                },
-                userMessage: {
-                    backgroundColor: "#3B81F6",
-                    textColor: "#ffffff",
-                    showAvatar: true,
-                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
-                },
-                textInput: {
-                    placeholder: "Type your question",
-                    backgroundColor: "#ffffff",
-                    textColor: "#303235",
-                    sendButtonColor: "#3B81F6",
+        <div class="header" id="header">
+            <div class="logo">
+                <div class="name">
+                    <span class="logo-circle">K</span>now
+                    <span class="logo-circle">M</span>y
+                    <span class="logo-circle">C</span>ollege
+                </div>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li>
+                        <a class="tryit" href="form"
+                            >Refill The Form</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+       <div class = "ai-container"> <flowise-fullchatbot>
+        <script type="module">
+            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+            Chatbot.initFull({
+                chatflowid: "b76d3360-5763-4b82-a3fb-354e1f25d3f7",
+                apiHost: "https://kmc-gop0.onrender.com",
+                theme: {
+                    chatWindow: {
+                        welcomeMessage: "Hello! I am here to assist you to KnowYourCollege :)",
+                        backgroundColor: "rgba(46, 52, 64, 0.7)",
+                        height: 700,
+                        width: 400,
+                        fontSize: 16,
+                        poweredByTextColor: "rgba(46, 52, 64, 0.7)",
+                        botMessage: {
+                            backgroundColor: "rgb(46, 52, 64)",
+                            textColor: "#ECEFF4",
+                            showAvatar: false,
+                            avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                        },
+                        userMessage: {
+                            backgroundColor: "#8FBCBB",
+                            textColor: "#ffffff",
+                            showAvatar: false,
+                            avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                        },
+                        textInput: {
+                            placeholder: "Type your question",
+                            backgroundColor: "#ffffff",
+                            textColor: "black",
+                            sendButtonColor: "#8FBCBB",
+                        }
+                    }
                 }
-            }
-        }
-    })
-</script>
+            })
+        </script>
+       </flowise-fullchatbot></div>
+
+        
+        <div class="footer-container">
+            <div class="footer" id="footer">
+                <div class="about-card">
+                    <div class="heading">About Us</div>
+                    <div class="about">
+                        We are a team of 4 people from
+                        <a class="iiitp-link" href="https://iiitp.ac.in"
+                            >IIITP College</a
+                        >.<br />
+                        This project is but as hobby project, but we try
+                        to keep the data up to data. If you find any
+                        bugs or have some improvement suggestion then
+                        open a issue at our
+                        <a
+                            class="github-link"
+                            href="https://github.com/h4636oh/KnowMyCollege/issues/new"
+                            >Github Repo</a
+                        >.<br />
+                        Just to tell you We hate Skiddies, so
+                        don't be one and be respectful.
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="heading">Contact Us</div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                Email:
+                                <a
+                                    href="mailto:fakeh4@tuta.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >fakeh4@tuta.io</a
+                                >
+                            </li>
+                            <li>
+                                Github:
+                                <a
+                                    href="https://github.com/h4636oh/KnowMyCollege"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                LinkedIn:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Instagram:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Twitter:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>    
 	</body>
 </html>
