@@ -50,7 +50,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         total += int(value4_temp) * value4
         total += int(value5)
         total += int(value6)*int(Cultural_Pref)
-        total += value7_f
+        total += value7_f*5
         total += value8*int(brand_value)
         total += value9*int(Entra)
         totals.append(total)
