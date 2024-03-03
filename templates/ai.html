@@ -26,52 +26,53 @@
                     <li><a href="home">Home</a></li>
                     <li><a href="#footer">Contact</a></li>
                     <li>
-                        <a class="tryit" href="form"
-                            >Refill The Form</a
-                        >
+                        <a class="tryit" href="ai">Reset Bot</a>
                     </li>
                 </ul>
             </div>
         </div>
-       <div class = "ai-container"> <flowise-fullchatbot>
-        <script type="module">
-            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-            Chatbot.initFull({
-                chatflowid: "b76d3360-5763-4b82-a3fb-354e1f25d3f7",
-                apiHost: "https://kmc-gop0.onrender.com",
-                theme: {
-                    chatWindow: {
-                        welcomeMessage: "Hello! I am here to assist you to KnowYourCollege :)",
-                        backgroundColor: "rgba(46, 52, 64, 0.7)",
-                        height: 700,
-                        width: 400,
-                        fontSize: 16,
-                        poweredByTextColor: "rgba(46, 52, 64, 0.7)",
-                        botMessage: {
-                            backgroundColor: "rgb(46, 52, 64)",
-                            textColor: "#ECEFF4",
-                            showAvatar: false,
-                            avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
-                        },
-                        userMessage: {
-                            backgroundColor: "#8FBCBB",
-                            textColor: "#ffffff",
-                            showAvatar: false,
-                            avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
-                        },
-                        textInput: {
-                            placeholder: "Type your question",
-                            backgroundColor: "#ffffff",
-                            textColor: "black",
-                            sendButtonColor: "#8FBCBB",
-                        }
-                    }
-                }
-            })
-        </script>
-       </flowise-fullchatbot></div>
-
-        
+    <div class="main">
+        <div class = "ai-container">
+         <div class="box"></div>
+         <flowise-fullchatbot>
+         <script type="module">
+             import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+             Chatbot.initFull({
+                 chatflowid: "fb0e4f8d-eef9-4fdc-9bcc-21f2e02c754b",
+                 apiHost: "https://kmc-gop0.onrender.com",
+                 theme: {
+                     chatWindow: {
+                         welcomeMessage: "Hello! I am here to assist you at KnowYourCollege :)",
+                         backgroundColor: "rgba(46, 52, 64, 0.7)",
+                         height: 700,
+                         width: 1800,
+                         fontSize: 18,
+                         poweredByTextColor: "rgba(46, 52, 64, 1)",
+                         botMessage: {
+                             backgroundColor: "rgb(46, 52, 64)",
+                             textColor: "#ECEFF4",
+                             showAvatar: false,
+                             // avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                         },
+                         userMessage: {
+                             backgroundColor: "#8FBCBB",
+                             textColor: "#ECEFF4",
+                             showAvatar: false,
+                             // avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                         },
+                         textInput: {
+                             placeholder: "Type to ask college queries",
+                             backgroundColor: "#3B4252",
+                             textColor: "#ECEFF4",
+                             sendButtonColor: "#4C566A",
+                         }
+                     }
+                 }
+             })
+         </script>
+         </flowise-fullchatbot>
+         </div>        
+    </div>
         <div class="footer-container">
             <div class="footer" id="footer">
                 <div class="about-card">

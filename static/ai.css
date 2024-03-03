@@ -41,12 +41,18 @@ body{
     background-image: url(./images/backgound.jpg);
 }
 
+.main {
+	background-color: var(--n0-tp);
+	backdrop-filter: blur(5px);
+}
 
 .ai-container{
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 75px;
+}
+
+.box {
+
 }
