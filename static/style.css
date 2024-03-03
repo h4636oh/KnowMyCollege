@@ -529,8 +529,6 @@ body::-webkit-scrollbar {
 
 .footer-container {
 	background-image: url(./images/backgound.jpg);
-	border-top-left-radius: 50px;
-	border-top-right-radius: 50px;
 }
 
 .footer {
@@ -541,8 +539,6 @@ body::-webkit-scrollbar {
 	background-color: var(--n0-ltp);
 	bottom: 0;
 	backdrop-filter: blur(5px);
-	border-top-left-radius: 50px;
-	border-top-right-radius: 50px;
 }
 
 .footer .about-card,
