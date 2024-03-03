@@ -230,7 +230,7 @@ input::-webkit-inner-spin-button {
 	border-radius: 100%;
 	background: var(--n0-tp);
 	box-shadow: 0px 0px 2px var(--n0);
-	border: 3px var(--n3) solid;
+	border: 3px var(--n4) solid;
 	cursor: pointer;
 }
 
