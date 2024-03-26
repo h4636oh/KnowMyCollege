@@ -161,8 +161,19 @@ def college_page():
 def ai_page():
     return render_template('./ai.html')
 
+@app.route('/ai_chatbot', methods=['GET', 'POST'])
+def ai_chat():
+    if request.method == "POST":
+        question_query = request.form.get("question")
+        # Here you would process the question and generate a response
+        bot_response = "This is a bot response."
+        messages = [
+            {"sender": "user", "content": question_query},
+            {"sender": "bot", "content": bot_response}
+        ]
+        return render_template('aichatbot.html', messages=messages)
+    else:
+        return render_template('aichatbot.html', messages=[])
 
-
-# Run the Flask application
 if __name__ == '__main__':
     app.run(debug=True)

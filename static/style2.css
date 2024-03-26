@@ -1,0 +1,224 @@
+/* Importing Fonts */
+@font-face {
+	font-family: Norse;
+	src: url(./fonts/Norse.otf);
+}
+
+@font-face {
+	font-family: NorseBold;
+	src: url(./fonts/Norsebold.otf);
+}
+
+/* Color Scheme - Nord */
+:root {
+	--n0: #2E3440;
+	--n0-tp: rgba(46, 52, 64, 0.7);
+	--n0-ltp: rgba(46, 52, 64, 0.9);
+	--n1: #3B4252;
+	--n2: #3B4252;
+	--n3: #4C566A;
+	--n4: #D8DEE9;
+	--n5: #E5E9F0;
+	--n6: #ECEFF4;
+	--n7: #8FBCBB;
+	--n8: #88C0D0;
+	--n9: #81A1C1;
+	--n10: #5E81AC;
+	--n11: #BF616A;
+	--n12: #D08770;
+	--n13: #EBCB8B;
+	--n14: #A3BE8C;
+	--n15: #B48EAD;
+}
+
+/* Global Properties */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Iosevka Web";
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+::selection {
+	background: var(--n0);
+	color: var(--n4);
+}
+
+/* Header Bar */
+
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	padding: 16px;
+	background-color: var(--n3);
+	backdrop-filter: blur(5px);
+	justify-content: space-between;
+	align-items: center;
+	color: var(--n6);
+	font-weight: 700;
+	font-size: large;
+	font-family: "Norse";
+	z-index: 1;
+	box-shadow: 0px 5px 10px var(--n0);
+}
+
+.header .logo .name {
+	display: flex;
+	gap: 4px;
+	font-size: xx-large;
+	font-family: "NorseBold";
+	font-weight: bold;
+	text-shadow: 1px 1px 5px var(--n0);
+}
+
+.logo .name .logo-circle {
+	background-color: var(--n6);
+	color: var(--n3);
+	font-family: "NorseBold";
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	width: 35px;
+	text-shadow: none;
+	box-shadow: 0px 0px 10px var(--n0);
+	margin-left: 10px;
+}
+
+.links ul,
+.links a {
+	display: flex;
+	gap: 32px;
+	list-style-type: none;
+	text-decoration: none;
+	color: var(--n6);
+	font-family: "Norse";
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.links li:hover a {
+	background-color: var(--n6);
+	padding: 8px 16px;
+	color: var(--n3);
+	font-weight: bold;
+	font-family: NorseBold;
+	transition-duration: 0.3s;
+	box-shadow: 0px 0px 10px var(--n0);
+}
+
+.links li:not(:hover) a {
+	transition-duration: 0.3s;
+}
+
+.header .tryit {
+	background-color: var(--n6);
+	color: var(--n3);
+	padding: 8px 16px;
+	font-family: NorseBold;
+	font-weight: bold;
+}
+
+.header .tryit:hover {
+	font-weight: bold;
+	background-color: var(--n11);
+	color: var(--n6);
+	transition-duration: 0.3s;
+	box-shadow: 0px 0px 10px var(--n0);
+}
+
+/* AI Chatbot Container */
+
+.ai-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 0px;
+}
+
+.flowise-fullchatbot {
+	width: 100%;
+	max-width: 1000px;
+}
+
+/* Footer Bar */
+
+.footer-container {
+	background-image: url(./images/backgound.jpg);
+}
+
+.footer {
+	display: flex;
+	padding: 80px 0px;
+	gap: 180px;
+	justify-content: center;
+	background-color: var(--n0-ltp);
+	backdrop-filter: blur(5px);
+}
+
+.footer .about-card,
+.footer .contact-card {
+	display: flex;
+	max-width: 800px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: var(--n2);
+	color: var(--n6);
+	gap: 24px;
+	padding: 24px;
+	border-radius: 20px;
+	font-size: 20px;
+	box-shadow: inset 0px 0px 10px var(--n0);
+	border: 3px var(--n2) solid;
+	text-shadow: 1px 1px 2px var(--n0);
+}
+
+.footer .about-card .heading,
+.footer .contact-card .heading {
+	font-size: x-large;
+	font-weight: 700;
+	font-family: Norse;
+	font-size: 28px;
+}
+
+.footer .about-card .about a {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--n4);
+}
+
+.about-card .about a:hover {
+	text-decoration: underline;
+	font-weight: 700;
+	color: var(--n6);
+}
+
+.contact-card ul,
+.contact-card {
+	list-style-type: none;
+}
+
+.contact-card a {
+	text-decoration: none;
+	color: var(--n4);
+}
+
+.contact-card a:hover {
+	text-decoration: underline;
+	color: var(--n6);
+}
