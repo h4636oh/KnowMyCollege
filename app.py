@@ -160,20 +160,23 @@ def college_page():
 @app.route('/ai')
 def ai_page():
     return render_template('./ai.html')
-
+messages = [
+        {"sender": "bot", "content": "Welcome to the chatbot!"},
+        {"sender": "bot", "content": "How can I assist you today?"}
+    ]
 @app.route('/ai_chatbot', methods=['GET', 'POST'])
-def ai_chat():
-    if request.method == "POST":
-        question_query = request.form.get("question")
-        # Here you would process the question and generate a response
+def ai_chatbot():
+    global messages
+    if request.method == 'POST':
+        # Get the user's question from the form
+        question = request.form.get('question')
+        # Append the user's question to the messages list
+        messages.append({'sender': 'user', 'content': question})
+        # Process the question and generate a bot response (dummy response for demonstration)
         bot_response = "This is a bot response."
-        messages = [
-            {"sender": "user", "content": question_query},
-            {"sender": "bot", "content": bot_response}
-        ]
-        return render_template('aichatbot.html', messages=messages)
-    else:
-        return render_template('aichatbot.html', messages=[])
+        # Append the bot's response to the messages list
+        messages.append({'sender': 'bot', 'content': bot_response})
+    return render_template('aichatbot.html', messages=messages)
 
 if __name__ == '__main__':
     app.run(debug=True)
