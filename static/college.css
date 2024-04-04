@@ -70,7 +70,6 @@ body::-webkit-scrollbar,
 	color: var(--n6);
 	font-weight: 700;
 	font-size: 20px;
-	font-family: "Norse";
 	z-index: 1;
 	box-shadow: 0px 5px 10px var(--n0);
 }
@@ -128,7 +127,6 @@ body::-webkit-scrollbar,
 	list-style-type: none;
 	text-decoration: none;
 	color: var(--n6);
-	font-family: "Norse";
 	align-items: center;
 	justify-content: flex-end;
 	font-family: NorseBold;
