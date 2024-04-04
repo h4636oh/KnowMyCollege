@@ -119,30 +119,77 @@ def home_page():
     return render_template('./index.html')
 
 Final_List = [[],[]]
+Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+
+
+# First_one=[]
+# Second_one=[]
+
 #college comparison
+# @app.route('/process_selection', methods=['POST'])
+# def process_selection():
+#     selected_data = request.json
+#     # Process the selected data here
+#     print(selected_data)  # This will print the received data in the console
+    
+#     ranks = [entry['rank'] for entry in selected_data]
+#     colleges = [entry['college'] for entry in selected_data]
+#     college_First=colleges[0]
+#     college_Second=colleges[1]
+#     a=int(ranks[0])-1
+#     b=int(ranks[1])-1
+
+#     print(a)
+#     print(b)
+#     for j in range(3,8):
+        
+#         First_one.append(j)
+#         # Second_one.append(Final_List[b][j])
+#     print(Second_one)
+#     return "DA" , 200
+
+First_one=[]
+Second_one=[]
+Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+#college comparison
+xxx = []
 @app.route('/process_selection', methods=['POST'])
 def process_selection():
     selected_data = request.json
+    for x in selected_data:
+        xxx.append(x)
     # Process the selected data here
     print(selected_data)  # This will print the received data in the console
-    
-    ranks = [entry['rank'] for entry in selected_data]
-    colleges = [entry['college'] for entry in selected_data]
-    college_First=colleges[0]
-    college_Second=colleges[1]
-    a=int(ranks[0])-1
-    b=int(ranks[1])-1
-    First_one=[]
-    Second_one=[]
-    Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
-    print(a)
-    print(b)
-    for j in range(3,8):
-        
-        First_one.append(Final_List[a][j])
-        Second_one.append(Final_List[b][j])
-    print(First_one)
     return "DA" ,200
+print(First_one)
+
+
+#
+
+
+@app.route('/compare')
+def compare_page():
+    print("hello")
+    print(xxx)
+    # ranks = [entry['rank'] for entry in selected_data]
+    # colleges = [entry['college'] for entry in selected_data]
+    # college_First=colleges[0]
+    # college_Second=colleges[1]
+    # a=int(ranks[0])-1
+    # b=int(ranks[1])-1
+    
+    
+    # print(a)
+    # print(b)
+    # for j in range(3,8):
+    #     First_one.append(Final_List[a][j])
+    #     Second_one.append(Final_List[b][j])
+    
+    # print(First_one)
+    # my_list = Final_List
+    return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
+
+
         
     
         

@@ -96,20 +96,16 @@
 					<thead>
 						<tr>
                             <th scope="col" style="width: 55%">Criteria</th>
-							<th scope="col" style="width: 7%">College 1</th>
-							<th scope="col" style="width: 25%">College 2</th>
+							<th scope="col" style="width: 7%">{{First_one[1]}}</th>
+							<th scope="col" style="width: 25%">{{ Second_one[1] }}</th>
 						</tr>
 					</thead>
 					<tbody>
-						{% for college in my_list %}
+						{% for i in range(5) %}
 						<tr>
-							<td style="width: 7%">{{ college[0] }}</td>
-							<td style="width: 25%">{{ college[1] }}</td>
-							<td style="width: 55%">{{ college[2] }}</td>
-							<td style="width: 13%">{{ college[3] }}</td>
-							<td style="width: 13%">
-								<input type="checkbox" name="test1"  onclick="checkSelected()"/>
-							</td>
+							<td style="width: 7%">{{ Para[i]}}</td>
+							<td style="width: 25%">{{ First_one[i] }}</td>
+							<td style="width: 55%">{{ Second_one[i] }}</td>
 						</tr>
 						{% endfor %}
 					</tbody>
