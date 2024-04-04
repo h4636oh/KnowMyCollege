@@ -1,3 +1,9 @@
-python
 flask
 pandas
+google-generativeai
+python-dotenv
+langchain
+langchain_community
+PyPDF2
+faiss-cpu
+langchain_google_genai

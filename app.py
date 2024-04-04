@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 # import gunicorn 
-#from Responce import get_conversational_chain_csv
+from response import user_input,user_input_csv
 
 # Taking the Data Base
 file_path = 'static/Database - Sheet1.csv'
@@ -170,10 +170,12 @@ def college_page():
 @app.route('/ai')
 def ai_page():
     return render_template('./ai.html')
+
 messages = [
         {"sender": "bot", "content": "Welcome to the chatbot!"},
         {"sender": "bot", "content": "How can I assist you today?"}
     ]
+
 @app.route('/ai_chatbot', methods=['GET', 'POST'])
 def ai_chatbot():
     global messages
@@ -183,16 +185,32 @@ def ai_chatbot():
         # Append the user's question to the messages list
         messages.append({'sender': 'user', 'content': question})
         # Process the question and generate a bot response (dummy response for demonstration)
-        bot_response = "This is a bot response."
+        bot_response_temp = user_input(question)
+        bot_response=bot_response_temp["output_text"]
         # Append the bot's response to the messages list
         messages.append({'sender': 'bot', 'content': bot_response})
     return render_template('aichatbot.html', messages=messages)
-@app.route('/ai_colleges')
-def ai_colleges():
-    return render_template('ai_colleges.html')
-@app.route('/ai_list')
-def ai_list():
-    return render_template('ai_list.html')
+
+
+messagescsv = [
+        {"sender": "bot", "content": "Welcome to the chatbot!"},
+        {"sender": "bot", "content": "How can I assist you today?"}
+    ]
+@app.route('/ai_chatbot_list', methods=['GET', 'POST'])
+def ai_chatbot_list():
+    global messagescsv
+    if request.method == 'POST':
+        # Get the user's question from the form
+        question = request.form.get('question')
+        # Append the user's question to the messages list
+        messagescsv.append({'sender': 'user', 'content': question})
+        # Process the question and generate a bot response (dummy response for demonstration)
+        bot_response_temp = user_input_csv(question)
+        print("Perepere prerper")
+        bot_response=bot_response_temp["output_text"]
+        # Append the bot's response to the messages list
+        messagescsv.append({'sender': 'bot', 'content': bot_response})
+    return render_template('ai_chatbot_list.html', messages=messagescsv)
 
 
 # Run the Flask application

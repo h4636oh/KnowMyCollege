@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="static/aichat1.css">
+    <link rel="stylesheet" href="static/style.css" />
+    <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".chatbox").scrollTop($(".chatbox")[0].scrollHeight);
+        });
+    </script>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="logo">
+            <div class="name">
+                <span class="logo-circle">K</span>now
+                <span class="logo-circle">M</span>y
+                <span class="logo-circle">C</span>ollege
+            </div>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li>
+                    <a class="tryit" href="form">Refill The Form</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1>AI Chatbot</h1>
+        <div class="chatbox" id="chatbox">
+            {% for message in messages %}
+                <div class="message {{ message.sender }}">
+                    <span class="sender">{{ message.sender }}:</span>
+                    <span class="content">{{ message.content }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <form id="chat-form" action="/ai_chatbot" method="post">
+            <input type="text" id="question" name="question" placeholder="Enter your question">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="footer-container">
+        <div class="footer-container">
+            <div class="footer" id="footer">
+                <div class="about-card">
+                    <div class="heading">About Us</div>
+                    <div class="about">
+                        We are a team of 4 people from
+                        <a class="iiitp-link" href="https://iiitp.ac.in"
+                            >IIITP College</a
+                        >.<br />
+                        This project is but as hobby project, but we try
+                        to keep the data up to data. If you find any
+                        bugs or have some improvement suggestion then
+                        open a issue at our
+                        <a
+                            class="github-link"
+                            href="https://github.com/h4636oh/KnowMyCollege/issues/new"
+                            >Github Repo</a
+                        >.<br />
+                        Just to tell you We hate Skiddies, so
+                        don't be one and be respectful.
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="heading">Contact Us</div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                Email:
+                                <a
+                                    href="mailto:fakeh4@tuta.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >fakeh4@tuta.io</a
+                                >
+                            </li>
+                            <li>
+                                Github:
+                                <a
+                                    href="https://github.com/h4636oh/KnowMyCollege"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                LinkedIn:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Instagram:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Twitter:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Function to handle scrolling
+            $("#chatbox").on("scroll", function () {
+                if ($(this).scrollTop() === 0) {
+                    $(this).prepend('<div class="loading">Loading...</div>');
+                    setTimeout(function () {
+                        $(".loading").remove();
+                        // Add logic here to load older messages if available
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
