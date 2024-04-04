@@ -4,7 +4,7 @@ import pandas as pd
 from response import user_input,user_input_csv
 
 # Taking the Data Base
-file_path = 'static/Database.csv'
+file_path = '/home/h4636oh/Desktop/Git/KnowMyCollege/static/DataBase.csv'
 df = pd.read_csv(file_path)
 
 # function for Data Base

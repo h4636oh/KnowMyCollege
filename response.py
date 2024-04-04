@@ -68,7 +68,7 @@ def user_input(user_question):
     print(response)
     return response
 
-loader = CSVLoader(file_path="~/Desktop/Git/static/Database.csv")
+loader = CSVLoader(file_path="/home/h4636oh/Desktop/Git/KnowMyCollege/static/DataBase.csv")
 data = loader.load()
 
 
