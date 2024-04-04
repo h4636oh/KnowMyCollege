@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>KnowMyCollege</title>
+        <title>KnowMyCollege Form</title>
         <link rel="stylesheet" href="static/form.css">
 		<link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet">
-		<link rel="icon" type="image/png" href="static/images/grad_hat_black.png">
+		<link rel="icon" type="image/png" href="static/images/grad_hat_white.png">
         <script src="https://kit.fontawesome.com/681ff4ba53.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -41,7 +41,7 @@
                     <ul>
                         <li><a href="index/#top">Home</a></li>
                         <li><a href="#footer">About Us</a></li>
-                        <span style="font-size: 28px;">~</span>
+                        <span style="font-size: 28px; font-family: NorseBold;">~</span>
                         <li><a id="header-reset" href="form">reset</a></li>
                     </ul>
                 </div>
@@ -54,9 +54,9 @@
             <!-- Form Begins -->
 
             <div class="form-container">
-                <form class="form" method="post">
+                <form id="form" class="form" method="post">
                     <div class="heading">
-                        Fill The Form
+                        ~ Fill The Form ~
                     </div>
                     <div class="rank">
                         <label for="rankAIR" required>How was your JEE-Advanced?</label>
@@ -108,7 +108,7 @@
                     <div class="preflist-container">
                         <div class="preflist">
                             <label for="statePref" required>Rank Your Preferred States:</label>
-                            <select id="choice1" name="choice1" required>
+                            <select id="choice1" name="choice1">
                                         <option value>Select Your 1st Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -140,7 +140,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice2" name="choice2" required>
+                            <select id="choice2" name="choice2">
                                         <option value>Select Your 2nd Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -172,7 +172,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice3" name="choice3" required>
+                            <select id="choice3" name="choice3">
                                         <option value>Select Your 3rd Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -204,7 +204,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice4" name="choice4" required>
+                            <select id="choice4" name="choice4">
                                         <option value>Select Your 4th Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -236,7 +236,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>        
-                            <select id="choice5" name="choice5" required>
+                            <select id="choice5" name="choice5">
                                         <option value>Select Your 5th Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -268,7 +268,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice6" name="choice6" required>
+                            <select id="choice6" name="choice6">
                                         <option value>Select Your 6th Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -300,7 +300,7 @@
                                         <option value="Uttarakhand">Uttarakhand</option>
                                         <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice7" name="choice7" required>
+                            <select id="choice7" name="choice7">
                                     <option value>Select Your 7th Preference</option>
                                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -332,7 +332,7 @@
                                     <option value="Uttarakhand">Uttarakhand</option>
                                     <option value="West Bengal">West Bengal</option>
                             </select>
-                            <select id="choice8" name="choice8" required>
+                            <select id="choice8" name="choice8">
                                         <option value>Select Your 8th Preference</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -467,9 +467,7 @@
                         </div>    
                     </div>
                     <div class="submit-container">
-                        <div class="submits">
-                            <input class="submit" type="submit" value="Submit">
-                        </div>
+                        <button type="submit" class="submit" value="submit">Submit</button>
                     </div>
                 </form>
             </div>

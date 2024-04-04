@@ -181,14 +181,14 @@ body::-webkit-scrollbar {
 
 .form {
 	padding: 32px;
-	gap: 32px;
+	gap: 8px;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--n3);
-	border: 3px var(--n3) solid;
+	border: 5px var(--n3) solid;
 	border-radius: 15px;
 	box-shadow: inset 0px 0px 10px var(--n0);
-	font-size: 18px;
+	font-size: 20px;
 	width: 900px;
 	font-weight: 600;
 }
@@ -197,8 +197,9 @@ body::-webkit-scrollbar {
 	font-family: "NorseBold";
 	font-weight: bold;
 	font-size: 48px;
-	text-shadow: 1px 1px 2px var(--n0);
+	text-shadow: 2px 2px 2px var(--n0);
 	text-align: center;
+	margin-bottom: 24px;
 }
 
 .form .rank, .form .zth, .form .highstd, .form .preflist {
@@ -214,7 +215,7 @@ body::-webkit-scrollbar {
 
 .form .rank input[type=number] {
 	background-color: transparent;
-	font-size: 18px;
+	font-size: 20px;
 	outline: none;
 	border: none;
 	border-bottom: 2px var(--n6) solid;
@@ -224,20 +225,21 @@ body::-webkit-scrollbar {
 	color: var(--n6);
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  	-webkit-appearance: none;
+  	margin: 0;
 }
 
 .form .zth input[type=range] {
 	-webkit-appearance: none;
+	appearance: none;
 	background: linear-gradient(-90deg ,var(--n14), var(--n11));
 	height: 5px;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
 	border-radius: 2px;
 	box-shadow: 0px 0px 10px var(--n0);
+	outline: none;
 }
 
 .form .zth input[type=range]::-webkit-slider-thumb {
@@ -254,16 +256,30 @@ input::-webkit-inner-spin-button {
 
 .form .preflist-container {
 	display: flex;
-	gap: 32px;
+	gap: 8px;
 }
 
 .form .preflist {
 	width: calc(100%/2);
 }
 
+.form .preflist select {
+	background-color: var(--n3);
+	color: var(--n6);
+	font-size: 20px;
+	font-weight: 500;
+	font-family: "Iosevka Web";
+	outline: none;
+	border: 3px var(--n3) solid;
+	box-shadow: inset 0px 0px 10px var(--n0);
+	padding: 2px;
+	overflow-y: scroll;
+}
+
 .form .submit-container {
 	display: flex;
 	justify-content: center;
+	margin-top: 22px;
 }
 
 .submit {
@@ -271,32 +287,19 @@ input::-webkit-inner-spin-button {
 	font-family: "NorseBold";
 	font-size: 24px;
 	color: var(--n6);
-	padding: 16px;
+	padding: 8px 14px;
 	border: 3px var(--n14) solid;
-	border-radius: 10px;
-	transition-duration: 0.3s;
-	text-shadow: 1px 1px 2px var(--n0);
-}
-
-.submits {
-	box-shadow: 0px 0px 10px var(--n6);
-	border-radius: 10px;
-}
-
-.submits:hover .submit{
 	box-shadow: inset 0px 0px 10px var(--n0);
+	border-radius: 5px;
 	transition-duration: 0.3s;
+	text-shadow: 2px 2px 2px var(--n0);
 }
 
-.submits:hover {
-	box-shadow: none;
-	transition-duration: 0.3s;
+.submit:hover {
+	border: 3px var(--n6) solid;
+	box-shadow: inset 0px 0px 5px var(--n6), 0px 0px 5px var(--n6);
 }
 
-
-.submits:not(:hover) .submit{
-	transition-duration: 0.3s;
-}
 
 /* Footer Bar */
 
