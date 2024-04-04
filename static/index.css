@@ -6,24 +6,24 @@
 
 /* Color Scheme - Nord */
 :root {
-	--n0: #2E3440;
+	--n0: #2e3440;
 	--n0-tp: rgba(46, 52, 64, 0.7);
 	--n0-ltp: rgba(46, 52, 64, 0.9);
-	--n1: #3B4252;
-	--n2: #3B4252;
-	--n3: #4C566A;
-	--n4: #D8DEE9;
-	--n5: #E5E9F0;
-	--n6: #ECEFF4;
-	--n7: #8FBCBB;
-	--n8: #88C0D0;
-	--n9: #81A1C1;
-	--n10: #5E81AC;
-	--n11: #BF616A;
-	--n12: #D08770;
-	--n13: #EBCB8B;
-	--n14: #A3BE8C;
-	--n15: #B48EAD;
+	--n1: #3b4252;
+	--n2: #3b4252;
+	--n3: #4c566a;
+	--n4: #d8dee9;
+	--n5: #e5e9f0;
+	--n6: #eceff4;
+	--n7: #8fbcbb;
+	--n8: #88c0d0;
+	--n9: #81a1c1;
+	--n10: #5e81ac;
+	--n11: #bf616a;
+	--n12: #d08770;
+	--n13: #ebcb8b;
+	--n14: #a3be8c;
+	--n15: #b48ead;
 }
 
 /* Global Properties */
@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 	background: var(--n0);
 	color: var(--n4);
 }
-  
+
 /* Header Bar */
 
 .header {
@@ -120,7 +120,8 @@ body::-webkit-scrollbar {
 	padding-right: 8px;
 }
 
-.header-links ul, .header-links a {
+.header-links ul,
+.header-links a {
 	display: flex;
 	gap: 8px;
 	list-style-type: none;
@@ -317,12 +318,14 @@ body::-webkit-scrollbar {
 	flex-grow: 1;
 }
 
-.feature:hover .front, .feature:not(:hover) .back {
+.feature:hover .front,
+.feature:not(:hover) .back {
 	display: none;
 	transition-duration: 0.3s;
 }
 
-.feature:hover .back, .feature:not(:hover) .front {
+.feature:hover .back,
+.feature:not(:hover) .front {
 	display: block;
 	transition-duration: 0.3s;
 }
@@ -338,7 +341,8 @@ body::-webkit-scrollbar {
 	margin: 52px 0px;
 }
 
-.filltheform, .collegelist {
+.filltheform,
+.collegelist {
 	padding: 8px 14px;
 	text-decoration: none;
 	font-family: "NorseBold";
@@ -355,11 +359,11 @@ body::-webkit-scrollbar {
 
 .collegelist {
 	position: relative;
-	left: -10px
+	left: -10px;
 }
 
-
-.filltheform:hover, .collegelist:hover {
+.filltheform:hover,
+.collegelist:hover {
 	transform: scale(1.2);
 	border: 3px var(--n6) solid;
 	box-shadow: 0px 0px 10px var(--n6), inset 0px 0px 10px var(--n6);
@@ -416,7 +420,7 @@ body::-webkit-scrollbar {
 	margin-right: 0px;
 }
 
-.whatdowedo .flashcard:hover .card{
+.whatdowedo .flashcard:hover .card {
 	transform: rotateY(180deg);
 }
 
@@ -553,7 +557,9 @@ body::-webkit-scrollbar {
 	box-shadow: inset 0px 0px 10px var(--n0);
 }
 
-.contactform-name, .contactform-email, .contactform-msg {
+.contactform-name,
+.contactform-email,
+.contactform-msg {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -568,7 +574,8 @@ label {
 	align-self: flex-start;
 }
 
-input, textarea {
+input,
+textarea {
 	width: 700px;
 	resize: none;
 	background-color: var(--n2);
@@ -617,7 +624,8 @@ input, textarea {
 	backdrop-filter: blur(5px);
 }
 
-.footer .about-card, .footer .contact-card {
+.footer .about-card,
+.footer .contact-card {
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-evenly; */
@@ -633,7 +641,8 @@ input, textarea {
 	text-shadow: 2px 2px 2px var(--n0);
 }
 
-.footer .about-card-heading, .footer .contact-card-heading {
+.footer .about-card-heading,
+.footer .contact-card-heading {
 	font-size: 28px;
 	font-weight: 700;
 	font-family: NorseBold;

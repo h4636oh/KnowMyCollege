@@ -121,7 +121,8 @@ body::-webkit-scrollbar,
 	padding-right: 8px;
 }
 
-.header-links ul, .header-links a {
+.header-links ul,
+.header-links a {
 	display: flex;
 	gap: 8px;
 	list-style-type: none;
@@ -216,7 +217,6 @@ td {
 tbody {
 	font-size: 20px;
 	box-shadow: inset 0px 0px 10px var(--n0);
-	
 }
 
 /* Footer Bar */
@@ -234,7 +234,8 @@ tbody {
 	backdrop-filter: blur(5px);
 }
 
-.footer .about-card, .footer .contact-card {
+.footer .about-card,
+.footer .contact-card {
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-evenly; */
@@ -250,7 +251,8 @@ tbody {
 	text-shadow: 2px 2px 2px var(--n0);
 }
 
-.footer .about-card-heading, .footer .contact-card-heading {
+.footer .about-card-heading,
+.footer .contact-card-heading {
 	font-size: 28px;
 	font-weight: 700;
 	font-family: NorseBold;
