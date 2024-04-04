@@ -67,9 +67,19 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
     Values=[]
     college_names=[]
     Branch_names=[]
+    Placement=[]
+    coding=[]
+    campus=[]
+    cultural=[]
+    entrupr=['Entrepreneurship_Culture']
     for index, row in sorted_df.iterrows():
         college_name = row['College Name']
         Branch_name = row['Branch']
+        PLA=row['Placement ']
+        Co=row['Coding_Culture']
+        Ca=row['Campus']
+        CU=row['Cultural_Activity']
+        en=row['Entrepreneurship_Culture']
         V6= row['Total']
         V6=V6/500
         V6=round(V6,1)
@@ -79,9 +89,16 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         if int(rankAIR)-2000<= V4:
             college_names.append(college_name)
             Branch_names.append(Branch_name)
+            Placement.append(PLA)
+            coding.append(Co)
+            campus.append(Ca)
+            cultural.append(CU)
+            entrupr.append(en)
+            
+            
             Values.append(V6)
     
-    return college_names,Branch_names,Values
+    return college_names,Branch_names,Values,Placement,coding,campus,cultural,entrupr
 
 
 def get_branches_and_closing(college_name):
@@ -101,14 +118,34 @@ def get_branches_and_closing(college_name):
 def home_page():
     return render_template('./index.html')
 
-
+Final_List = [[],[]]
 #college comparison
 @app.route('/process_selection', methods=['POST'])
 def process_selection():
     selected_data = request.json
     # Process the selected data here
     print(selected_data)  # This will print the received data in the console
-    return 'Data received successfully', 200
+    
+    ranks = [entry['rank'] for entry in selected_data]
+    colleges = [entry['college'] for entry in selected_data]
+    college_First=colleges[0]
+    college_Second=colleges[1]
+    a=int(ranks[0])-1
+    b=int(ranks[1])-1
+    First_one=[]
+    Second_one=[]
+    Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+    print(a)
+    print(b)
+    for j in range(3,8):
+        
+        First_one.append(Final_List[a][j])
+        Second_one.append(Final_List[b][j])
+    print(First_one)
+    return "DA" ,200
+        
+    
+        
 
 campus_size_value = None  # Define a global variable
 
@@ -163,15 +200,15 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        college_names,Branch_names,Values=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        college_names,Branch_names,Values,a,b,c,d,e=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
         for i in range(len(college_names)):
-            tempo = [ctt, college_names[i],Branch_names[i],Values[i]]
+            tempo = [ctt, college_names[i],Branch_names[i],Values[i],a[i],b[i],c[i],d[i],e[i]]
             Final_List.append(tempo)
             ctt+=1
         
-        
+        print(Final_List)      
 
         return redirect('/college')
     return render_template('/form.html')
