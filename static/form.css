@@ -254,6 +254,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	cursor: pointer;
 }
 
+.form .highstd input[type=radio] {
+	outline: none;
+}
+
 .form .preflist-container {
 	display: flex;
 	gap: 8px;
@@ -271,6 +275,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	font-family: "Iosevka Web";
 	outline: none;
 	border: 3px var(--n3) solid;
+	border-radius: 3px;
 	box-shadow: inset 0px 0px 10px var(--n0);
 	padding: 2px;
 	overflow-y: scroll;

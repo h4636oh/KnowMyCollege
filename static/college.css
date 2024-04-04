@@ -1,10 +1,5 @@
 /* Importing Fonts */
 @font-face {
-	font-family: Norse;
-	src: url(./fonts/Norse.otf);
-}
-
-@font-face {
 	font-family: NorseBold;
 	src: url(./fonts/Norsebold.otf);
 }
@@ -166,7 +161,6 @@ body::-webkit-scrollbar,
 .header .ai:not(:hover) {
 	transition-duration: 0.3s;
 }
-
 
 .header .ai:hover {
 	transition-duration: 0.3s;
