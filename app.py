@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 # import gunicorn 
-from response import user_input,user_input_csv
+from response import user_input
 
 # Taking the Data Base
-file_path = 'static/Database.csv'
+file_path = "/home/sdnt/repos/KnowMyCollege/static/DataBase.csv"
 df = pd.read_csv(file_path)
 
 # function for Data Base
@@ -100,6 +100,13 @@ def home_page():
     return render_template('./index.html')
 
 
+#college comparison
+@app.route('/process_selection', methods=['POST'])
+def process_selection():
+    selected_data = request.json
+    # Process the selected data here
+    print(selected_data)  # This will print the received data in the console
+    return 'Data received successfully', 200
 
 campus_size_value = None  # Define a global variable
 
@@ -203,25 +210,25 @@ def ai_colleges():
 @app.route('/ai_list')
 def ai_list():
     return render_template('ai_list.html')
-messagescsv = [
-        {"sender": "bot", "content": "Welcome to the chatbot!"},
-        {"sender": "bot", "content": "How can I assist you today?"}
-    ]
-@app.route('/ai_chatbot_list', methods=['GET', 'POST'])
-def ai_chatbot_list():
-    global messagescsv
-    if request.method == 'POST':
-        # Get the user's question from the form
-        question = request.form.get('question')
-        # Append the user's question to the messages list
-        messagescsv.append({'sender': 'user', 'content': question})
-        # Process the question and generate a bot response (dummy response for demonstration)
-        bot_response_temp = user_input_csv(question)
-        print("Perepere prerper")
-        bot_response=bot_response_temp["output_text"]
-        # Append the bot's response to the messages list
-        messagescsv.append({'sender': 'bot', 'content': bot_response})
-    return render_template('ai_chatbot_list.html', messages=messagescsv)
+# messagescsv = [
+#         {"sender": "bot", "content": "Welcome to the chatbot!"},
+#         {"sender": "bot", "content": "How can I assist you today?"}
+#     ]
+# @app.route('/ai_chatbot_list', methods=['GET', 'POST'])
+# def ai_chatbot_list():
+#     global messagescsv
+#     if request.method == 'POST':
+#         # Get the user's question from the form
+#         question = request.form.get('question')
+#         # Append the user's question to the messages list
+#         messagescsv.append({'sender': 'user', 'content': question})
+#         # Process the question and generate a bot response (dummy response for demonstration)
+#         bot_response_temp = user_input_csv(question)
+#         print("Perepere prerper")
+#         bot_response=bot_response_temp["output_text"]
+#         # Append the bot's response to the messages list
+#         messagescsv.append({'sender': 'bot', 'content': bot_response})
+#     return render_template('ai_chatbot_list.html', messages=messagescsv)
 
 @app.route('/college/<college_name>', methods=['GET'])
 def college_info(college_name):

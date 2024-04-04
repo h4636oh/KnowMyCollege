@@ -54,72 +54,70 @@
 			</div>
 		</div>
 
-    <!-- HeaderBar Ends -->
-    
-    
-    
-    <!-- Backgorund Effect and Color -->
-    
-    <div class="main">
+		<!-- HeaderBar Ends -->
 
+		<!-- Backgorund Effect and Color -->
 
+		<div class="main">
+			<!-- AI Chatbot Button Begins -->
 
-        <!-- AI Chatbot Button Begins -->
+			<div class="chatbox-clicker" onclick="chatbotpopuptoggle()">
+				<i class="fa-solid fa-message">
+					<p>AI</p>
+				</i>
+			</div>
 
-        <div class="chatbox-clicker" onclick="chatbotpopuptoggle()">
-            <i class="fa-solid fa-message">
-                <p>AI</p>
-            </i>
-        </div>
-        
-        <!-- AI Chatbot Button Begins -->
-				
+			<!-- AI Chatbot Button Begins -->
 
+			<!-- AI Chatbot Prompt Begins-->
 
-        <!-- AI Chatbot Prompt Begins-->
+			<div class="chat-options-container">
+				<div class="chat-options-heading">
+					<p>WHAT DO WHAT TO DISCUSS ABOUT ?</p>
+					<i
+						class="fa-solid fa-circle-xmark"
+						onclick="chatbotpopuptoggle()"
+					></i>
+				</div>
+				<div class="chat-options">
+					<a class="chat-option" href="">Generated <br />Rank List</a>
+					<a class="chat-option" href=""
+						>College's <br />Information</a
+					>
+				</div>
+			</div>
 
-        <div class="chat-options-container">
-            <div class="chat-options-heading">
-                <p>
-                    WHAT DO WHAT TO DISCUSS ABOUT ?
-                </p>
-                <i class="fa-solid fa-circle-xmark" onclick="chatbotpopuptoggle()"></i>
-            </div>
-            <div class="chat-options">
-                <a class="chat-option" href="">Generated <br>Rank List</a>
-                <a class="chat-option" href="">College's <br>Information</a>
-            </div>
-        </div>
-        
-        <!-- AI Chatbot Prompt Begins-->
+			<!-- AI Chatbot Prompt Begins-->
 
+			<!-- Table Begins -->
 
-        
-        <!-- Table Begins -->
-
-        <div class = "table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col" style="width: 7%;">Rank</th>
-                        <th scope="col" style="width: 25%;">College</th>
-                        <th scope="col" style="width: 55%;">Branch</th>
-                        <th scope="col" style="width: 13%;">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for college in my_list %}
-                        <tr>
-                            <td style="width: 7%;">{{ college[0] }}</td>
-                            <td style="width: 25%;">{{ college[1] }}</td>
-                            <td style="width: 55%;">{{ college[2] }}</td>
-                            <td style="width: 13%;">{{ college[3] }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-
+			<div class="table-container">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col" style="width: 7%">Rank</th>
+							<th scope="col" style="width: 25%">College</th>
+							<th scope="col" style="width: 55%">Branch</th>
+							<th scope="col" style="width: 13%">Score</th>
+							<th scope="col" style="width: 13%">Select</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for college in my_list %}
+						<tr>
+							<td style="width: 7%">{{ college[0] }}</td>
+							<td style="width: 25%">{{ college[1] }}</td>
+							<td style="width: 55%">{{ college[2] }}</td>
+							<td style="width: 13%">{{ college[3] }}</td>
+							<td style="width: 13%">
+								<input type="checkbox" name="test1"  onclick="checkSelected()"/>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<button id="submitBtn" style="display: none;" onclick="submitSelection()">Submit Selection</button></div>
 			<!-- Table Ends -->
 		</div>
 
@@ -137,9 +135,9 @@
 							<!-- <i class="fa-solid fa-graduation-cap"></i> -->
 							Indian Institute of Information Technology, Pune</a
 						>.<br />
-						This is a hobby project, but we try to keep the
-						data up to date. If you find any bugs or have any
-						suggestions then open a issue at our
+						This is a hobby project, but we try to keep the data up
+						to date. If you find any bugs or have any suggestions
+						then open a issue at our
 						<a
 							class="github-link"
 							href="https://github.com/h4636oh/KnowMyCollege/issues/new"
@@ -215,31 +213,71 @@
 
 		<!-- Footer Ends -->
 
+		<!-- PopUp Script Begins -->
 
+		<script>
+			function chatbotpopuptoggle() {
+				let popup = document.querySelector(".chat-options-container");
+				let button = document.querySelector(".chatbox-clicker");
 
-    <!-- PopUp Script Begins -->
+				if (popup.style.display == "flex") {
+					popup.style.display = "none";
+					button.style.display = "block";
+				} else {
+					popup.style.display = "flex";
+					button.style.display = "none";
+				}
+			}
 
-    <script>
-        function chatbotpopuptoggle() 
-        {
-            let popup = document.querySelector('.chat-options-container');
-            let button = document.querySelector('.chatbox-clicker');
-    
-            if (popup.style.display == "flex")
-            {
-                popup.style.display = "none";
-                button.style.display = "block";
-            }
-            else
-            {
-                popup.style.display = "flex";
-                button.style.display = "none";
-            }
-        }
-    </script>
+			function checkSelected() {
+				let checkboxes = document.querySelectorAll(
+					'input[type="checkbox"]:checked'
+				);
+				if (checkboxes.length >= 2) {
+					document.getElementById("submitBtn").style.display =
+						"block";
+				} else {
+					document.getElementById("submitBtn").style.display = "none";
+				}
+			}
 
-    <!-- PopUp Script Ends -->
+			function submitSelection() {
+				console.log("succ");
 
+				let selectedData = [];
+            	let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            	checkboxes.forEach(function(checkbox) {
+                let row = checkbox.closest('tr');
+                let rank = row.cells[0].textContent;
+                let college = row.cells[1].textContent;
+                let branch = row.cells[2].textContent;
+                let score = row.cells[3].textContent;
 
-</body>
+				console.log(rank);
+                selectedData.push({ rank: rank, college: college, branch: branch, score: score });
+				});
+				fetch('/process_selection', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(selectedData),
+				})
+				.then(response => {
+					if (response.ok) {
+						console.log('Data sent successfully');
+					} else {
+						console.error('Failed to send data');
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			}
+
+			
+		</script>
+
+		<!-- PopUp Script Ends -->
+	</body>
 </html>
