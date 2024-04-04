@@ -110,6 +110,23 @@ def get_branches_and_closing(college_name):
         closing_ranks = college_data[college_data['Branch'] == college_data['Parent Branch']]['CLOSING'].tolist()
         return main_branches, closing_ranks
 
+def comper(selected_data):
+    ranks = [entry['rank'] for entry in selected_data]
+    colleges = [entry['college'] for entry in selected_data]
+    college_First=colleges[0]
+    college_Second=colleges[1]
+    a=int(ranks[0])-1
+    b=int(ranks[1])-1
+    First_one.append(college_First)
+    Second_one.append(college_Second)
+    
+    print(a)
+    print(b)
+    for j in range(3,8):
+        
+        First_one.append(Final_List[a][j])
+        Second_one.append(Final_List[b][j])
+    print(First_one)
 
 
 
@@ -119,7 +136,7 @@ def home_page():
     return render_template('./index.html')
 
 Final_List = [[],[]]
-Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+
 
 
 # First_one=[]
@@ -150,16 +167,13 @@ Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurshi
 
 First_one=[]
 Second_one=[]
-Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+Para=['ff','Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
 #college comparison
 xxx = []
 @app.route('/process_selection', methods=['POST'])
 def process_selection():
     selected_data = request.json
-    for x in selected_data:
-        xxx.append(x)
-    # Process the selected data here
-    print(selected_data)  # This will print the received data in the console
+    comper(selected_data) # This will print the received data in the console
     return "DA" ,200
 print(First_one)
 
@@ -170,7 +184,7 @@ print(First_one)
 @app.route('/compare')
 def compare_page():
     print("hello")
-    print(xxx)
+    
     # ranks = [entry['rank'] for entry in selected_data]
     # colleges = [entry['college'] for entry in selected_data]
     # college_First=colleges[0]

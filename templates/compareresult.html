@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="static/compare.css" />
+		<title>KnowMyCollege List</title>
+		<link
+			href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="static/images/grad_hat_white.png"
+		/>
+		<script
+			src="https://kit.fontawesome.com/681ff4ba53.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<!-- HeaderBar Begins -->
+
+		<div class="header" id="header">
+			<!-- Logo(KnowMyCollege) of the Website -->
+			<div class="logo">
+				<!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
+				<a href="#top">
+					Know My College
+					<!-- <span class="logo-circle-red">K</span> -->
+					<!-- <span class="logo-name-red">Know</span> -->
+					<!-- <span class="logo-circle-blue">M</span> -->
+					<!-- <span class="logo-name-blue">My</span> -->
+					<!-- <span class="logo-circle-green">C</span> -->
+					<!-- <span class="logo-name-green">College</span> -->
+				</a>
+			</div>
+
+			<!-- Links Appearing on the Right Side of the HeaderBar -->
+			<div class="header-links">
+				<ul>
+					<li><a href="#top">Home</a></li>
+					<li><a href="#footer">About Us</a></li>
+					<span style="font-size: 28px; font-family: NorseBold"
+						>~</span
+					>
+					<li>
+						<a id="header-refilltheform" href="form"
+							>Refill The Form</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- HeaderBar Ends -->
+
+		<!-- Backgorund Effect and Color -->
+
+		<div class="main">
+			<!-- AI Chatbot Button Begins -->
+
+			<div class="chatbox-clicker" onclick="chatbotpopuptoggle()">
+				<i class="fa-solid fa-message">
+					<p>AI</p>
+				</i>
+			</div>
+
+			<!-- AI Chatbot Button Begins -->
+
+			<!-- AI Chatbot Prompt Begins-->
+
+			<div class="chat-options-container">
+				<div class="chat-options-heading">
+					<p>WHAT DO WHAT TO DISCUSS ABOUT ?</p>
+					<i
+						class="fa-solid fa-circle-xmark"
+						onclick="chatbotpopuptoggle()"
+					></i>
+				</div>
+				<div class="chat-options">
+					<a class="chat-option" href="">Generated <br />Rank List</a>
+					<a class="chat-option" href=""
+						>College's <br />Information</a
+					>
+				</div>
+			</div>
+
+			<!-- AI Chatbot Prompt Begins-->
+
+			<!-- Table Begins -->
+
+			<div class="table-container">
+				<table>
+					<thead>
+						<tr>
+                            <th scope="col" style="width: 55%">Criteria</th>
+							<th scope="col" style="width: 7%">{{First_one[0]}}</th>
+							<th scope="col" style="width: 25%">{{Second_one[0]}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i in range(1,6) %}
+						<tr>
+							<td style="width: 7%">{{ Para[i]}}</td>
+							<td style="width: 25%">{{ First_one[i] }}</td>
+							<td style="width: 55%">{{ Second_one[i] }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<button id="submitBtn" style="display: none;" onclick="submitSelection()">Submit Selection</button></div>
+			<!-- Table Ends -->
+		</div>
+
+		<!-- Background Effect and Color Ends -->
+
+		<!-- Footer Begins -->
+
+		<div class="footer-container">
+			<div class="footer" id="footer">
+				<div class="about-card">
+					<div class="about-card-heading">About Us</div>
+					<div class="about-card-content">
+						We are a team of 4 people from
+						<a class="iiitp-link" href="https://iiitp.ac.in">
+							<!-- <i class="fa-solid fa-graduation-cap"></i> -->
+							Indian Institute of Information Technology, Pune</a
+						>.<br />
+						This is a hobby project, but we try to keep the data up
+						to date. If you find any bugs or have any suggestions
+						then open a issue at our
+						<a
+							class="github-link"
+							href="https://github.com/h4636oh/KnowMyCollege/issues/new"
+						>
+							<!-- <i class="fa-brands fa-github"></i> -->
+							Github Repo</a
+						>.<br />
+					</div>
+				</div>
+				<div class="contact-card">
+					<div class="contact-card-heading">Contact Us</div>
+					<div class="contact-card-content">
+						<ul>
+							<li>
+								<i class="fa-regular fa-envelope"></i>
+								<a
+									href="mailto:fakeh4@tuta.io"
+									target="_blank"
+									rel="noopener noreferrer"
+									>Fakeh4@tuta.io</a
+								>
+							</li>
+							<li>
+								<i class="fa-brands fa-github"></i>
+								<a
+									href="https://github.com/h4636oh/KnowMyCollege"
+									target="_blank"
+									rel="noopener noreferrer"
+									>KnowMyCollege</a
+								>
+							</li>
+							<li>
+								<i class="fa-brands fa-mastodon"></i>
+								<a
+									href="https://mastodon.social/getting-started"
+									target="_blank"
+									rel="noopener noreferrer"
+									>KnowMyCollege</a
+								>
+							</li>
+							<li>
+								<i class="fa-brands fa-linkedin"></i>
+								<a
+									href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+									target="_blank"
+									rel="noopener noreferrer"
+									>~KnowMyCollege~</a
+								>
+							</li>
+							<li>
+								<i class="fa-brands fa-instagram"></i>
+								<a
+									href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+									target="_blank"
+									rel="noopener noreferrer"
+									>~KnowMyCollege~</a
+								>
+							</li>
+							<li>
+								<i class="fa-brands fa-x-twitter"></i>
+								<a
+									href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+									target="_blank"
+									rel="noopener noreferrer"
+									>~KnowMyCollege~</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer Ends -->
+
+		<!-- PopUp Script Begins -->
+
+		<script>
+			function chatbotpopuptoggle() {
+				let popup = document.querySelector(".chat-options-container");
+				let button = document.querySelector(".chatbox-clicker");
+
+				if (popup.style.display == "flex") {
+					popup.style.display = "none";
+					button.style.display = "block";
+				} else {
+					popup.style.display = "flex";
+					button.style.display = "none";
+				}
+			}
+
+			function checkSelected() {
+				let checkboxes = document.querySelectorAll(
+					'input[type="checkbox"]:checked'
+				);
+				if (checkboxes.length >= 2) {
+					document.getElementById("submitBtn").style.display ="block";
+					document.querySelectorAll('input[type="checkbox"]:not(:checked)').forEach(function(checkbox) {
+                    checkbox.disabled = true;
+                });
+				} else {
+					document.getElementById("submitBtn").style.display = "none";
+					document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+                    checkbox.disabled = false;
+					});
+				}
+			}
+
+			function submitSelection() {
+				console.log("succ");
+
+				let selectedData = [];
+            	let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            	checkboxes.forEach(function(checkbox) {
+                let row = checkbox.closest('tr');
+                let rank = row.cells[0].textContent;
+                let college = row.cells[1].textContent;
+                let branch = row.cells[2].textContent;
+                let score = row.cells[3].textContent;
+
+				console.log(rank);
+                selectedData.push({ rank: rank, college: college, branch: branch, score: score });
+				});
+				fetch('/process_selection', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(selectedData),
+				})
+				.then(response => {
+					if (response.ok) {
+						console.log('Data sent successfully');
+					} else {
+						console.error('Failed to send data');
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			}
+
+			
+		</script>
+
+		<!-- PopUp Script Ends -->
+	</body>
+</html>
