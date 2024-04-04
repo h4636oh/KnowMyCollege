@@ -7,24 +7,24 @@
 
 /* Color Scheme - Nord */
 :root {
-	--n0: #2E3440;
+	--n0: #2e3440;
 	--n0-tp: rgba(46, 52, 64, 0.7);
 	--n0-ltp: rgba(46, 52, 64, 0.9);
-	--n1: #3B4252;
-	--n2: #3B4252;
-	--n3: #4C566A;
-	--n4: #D8DEE9;
-	--n5: #E5E9F0;
-	--n6: #ECEFF4;
-	--n7: #8FBCBB;
-	--n8: #88C0D0;
-	--n9: #81A1C1;
-	--n10: #5E81AC;
-	--n11: #BF616A;
-	--n12: #D08770;
-	--n13: #EBCB8B;
-	--n14: #A3BE8C;
-	--n15: #B48EAD;
+	--n1: #3b4252;
+	--n2: #3b4252;
+	--n3: #4c566a;
+	--n4: #d8dee9;
+	--n5: #e5e9f0;
+	--n6: #eceff4;
+	--n7: #8fbcbb;
+	--n8: #88c0d0;
+	--n9: #81a1c1;
+	--n10: #5e81ac;
+	--n11: #bf616a;
+	--n12: #d08770;
+	--n13: #ebcb8b;
+	--n14: #a3be8c;
+	--n15: #b48ead;
 }
 
 /* Global Properties */
@@ -55,7 +55,7 @@ body::-webkit-scrollbar {
 	background: var(--n0);
 	color: var(--n4);
 }
-  
+
 /* Header Bar */
 
 .header {
@@ -122,7 +122,8 @@ body::-webkit-scrollbar {
 	padding-right: 8px;
 }
 
-.header-links ul, .header-links a {
+.header-links ul,
+.header-links a {
 	display: flex;
 	gap: 8px;
 	list-style-type: none;
@@ -202,7 +203,10 @@ body::-webkit-scrollbar {
 	margin-bottom: 24px;
 }
 
-.form .rank, .form .zth, .form .highstd, .form .preflist {
+.form .rank,
+.form .zth,
+.form .highstd,
+.form .preflist {
 	background-color: var(--n2);
 	display: flex;
 	flex-direction: column;
@@ -213,7 +217,7 @@ body::-webkit-scrollbar {
 	box-shadow: inset 0px 0px 10px var(--n0);
 }
 
-.form .rank input[type=number] {
+.form .rank input[type="number"] {
 	background-color: transparent;
 	font-size: 20px;
 	outline: none;
@@ -225,24 +229,25 @@ body::-webkit-scrollbar {
 	color: var(--n6);
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-  	-webkit-appearance: none;
-  	margin: 0;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
-.form .zth input[type=range] {
+.form .zth input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none;
-	background: linear-gradient(-90deg ,var(--n14), var(--n11));
+	background: linear-gradient(-90deg, var(--n14), var(--n11));
 	height: 5px;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
 	border-radius: 2px;
 	box-shadow: 0px 0px 10px var(--n0);
 	outline: none;
 }
 
-.form .zth input[type=range]::-webkit-slider-thumb {
+.form .zth input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	width: 15px;
@@ -254,7 +259,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	cursor: pointer;
 }
 
-.form .highstd input[type=radio] {
+.form .highstd input[type="radio"] {
 	outline: none;
 }
 
@@ -264,7 +269,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .form .preflist {
-	width: calc(100%/2);
+	width: calc(100% / 2);
 }
 
 .form .preflist select {
@@ -305,7 +310,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	box-shadow: inset 0px 0px 5px var(--n6), 0px 0px 5px var(--n6);
 }
 
-
 /* Footer Bar */
 
 .footer-container {
@@ -322,7 +326,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	backdrop-filter: blur(5px);
 }
 
-.footer .about-card, .footer .contact-card {
+.footer .about-card,
+.footer .contact-card {
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-evenly; */
@@ -338,7 +343,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	text-shadow: 2px 2px 2px var(--n0);
 }
 
-.footer .about-card-heading, .footer .contact-card-heading {
+.footer .about-card-heading,
+.footer .contact-card-heading {
 	font-size: 28px;
 	font-weight: 700;
 	font-family: NorseBold;

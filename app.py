@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 # import gunicorn 
-#from Responce import get_conversational_chain_csv
+from response import user_input,user_input_csv
 
 # Taking the Data Base
 file_path = 'static/Database - Sheet1.csv'
@@ -62,23 +62,33 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
     sorted_df = df.sort_values(by='Total', ascending=False)
     # sorted_df = df.sort_values(by='Total', ascending=False)
     Values=[]
+    college_names=[]
+    Branch_names=[]
     for index, row in sorted_df.iterrows():
-        V1 = row['College Name']
-        V2 = row['Branch']
+        college_name = row['College Name']
+        Branch_name = row['Branch']
         V6= row['Total']
         V6=V6/500
         V6=round(V6,1)
         
-        V3 = f"{V1} {V2}"  # Concatenating strings using f-string
+        
         V4= row['CLOSING']
         if int(rankAIR)-2000<= V4:
-            LIST.append(V3)
+            college_names.append(college_name)
+            Branch_names.append(Branch_name)
             Values.append(V6)
     
-    return LIST,Values
+    return college_names,Branch_names,Values
 
 
-
+def get_branches_and_closing(college_name):
+    college_data = df[df['College Name'] == college_name]
+    if college_data.empty:
+        return None, None  # Return None if college not found
+    else:
+        main_branches = college_data['Branch'].unique().tolist()
+        closing_ranks = college_data[college_data['Branch'] == college_data['Parent Branch']]['CLOSING'].tolist()
+        return main_branches, closing_ranks
 
 
 
@@ -144,13 +154,14 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        TEMP,V6=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        college_names,Branch_names,Values=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
-        for i in range(len(TEMP)):
-            tempo = [ctt, TEMP[i],V6[i]]
+        for i in range(len(college_names)):
+            tempo = [ctt, college_names[i],Branch_names[i],Values[i]]
             Final_List.append(tempo)
             ctt+=1
+        
         
 
         return redirect('/college')
@@ -167,7 +178,61 @@ def college_page():
 def ai_page():
     return render_template('./ai.html')
 
+messages = [
+        {"sender": "bot", "content": "Welcome to the chatbot!"},
+        {"sender": "bot", "content": "How can I assist you today?"}
+    ]
 
+@app.route('/ai_chatbot', methods=['GET', 'POST'])
+def ai_chatbot():
+    global messages
+    if request.method == 'POST':
+        # Get the user's question from the form
+        question = request.form.get('question')
+        # Append the user's question to the messages list
+        messages.append({'sender': 'user', 'content': question})
+        # Process the question and generate a bot response (dummy response for demonstration)
+        bot_response_temp = user_input(question)
+        bot_response=bot_response_temp["output_text"]
+        # Append the bot's response to the messages list
+        messages.append({'sender': 'bot', 'content': bot_response})
+    return render_template('aichatbot.html', messages=messages)
+@app.route('/ai_colleges')
+def ai_colleges():
+    return render_template('ai_colleges.html')
+@app.route('/ai_list')
+def ai_list():
+    return render_template('ai_list.html')
+messagescsv = [
+        {"sender": "bot", "content": "Welcome to the chatbot!"},
+        {"sender": "bot", "content": "How can I assist you today?"}
+    ]
+@app.route('/ai_chatbot_list', methods=['GET', 'POST'])
+def ai_chatbot_list():
+    global messagescsv
+    if request.method == 'POST':
+        # Get the user's question from the form
+        question = request.form.get('question')
+        # Append the user's question to the messages list
+        messagescsv.append({'sender': 'user', 'content': question})
+        # Process the question and generate a bot response (dummy response for demonstration)
+        bot_response_temp = user_input_csv(question)
+        print("Perepere prerper")
+        bot_response=bot_response_temp["output_text"]
+        # Append the bot's response to the messages list
+        messagescsv.append({'sender': 'bot', 'content': bot_response})
+    return render_template('ai_chatbot_list.html', messages=messagescsv)
+
+@app.route('/college/<college_name>', methods=['GET'])
+def college_info(college_name):
+    college_name = college_name.replace('_', ' ')
+    # Find the college information based on the provided name
+    branches, closing_ranks = get_branches_and_closing(college_name)
+    if branches is None or closing_ranks is None:
+        return render_template('college_not_found.html')
+    else:
+        branch_closing_list = list(zip(branches, closing_ranks))
+        return render_template('college_page.html', college_name=college_name, branch_closing_list=branch_closing_list)
 
 # Run the Flask application
 if __name__ == '__main__':

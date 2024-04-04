@@ -1,5 +1,3 @@
-
-
 /* Importing Fonts */
 @font-face {
 	font-family: Norse;
@@ -13,32 +11,32 @@
 
 /* Color Scheme - Nord */
 :root {
-	--n0: #2E3440;
+	--n0: #2e3440;
 	--n0-tp: rgba(46, 52, 64, 0.7);
 	--n0-ltp: rgba(46, 52, 64, 0.9);
-	--n1: #3B4252;
-	--n2: #3B4252;
-	--n3: #4C566A;
-	--n4: #D8DEE9;
-	--n5: #E5E9F0;
-	--n6: #ECEFF4;
-	--n7: #8FBCBB;
-	--n8: #88C0D0;
-	--n9: #81A1C1;
-	--n10: #5E81AC;
-	--n11: #BF616A;
-	--n12: #D08770;
-	--n13: #EBCB8B;
-	--n14: #A3BE8C;
-	--n15: #B48EAD;
+	--n1: #3b4252;
+	--n2: #3b4252;
+	--n3: #4c566a;
+	--n4: #d8dee9;
+	--n5: #e5e9f0;
+	--n6: #eceff4;
+	--n7: #8fbcbb;
+	--n8: #88c0d0;
+	--n9: #81a1c1;
+	--n10: #5e81ac;
+	--n11: #bf616a;
+	--n12: #d08770;
+	--n13: #ebcb8b;
+	--n14: #a3be8c;
+	--n15: #b48ead;
 }
 
-.absolute{
-    background-color: #BF616A;
+.absolute {
+	background-color: #bf616a;
 }
 
-body{
-    background-image: url(./images/backgound.jpg);
+body {
+	background-image: url(./images/backgound.jpg);
 }
 
 .main {
@@ -46,11 +44,11 @@ body{
 	backdrop-filter: blur(5px);
 }
 
-.ai-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 75px;
+.ai-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 75px;
 }
 
 .box {

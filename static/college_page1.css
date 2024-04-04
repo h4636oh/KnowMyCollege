@@ -1,0 +1,12 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Adjust alignment as needed */
+}
+.flex-item {
+    width: 200px; /* Set the width of each flex item */
+    margin-right: 10px; /* Adjust spacing between items as needed */
+    margin-bottom: 10px; /* Adjust spacing between rows as needed */
+    border: 1px solid #000; /* Add borders to simulate table-like appearance */
+    padding: 10px; /* Add padding for content */
+}
