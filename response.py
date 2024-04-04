@@ -68,7 +68,7 @@ def user_input(user_question):
     print(response)
     return response
 
-loader = CSVLoader(file_path="static\Database - Sheet1.csv")
+loader = CSVLoader(file_path="static/Database.csv")
 data = loader.load()
 
 
