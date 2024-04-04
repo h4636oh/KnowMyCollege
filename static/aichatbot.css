@@ -262,6 +262,7 @@ body::-webkit-scrollbar {
     background-color: var(--n3);
     color: var(--n6);
     padding: 32px;
+	margin: 0px 500px;
     border: 5px var(--n3) solid;
     border-radius: 15px;
     box-shadow: inset 0px 0px 10px var(--n0);
@@ -287,13 +288,36 @@ body::-webkit-scrollbar {
 }
 
 .message {
-	
+	padding: 8xp 12px;
+	font-size: 20px;
 }
 
 .chatbox .message.bot {
+	align-self: flex-start;
+}
+
+.chatbox .message.bot .content {
 	background-color: var(--n14);
 }
 
+.chatbox .message.bot i {
+	background-color: var(--n14);
+	color: var(--n6);
+	padding: 12px 10px;
+	border-radius: 100%;
+}
+
 .chatbox .message.user {
+	align-self: flex-end;
+}
+
+.chatbox .message.user i {
+	background-color: var(--n10);
+	color: var(--n6);
+	padding: 12px 14px;
+	border-radius: 100%;
+}
+
+.chatbox .message.user .content {
 	background-color: var(--n10);
 }
