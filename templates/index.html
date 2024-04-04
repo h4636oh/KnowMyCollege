@@ -6,72 +6,102 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="static/index.css" />
 		<link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
-		<link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
+		<link rel="icon" type="image/png" href="static/images/grad_hat_white.png" />
+		<script src="https://kit.fontawesome.com/681ff4ba53.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		
+		<!-- Just for Moving to the Top of Site -->
 		<div id="top"></div>
+		
+		<!-- For Background Wallpaper -->
 		<div class="space-region-container">
+			
+			<!-- For Background Wallpaper Blur effect -->
 			<div class="space-region">
+				
+				<!-- HeaderBar Begins -->
+
 				<div class="header" id="header">
+					
+					<!-- Logo(KnowMyCollege) of the Website -->
 					<div class="logo">
-						<div class="name">
-							<a href="index/#top">tkmc</a>
-							<span class="logo-circle">K</span>now
-							<span class="logo-circle">M</span>y
-							<span class="logo-circle">C</span>ollege
-						</div>
+							<!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
+							<a href="#top">
+								Know My College
+								<!-- <span class="logo-circle-red">K</span> -->
+								<!-- <span class="logo-name-red">Know</span> -->
+								<!-- <span class="logo-circle-blue">M</span> -->
+								<!-- <span class="logo-name-blue">My</span> -->
+								<!-- <span class="logo-circle-green">C</span> -->
+								<!-- <span class="logo-name-green">College</span> -->
+							</a>
 					</div>
-					<div class="links">
+					
+					<!-- Links Appearing on the Right Side of the HeaderBar -->
+					<div class="header-links">
 						<ul>
 							<li><a href="#top">Home</a></li>
-							<li><a href="#footer">Contact</a></li>
-							<li><a class="tryit" href="form">Fill The Form</a></li>
+							<li><a href="#faqs">FAQs</a></li>
+							<li><a href="#contactform">Contact Us</a></li>
+							<li><a href="#footer">About Us</a></li>
+							<span style="font-size: 28px;">~</span>
+							<li><a id="header-collegelist" href="collegelist">Colleges</a></li>
+							<li><a id="header-filltheform" href="form">Fill The Form</a></li>
 						</ul>
 					</div>
 				</div>
+
+				<!-- HeaderBar Ends -->
+				
+
+
+				<!-- Main Body Begins -->
+
 				<div class="main-1">
-					<div class="intro">
-						<div class="intro-card-container">
-							<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
-    						<div class="hover-point"></div>
+					
+					<!-- IntroCard Begins -->
+					
+					<div class="intro-card-container">
+						<!-- <div class="intro-card-container"> -->
 							<div class="intro-card">
-								<div class="content">
-									<div class="heading">Know My College</div>
-									<div class="about">
+								
+								<!-- Text Written in the IntroBox -->
+								<div class="intro-card-content">
+									<div class="intro-card-heading">Know My College</div>
+									<div class="intro-card-about">
 										We established this website with
 										the aim of assisting students who have
 										recently passed their common college
 										entrance exams and find themselves in a
 										state of confusion regarding which
 										college to enroll in.
-									</br>
-								</br>
-										<!--Having been in the same position as you, having 
-									successfully cleared our exams, we understand your predicament better than anyone else.-->
+										</br>
+										</br>
 										We offer a holistic form that is
-										filled with more choices than just placement or cutoff. Based on
-										the information provided in this form,
-										we rank colleges.
+										filled with more choices than just placement 
+										or cutoff. Based on the information 
+										provided in this form, we rank colleges.
 										Additionally, we provide access to our
 										chatbot, which is designed to address
 										any queries or concerns you may have
 										regarding your choices.
-										<!-- Our goal is to simplify the college selection process and provide you with the 
-									support you need to embark on this new chapter of your academic journey with confidence. -->
 									</div>
 								</div>
-								<img
-									src="static/images/main.gif"
-								/>
+
+								<!-- GIF Show in IntroBox -->
+								<img class="intro-card-img" src="static/images/main.gif"/>
+
 							</div>
-						</div>
+						<!-- </div> -->
 					</div>
+					
+					<!-- IntroCard Ends -->
+					
+
+
+					<!-- Feature Section Begins -->
+
 					<div class="features">
 						<div class="feature f1">
 							<p class="front">
@@ -118,20 +148,30 @@
 							</p>
 						</div>
 					</div>
-					<div class="tryit-container">
-						<div class="tryit">
-							<a href="form">Fill The Form</a>
-						</div>
+
+					<!-- Feature Section Ends -->
+
+
+
+					<!-- Fill the Form Button Begins -->
+
+					<div class="mainlinks-container">
+						<a class="filltheform" href="form">Fill The Form</a>
+						<a class="collegelist" href="collegelist">Colleges</a>
 					</div>
-				</div>
-				<div class="main-2">
-					<div class="better-container">
-						<div class="better">
-							<div class="heading">
-								<!-- How are we better? -->
-								Why Do You Need Us ?
+
+					<!-- Fill the Form Ends -->
+
+
+
+					<!-- What do We Even Do Begins -->
+
+					<div class="whatdowedo-container">
+						<div class="whatdowedo">
+							<div class="whatdowedo-heading">
+								How We Save Your Time ?
 							</div>
-							<div class="content">
+							<div class="whatdowedo-content">
 								<div class="flashcard">
 									<div class="card">
 										<div class="card-face front">
@@ -171,49 +211,161 @@
 									</div>
 								</div>
 							</div>
-							<!-- <div class="notice">
-								<em>hover the cards</em>
-							</div> -->
 						</div>
 					</div>
+
+					<!-- What do We Even Do Ends -->
+
+
+
+					<!-- FAQs Begins -->
+
+					<div class="faqs-container">
+						<div class="faqs" id="faqs">
+							<div class="faqs-heading">
+								FAQs
+							</div>
+							<div class="faq" onclick="faqreveal(2)">
+								<div class="faq-question-container">
+									<div class="faq-question">
+										question-1 is sometext
+									</div>
+									<div class="faq-arrow">
+										<i class="fa-solid fa-caret-down"></i>		
+									</div>
+								</div>
+								<div class="faq-answer">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla velit rerum nemo ad quidem dolore, quisquam quibusdam laborum harum consequuntur aliquid voluptatum. Velit esse at officia vel doloribus! Porro, eum ipsa veniam dolores accusamus possimus excepturi officiis dolor iste nam perferendis accusantium est voluptas reiciendis nulla distinctio deserunt maxime atque!
+								</div>
+							</div>
+							<div class="faq" onclick="faqreveal(3)">
+								<div class="faq-question-container">
+									<div class="faq-question">
+										question-2 is sometext
+									</div>
+									<div class="faq-arrow">
+										<i class="fa-solid fa-caret-down"></i>
+									</div>
+								</div>
+								<div class="faq-answer">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla velit rerum nemo ad quidem dolore, quisquam quibusdam laborum harum consequuntur aliquid voluptatum. Velit esse at officia vel doloribus! Porro, eum ipsa veniam dolores accusamus possimus excepturi officiis dolor iste nam perferendis accusantium est voluptas reiciendis nulla distinctio deserunt maxime atque!
+								</div>
+							</div>
+							<div class="faq" onclick="faqreveal(4)">
+								<div class="faq-question-container">
+									<div class="faq-question">
+										question-3 is sometext
+									</div>
+									<div class="faq-arrow">
+										<i class="fa-solid fa-caret-down"></i>
+									</div>
+								</div>
+								<div class="faq-answer">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla velit rerum nemo ad quidem dolore, quisquam quibusdam laborum harum consequuntur aliquid voluptatum. Velit esse at officia vel doloribus! Porro, eum ipsa veniam dolores accusamus possimus excepturi officiis dolor iste nam perferendis accusantium est voluptas reiciendis nulla distinctio deserunt maxime atque!
+								</div>
+							</div>
+							<div class="faq" onclick="faqreveal(5)">
+								<div class="faq-question-container">
+									<div class="faq-question">
+										question-4 is sometext
+									</div>
+									<div class="faq-arrow">
+										<i class="fa-solid fa-caret-down"></i>
+									</div>
+								</div>
+								<div class="faq-answer">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla velit rerum nemo ad quidem dolore, quisquam quibusdam laborum harum consequuntur aliquid voluptatum. Velit esse at officia vel doloribus! Porro, eum ipsa veniam dolores accusamus possimus excepturi officiis dolor iste nam perferendis accusantium est voluptas reiciendis nulla distinctio deserunt maxime atque!
+								</div>
+							</div>
+							<div class="faq" onclick="faqreveal(6)">
+								<div class="faq-question-container">
+									<div class="faq-question">
+										question-5 is sometext
+									</div>
+									<div class="faq-arrow">
+										<i class="fa-solid fa-caret-down"></i>
+									</div>
+								</div>
+								<div class="faq-answer">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla velit rerum nemo ad quidem dolore, quisquam quibusdam laborum harum consequuntur aliquid voluptatum. Velit esse at officia vel doloribus! Porro, eum ipsa veniam dolores accusamus possimus excepturi officiis dolor iste nam perferendis accusantium est voluptas reiciendis nulla distinctio deserunt maxime atque!
+								</div>
+							</div>
+
+						</div>
+					</div>					
+
+					<!-- FAQs Ends -->
+
+
+
+					<!-- Contact Form Begins -->
+
+					<div class="contactform-container" id="contactform">
+						<form class="contactform" action="https://formspree.io/f/xwkgqqla" method="post">
+							<div class="contactform-heading">
+								Send Us Your Query
+							</div>
+							<div class="contactform-name">
+								<label for="contactform-name" required><i class="fa-solid fa-circle-user"></i></label>
+								<input type="text" id="contactform-name" name="contactform-name" placeholder="Enter Your Name" required>
+							</div>
+							<div class="contactform-email">
+								<label for="contactform-email" required><i class="fa-solid fa-envelope"></i></label>
+								<input type="email" id="contactform-email" name="contactform-email" placeholder="Enter Your Email" required>
+							</div>
+							<div class="contactform-msg">
+								<label for="contactform-msg" required><i class="fa-solid fa-message"></i></label>
+								<textarea id="contactform-msg" name="contactform-msg" rows="10" cols="21" maxlength="350" placeholder="Enter Your Message" required></textarea>
+							</div>
+							<button type="submit" class="contactform-submit">Send</button>
+						</form>
+					</div>
+
+					<!-- Contact Form Ends -->
+
 				</div>
+
+				<!-- Main Body Ends -->
+
+
+
+				<!-- Footer Begins -->
+
 				<div class="footer-container">
 					<div class="footer" id="footer">
 						<div class="about-card">
-							<div class="heading">About Us</div>
-							<div class="about">
+							<div class="about-card-heading">About Us</div>
+							<div class="about-card-content">
 								We are a team of 4 people from
-								<a class="iiitp-link" href="https://iiitp.ac.in"
-									>Indian Institute of Information Technology, Pune</a
-								>.<br />
-								This is but a hobby project, but we try
+								<a class="iiitp-link" href="https://iiitp.ac.in">
+								<!-- <i class="fa-solid fa-graduation-cap"></i> -->
+								Indian Institute of Information Technology, Pune</a>.<br />
+								This is just a hobby project, but we try
 								to keep the data up to date. If you find any
 								bugs or have any suggestions then
 								open a issue at our
-								<a
-									class="github-link"
-									href="https://github.com/h4636oh/KnowMyCollege/issues/new"
-									>Github Repo</a
-								>.<br />
+								<a class="github-link" href="https://github.com/h4636oh/KnowMyCollege/issues/new">
+								<!-- <i class="fa-brands fa-github"></i> -->
+								Github Repo</a>.<br />
 								Just to tell you we hate Skiddies, so
 								don't be one and be respectful.
 							</div>
 						</div>
 						<div class="contact-card">
-							<div class="heading">Contact Us</div>
-							<div class="contact">
+							<div class="contact-card-heading">Contact Us</div>
+							<div class="contact-card-content">
 								<ul>
 									<li>
-										Email:
+										<i class="fa-regular fa-envelope"></i> 
 										<a
 											href="mailto:fakeh4@tuta.io"
 											target="_blank"
 											rel="noopener noreferrer"
-											>fakeh4@tuta.io</a
+											>Fakeh4@tuta.io</a
 										>
 									</li>
 									<li>
-										Github:
+										<i class="fa-brands fa-github"></i>
 										<a
 											href="https://github.com/h4636oh/KnowMyCollege"
 											target="_blank"
@@ -222,30 +374,39 @@
 										>
 									</li>
 									<li>
-										LinkedIn:
+										<i class="fa-brands fa-mastodon"></i>
 										<a
-											href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+											href="https://mastodon.social/getting-started"
 											target="_blank"
 											rel="noopener noreferrer"
 											>KnowMyCollege</a
 										>
 									</li>
 									<li>
-										Instagram:
+										<i class="fa-brands fa-linkedin"></i>
 										<a
 											href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 											target="_blank"
 											rel="noopener noreferrer"
-											>KnowMyCollege</a
+											>~~KnowMyCollege~~</a
 										>
 									</li>
 									<li>
-										Twitter:
+										<i class="fa-brands fa-instagram"></i>
 										<a
 											href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 											target="_blank"
 											rel="noopener noreferrer"
-											>KnowMyCollege</a
+											>~~KnowMyCollege~~</a
+										>
+									</li>
+									<li>
+										<i class="fa-brands fa-x-twitter"></i>
+										<a
+											href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+											target="_blank"
+											rel="noopener noreferrer"
+											>~~KnowMyCollege~~</a
 										>
 									</li>
 								</ul>
@@ -253,7 +414,32 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Footer Ends -->
+
 			</div>
 		</div>
+
+		<!-- Background Effect Ends -->
+
+		<script>
+			function faqreveal(faqNumber) 
+			{
+				let answerState = document.querySelector(`.faq:nth-of-type(${faqNumber}) .faq-answer`);
+				let arrowState = document.querySelector(`.faq:nth-of-type(${faqNumber}) .faq-arrow`);
+				if (answerState.style.display == "block") 
+				{
+					answerState.style.display = "none";
+					arrowState.style.transform = "rotate(0deg)"
+				}
+				else
+				{
+					answerState.style.display = "block"; 
+					arrowState.style.transform = "rotate(180deg)"
+				}
+			}
+		</script>
+
+
 	</body>
 </html>
