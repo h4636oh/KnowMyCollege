@@ -81,7 +81,14 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
     return college_names,Branch_names,Values
 
 
-
+def get_branches_and_closing(college_name):
+    college_data = df[df['College Name'] == college_name]
+    if college_data.empty:
+        return None, None  # Return None if college not found
+    else:
+        main_branches = college_data['Branch'].unique().tolist()
+        closing_ranks = college_data[college_data['Branch'] == college_data['Parent Branch']]['CLOSING'].tolist()
+        return main_branches, closing_ranks
 
 
 
@@ -190,8 +197,12 @@ def ai_chatbot():
         # Append the bot's response to the messages list
         messages.append({'sender': 'bot', 'content': bot_response})
     return render_template('aichatbot.html', messages=messages)
-
-
+@app.route('/ai_colleges')
+def ai_colleges():
+    return render_template('ai_colleges.html')
+@app.route('/ai_list')
+def ai_list():
+    return render_template('ai_list.html')
 messagescsv = [
         {"sender": "bot", "content": "Welcome to the chatbot!"},
         {"sender": "bot", "content": "How can I assist you today?"}
@@ -212,6 +223,16 @@ def ai_chatbot_list():
         messagescsv.append({'sender': 'bot', 'content': bot_response})
     return render_template('ai_chatbot_list.html', messages=messagescsv)
 
+@app.route('/college/<college_name>', methods=['GET'])
+def college_info(college_name):
+    college_name = college_name.replace('_', ' ')
+    # Find the college information based on the provided name
+    branches, closing_ranks = get_branches_and_closing(college_name)
+    if branches is None or closing_ranks is None:
+        return render_template('college_not_found.html')
+    else:
+        branch_closing_list = list(zip(branches, closing_ranks))
+        return render_template('college_page.html', college_name=college_name, branch_closing_list=branch_closing_list)
 
 # Run the Flask application
 if __name__ == '__main__':
