@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ college_name }}</title>
+    <link rel="stylesheet" href="static/college_page1.css">
+    <link rel="stylesheet" href="static/style.css" />
+    <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="logo">
+            <div class="name">
+                <span class="logo-circle">K</span>now
+                <span class="logo-circle">M</span>y
+                <span class="logo-circle">C</span>ollege
+            </div>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li>
+                    <a class="tryit" href="form">Refill The Form</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h1>{{ college_name }}</h1>
+    <div class="images"></div>
+    <div class="collegetest">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, dolores
+         repudiandae! Consequatur quaerat veniam perferendis culpa, quae volupt
+        as reiciendis, possimus ducimus necessitatibus, sequ
+        i quo fugiat iusto excepturi quod. Aspernatur, 
+        animi!</div>
+    <div class="flex-container">
+        {% for branch, closing in branch_closing_list %}
+        <div class="flex-item">
+            <h2>{{ branch }}</h2>
+            <p>Closing Rank: {{ closing }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="footer-container">
+        <div class="footer-container">
+            <div class="footer" id="footer">
+                <div class="about-card">
+                    <div class="heading">About Us</div>
+                    <div class="about">
+                        We are a team of 4 people from
+                        <a class="iiitp-link" href="https://iiitp.ac.in"
+                            >IIITP College</a
+                        >.<br />
+                        This project is but as hobby project, but we try
+                        to keep the data up to data. If you find any
+                        bugs or have some improvement suggestion then
+                        open a issue at our
+                        <a
+                            class="github-link"
+                            href="https://github.com/h4636oh/KnowMyCollege/issues/new"
+                            >Github Repo</a
+                        >.<br />
+                        Just to tell you We hate Skiddies, so
+                        don't be one and be respectful.
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="heading">Contact Us</div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                Email:
+                                <a
+                                    href="mailto:fakeh4@tuta.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >fakeh4@tuta.io</a
+                                >
+                            </li>
+                            <li>
+                                Github:
+                                <a
+                                    href="https://github.com/h4636oh/KnowMyCollege"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                LinkedIn:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Instagram:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                            <li>
+                                Twitter:
+                                <a
+                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >KnowMyCollege</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
