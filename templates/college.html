@@ -41,30 +41,65 @@
     </div>
 
     <!-- HeaderBar Ends -->
+    
+    
+    
+    <!-- Backgorund Effect and Color -->
+    
+    <div class="main">
+
+
+
+        <!-- AI Chatbot Button Begins -->
+
+        <div class="chatbox-clicker" onclick="chatbotpopuptoggle()">
+            <i class="fa-solid fa-message">
+                <p>AI</p>
+            </i>
+        </div>
+        
+        <!-- AI Chatbot Button Begins -->
 				
 
 
-    <!-- Backgorund Effect and Color -->
+        <!-- AI Chatbot Prompt Begins-->
 
-    <div class="main">
+        <div class="chat-options-container">
+            <div class="chat-options-heading">
+                <p>
+                    WHAT DO WHAT TO DISCUSS ABOUT ?
+                </p>
+                <i class="fa-solid fa-circle-xmark" onclick="chatbotpopuptoggle()"></i>
+            </div>
+            <div class="chat-options">
+                <a class="chat-option" href="">Generated <br>Rank List</a>
+                <a class="chat-option" href="">College's <br>Information</a>
+            </div>
+        </div>
+        
+        <!-- AI Chatbot Prompt Begins-->
 
+
+        
         <!-- Table Begins -->
 
         <div class = "table-container">
-            <table cellpadding="0" cellspacing="0" >
+            <table>
                 <thead>
                     <tr>
-                        <th scope="col">Rank</th>
-                        <th scope="col">College</th>
-                        <th scope="col">Score</th>
+                        <th scope="col" style="width: 7%;">Rank</th>
+                        <th scope="col" style="width: 25%;">College</th>
+                        <th scope="col" style="width: 55%;">Branch</th>
+                        <th scope="col" style="width: 13%;">Score</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for college in my_list %}
                         <tr>
-                            <td>{{ college[0] }}</td>
-                            <td>{{ college[1] }}</td>
-                            <td>{{ college[2] }}</td>
+                            <td style="width: 7%;">{{ college[0] }}</td>
+                            <td style="width: 25%;">{{ college[1] }}</td>
+                            <td style="width: 55%;">{{ college[2] }}</td>
+                            <td style="width: 13%;">{{ college[2] }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -167,12 +202,31 @@
 
     <!-- Footer Ends -->
 
+
+
+    <!-- PopUp Script Begins -->
+
     <script>
-        $(window).on("load resize ", function() {
-        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-        $('.tbl-header').css({'padding-right':scrollWidth});
-        }).resize();
+        function chatbotpopuptoggle() 
+        {
+            let popup = document.querySelector('.chat-options-container');
+            let button = document.querySelector('.chatbox-clicker');
+    
+            if (popup.style.display == "flex")
+            {
+                popup.style.display = "none";
+                button.style.display = "block";
+            }
+            else
+            {
+                popup.style.display = "flex";
+                button.style.display = "none";
+            }
+        }
     </script>
+
+    <!-- PopUp Script Ends -->
+
 
 </body>
 </html>
