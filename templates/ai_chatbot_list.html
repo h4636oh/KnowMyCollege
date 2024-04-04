@@ -3,135 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot</title>
-    <link rel="stylesheet" href="static/aichat1.css">
-    <link rel="stylesheet" href="static/style.css" />
+    <title>KnowMyCollege Chatbot</title>
+    <link rel="stylesheet" href="static/ai_chatbot_list.css">
     <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="static/images/grad_hat_black.png" />
+    <link rel="icon" type="image/png" href="static/images/grad_hat_white.png" />
+    <script src="https://kit.fontawesome.com/681ff4ba53.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script>
         $(document).ready(function () {
             $(".chatbox").scrollTop($(".chatbox")[0].scrollHeight);
         });
     </script>
+
 </head>
 <body>
+
+    <!-- HeaderBar Begins -->
+
     <div class="header" id="header">
+        <!-- Logo(KnowMyCollege) of the Website -->
         <div class="logo">
-            <div class="name">
-                <span class="logo-circle">K</span>now
-                <span class="logo-circle">M</span>y
-                <span class="logo-circle">C</span>ollege
-            </div>
+            <!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
+            <a href="#top">
+                Know My College
+                <!-- <span class="logo-circle-red">K</span> -->
+                <!-- <span class="logo-name-red">Know</span> -->
+                <!-- <span class="logo-circle-blue">M</span> -->
+                <!-- <span class="logo-name-blue">My</span> -->
+                <!-- <span class="logo-circle-green">C</span> -->
+                <!-- <span class="logo-name-green">College</span> -->
+            </a>
         </div>
-        <div class="links">
+
+        <!-- Links Appearing on the Right Side of the HeaderBar -->
+        <div class="header-links">
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contactform">Contact Us</a></li>
+                <li><a href="#footer">About Us</a></li>
+                <span style="font-size: 28px; font-family: NorseBold">~</span>
                 <li>
-                    <a class="tryit" href="form">Refill The Form</a>
+                    <a id="header-collegelist" href="collegelist">Colleges</a>
+                </li>
+                <li>
+                    <a id="header-filltheform" href="form">Fill The Form</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="container">
-        <h1>AI Chatbot</h1>
-        <div class="chatbox" id="chatbox">
-            {% for message in messages %}
-                <div class="message {{ message.sender }}">
-                    <span class="sender">{{ message.sender }}:</span>
-                    <span class="content">{{ message.content }}</span>
-                </div>
-            {% endfor %}
+
+    <!-- HeaderBar Ends -->
+
+
+    <div class="main">
+
+
+        <div class="chatbox-container">
+
+            <div class="chatbox-heading">~ AI ChatBot ~</div>
+            
+            <div class="chatbox" id="chatbox">
+                {% for message in messages %}
+                    <div class="message {{ message.sender }}">
+                        <span class="sender">{{ message.sender }}:</span>
+                        <span class="content">{{ message.content }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <form id="chat-form" action="/ai_chatbot" method="post">
+                <input type="text" id="question" name="question" placeholder="Enter your question">
+                <button type="submit">Submit</button>
+            </form>
+
         </div>
-        <form id="chat-form" action="/ai_chatbot" method="post">
-            <input type="text" id="question" name="question" placeholder="Enter your question">
-            <button type="submit">Submit</button>
-        </form>
+
+
     </div>
+
+
+    <!-- Footer Begins -->
+
     <div class="footer-container">
-        <div class="footer-container">
-            <div class="footer" id="footer">
-                <div class="about-card">
-                    <div class="heading">About Us</div>
-                    <div class="about">
-                        We are a team of 4 people from
-                        <a class="iiitp-link" href="https://iiitp.ac.in"
-                            >IIITP College</a
-                        >.<br />
-                        This project is but as hobby project, but we try
-                        to keep the data up to data. If you find any
-                        bugs or have some improvement suggestion then
-                        open a issue at our
-                        <a
-                            class="github-link"
-                            href="https://github.com/h4636oh/KnowMyCollege/issues/new"
-                            >Github Repo</a
-                        >.<br />
-                        Just to tell you We hate Skiddies, so
-                        don't be one and be respectful.
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="heading">Contact Us</div>
-                    <div class="contact">
-                        <ul>
-                            <li>
-                                Email:
-                                <a
-                                    href="mailto:fakeh4@tuta.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >fakeh4@tuta.io</a
-                                >
-                            </li>
-                            <li>
-                                Github:
-                                <a
-                                    href="https://github.com/h4636oh/KnowMyCollege"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >KnowMyCollege</a
-                                >
-                            </li>
-                            <li>
-                                LinkedIn:
-                                <a
-                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >KnowMyCollege</a
-                                >
-                            </li>
-                            <li>
-                                Instagram:
-                                <a
-                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >KnowMyCollege</a
-                                >
-                            </li>
-                            <li>
-                                Twitter:
-                                <a
-                                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >KnowMyCollege</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
+        <div class="footer" id="footer">
+            <div class="about-card">
+                <div class="about-card-heading">About Us</div>
+                <div class="about-card-content">
+                    We are a team of 4 people from
+						<a class="iiitp-link" href="https://iiitp.ac.in">
+							<!-- <i class="fa-solid fa-graduation-cap"></i> -->
+							Indian Institute of Information Technology,
+							Pune</a>.<br />
+						This is just a hobby project, but we try to keep the
+						data up to date. If you find any bugs or have any
+						suggestions then open a issue at our
+						<a class="github-link" href="https://github.com/h4636oh/KnowMyCollege/issues/new">
+							<!-- <i class="fa-brands fa-github"></i> -->
+							Github Repo</a>.<br />
+						Just to tell you we hate Skiddies, so don't be one
+						and be respectful.
                 </div>
             </div>
+            <div class="contact-card">
+                <div class="contact-card-heading">Contact Us</div>
+                <div class="contact-card-content">
+                    <ul>
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:fakeh4@tuta.io" target="_blank"
+                                rel="noopener noreferrer">Fakeh4@tuta.io</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/h4636oh/KnowMyCollege" target="_blank"
+                                rel="noopener noreferrer">KnowMyCollege</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-mastodon"></i>
+                            <a href="https://mastodon.social/getting-started" target="_blank"
+                                rel="noopener noreferrer">KnowMyCollege</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                                rel="noopener noreferrer">~~KnowMyCollege~~</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                                rel="noopener noreferrer">~~KnowMyCollege~~</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                                rel="noopener noreferrer">~~KnowMyCollege~~</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer Ends -->
+
+
+
+    
     <script>
         $(document).ready(function () {
             // Function to handle scrolling
             $("#chatbox").on("scroll", function () {
                 if ($(this).scrollTop() === 0) {
-                    $(this).prepend('<div class="loading">Loading...</div>');
+                    $(this).prepend('<div class="loading">..*..*..*..</div>');
                     setTimeout(function () {
                         $(".loading").remove();
                         // Add logic here to load older messages if available
