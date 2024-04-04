@@ -166,7 +166,29 @@ def college_page():
 @app.route('/ai')
 def ai_page():
     return render_template('./ai.html')
-
+messages = [
+        {"sender": "bot", "content": "Welcome to the chatbot!"},
+        {"sender": "bot", "content": "How can I assist you today?"}
+    ]
+@app.route('/ai_chatbot', methods=['GET', 'POST'])
+def ai_chatbot():
+    global messages
+    if request.method == 'POST':
+        # Get the user's question from the form
+        question = request.form.get('question')
+        # Append the user's question to the messages list
+        messages.append({'sender': 'user', 'content': question})
+        # Process the question and generate a bot response (dummy response for demonstration)
+        bot_response = "This is a bot response."
+        # Append the bot's response to the messages list
+        messages.append({'sender': 'bot', 'content': bot_response})
+    return render_template('aichatbot.html', messages=messages)
+@app.route('/ai_colleges')
+def ai_colleges():
+    return render_template('ai_colleges.html')
+@app.route('/ai_list')
+def ai_list():
+    return render_template('ai_list.html')
 
 
 # Run the Flask application
