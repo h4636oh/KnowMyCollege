@@ -334,7 +334,7 @@ body::-webkit-scrollbar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 92px;
+	gap: 52px;
 	margin: 52px 0px;
 }
 
@@ -352,6 +352,12 @@ body::-webkit-scrollbar {
 	text-shadow: 1px 1px 2px var(--n0);
 	transition-duration: 0.3s;
 }
+
+.collegelist {
+	position: relative;
+	left: -10px
+}
+
 
 .filltheform:hover, .collegelist:hover {
 	transform: scale(1.2);
