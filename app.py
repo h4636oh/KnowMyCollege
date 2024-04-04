@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
-import gunicorn 
+# import gunicorn 
 #from Responce import get_conversational_chain_csv
 
 # Taking the Data Base
@@ -24,8 +24,8 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
             value4 += 0
 
         value5 = 0
-        arr = [100, 90, 80, 70, 60,50,40,30]
-        for i in range(5):
+        arr = [100, 81, 64, 49, 36,25,16,9]
+        for i in range(len(states)):
             if states[i] == row['STATE']:
                 value5 = arr[i]
                 
@@ -66,7 +66,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         V1 = row['College Name']
         V2 = row['Branch']
         V6= row['Total']
-        V6=V6/1000
+        V6=V6/500
         V6=round(V6,1)
         
         V3 = f"{V1} {V2}"  # Concatenating strings using f-string
@@ -74,7 +74,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
         if int(rankAIR)-2000<= V4:
             LIST.append(V3)
             Values.append(V6)
-    #V6 is deBuging
+    
     return LIST,Values
 
 
@@ -151,9 +151,7 @@ def form():
             tempo = [ctt, TEMP[i],V6[i]]
             Final_List.append(tempo)
             ctt+=1
-        # debuging
-        #Final_List.append(V6)
-        print(Final_List)
+        
 
         return redirect('/college')
     return render_template('/form.html')
