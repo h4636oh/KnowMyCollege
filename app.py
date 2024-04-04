@@ -62,20 +62,23 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
     sorted_df = df.sort_values(by='Total', ascending=False)
     # sorted_df = df.sort_values(by='Total', ascending=False)
     Values=[]
+    college_names=[]
+    Branch_names=[]
     for index, row in sorted_df.iterrows():
-        V1 = row['College Name']
-        V2 = row['Branch']
+        college_name = row['College Name']
+        Branch_name = row['Branch']
         V6= row['Total']
         V6=V6/500
         V6=round(V6,1)
         
-        V3 = f"{V1} {V2}"  # Concatenating strings using f-string
+        
         V4= row['CLOSING']
         if int(rankAIR)-2000<= V4:
-            LIST.append(V3)
+            college_names.append(college_name)
+            Branch_names.append(Branch_name)
             Values.append(V6)
     
-    return LIST,Values
+    return college_names,Branch_names,Values
 
 
 
@@ -144,13 +147,14 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        TEMP,V6=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        college_names,Branch_names,Values=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
-        for i in range(len(TEMP)):
-            tempo = [ctt, TEMP[i],V6[i]]
+        for i in range(len(college_names)):
+            tempo = [ctt, college_names[i],Branch_names[i],Values[i]]
             Final_List.append(tempo)
             ctt+=1
+        
         
 
         return redirect('/college')
