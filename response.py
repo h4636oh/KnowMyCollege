@@ -56,7 +56,7 @@ def get_conversational_chain_csv():
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001",google_api_key="AIzaSyBPvN2LK5zayUy3_5IAa02q_RzReiCrdxc")
     
-    new_db = FAISS.load_local("/Users/ponk6745/Documents/repos/KnowMyCollege/static/faiss_index", embeddings,allow_dangerous_deserialization=True)
+    new_db = FAISS.load_local("static/faiss_index", embeddings,allow_dangerous_deserialization=True)
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
