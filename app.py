@@ -3,9 +3,6 @@ import pandas as pd
 # import gunicorn 
 from response import user_input
 
-# Taking the Data Base
-file_path = "/Users/ponk6745/Documents/repos/KnowMyCollege/static/DataBase.csv"
-
 import os
 
 # Taking the Data Base

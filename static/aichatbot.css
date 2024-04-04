@@ -275,3 +275,25 @@ body::-webkit-scrollbar {
     margin-bottom: 32px;
 }
 
+.chatbox {
+	background-color: var(--n2);
+	border: 3px var(--n2) solid;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 10px var(--n0);
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.message {
+	
+}
+
+.chatbox .message.bot {
+	background-color: var(--n14);
+}
+
+.chatbox .message.user {
+	background-color: var(--n10);
+}
