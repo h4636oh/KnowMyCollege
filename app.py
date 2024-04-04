@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
+import gunicorn 
+#from Responce import get_conversational_chain_csv
 
 # Taking the Data Base
 file_path = 'static/Database - Sheet1.csv'
@@ -44,34 +46,37 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
                    
         
 
-        total += int(placement_pref) * int(value1)
-        total += int(coding_pref) * value2
-        total += int(campus_size_value) * value3
+        total += int(placement_pref) * int(value1)*3
+        total += int(coding_pref) * value2*2
+        total += int(campus_size_value) * value3*0.5
         total += int(value4_temp) * value4
         total += int(value5)
-        total += int(value6)*int(Cultural_Pref)
+        total += int(value6)*int(Cultural_Pref)*2
         total += value7_f*5
-        total += value8*int(brand_value)
-        total += value9*int(Entra)
+        total += value8*int(brand_value)*1
+        total += value9*int(Entra)*4
         totals.append(total)
     LIST=[]
     df['Total'] = totals
     # filtered_df = df[df['Rank_Cutoff'] <= int(rankAIR)]
     sorted_df = df.sort_values(by='Total', ascending=False)
     # sorted_df = df.sort_values(by='Total', ascending=False)
-    
+    Values=[]
     for index, row in sorted_df.iterrows():
         V1 = row['College Name']
         V2 = row['Branch']
+        V6= row['Total']
+        V6=V6/1000
+        V6=round(V6,1)
+        
         V3 = f"{V1} {V2}"  # Concatenating strings using f-string
         V4= row['CLOSING']
         if int(rankAIR)-2000<= V4:
             LIST.append(V3)
-    return LIST
-#Sta = ['Chhattisgarh', 'Uttar Pradesh', 'Odisha', 'Maharashtra', 'Jharkhand']
-#bra=['COMPUTER SCIENCE AND ENGINEERING','None','None','None','None','None','None','None']
-#A=Value(df, 100, 100, 10, 'y', Sta,100,bra,50,50)
-#print(A)
+            Values.append(V6)
+    #V6 is deBuging
+    return LIST,Values
+
 
 
 
@@ -139,13 +144,16 @@ def form():
 
         # Process the preferences as needed
         print("Selected Preferences:", preferences)
-        TEMP=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
+        TEMP,V6=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
-        for i in TEMP:
-            tempo = [ctt, i]
+        for i in range(len(TEMP)):
+            tempo = [ctt, TEMP[i],V6[i]]
             Final_List.append(tempo)
             ctt+=1
+        # debuging
+        #Final_List.append(V6)
+        print(Final_List)
 
         return redirect('/college')
     return render_template('/form.html')
