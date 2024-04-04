@@ -22,7 +22,7 @@ def get_pdf_text(pdf_docs):
 
 
 def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=40000, chunk_overlap=4000)
     chunks = text_splitter.split_text(text)
     return chunks
 
@@ -33,7 +33,7 @@ def get_vector_store(text_chunks):
     vector_store.save_local("faiss_index")
 
 def main():
-    pdf_docs = ["static\PDF\IIT BOMBAY .pdf"]
+    pdf_docs = ["static\PDF\IIT.pdf"]
     
     text = get_pdf_text(pdf_docs)
     

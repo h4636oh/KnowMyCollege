@@ -234,10 +234,15 @@
 					'input[type="checkbox"]:checked'
 				);
 				if (checkboxes.length >= 2) {
-					document.getElementById("submitBtn").style.display =
-						"block";
+					document.getElementById("submitBtn").style.display ="block";
+					document.querySelectorAll('input[type="checkbox"]:not(:checked)').forEach(function(checkbox) {
+                    checkbox.disabled = true;
+                });
 				} else {
 					document.getElementById("submitBtn").style.display = "none";
+					document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+                    checkbox.disabled = false;
+					});
 				}
 			}
 
@@ -267,7 +272,7 @@
 					if (response.ok) {
 						console.log('Data sent successfully');
 					} else {
-						console.error('Failed to send data');
+						console.error('Failed to send data abc');
 					}
 				})
 				.catch(error => {
