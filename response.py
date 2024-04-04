@@ -56,11 +56,7 @@ def get_conversational_chain_csv():
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001",google_api_key="AIzaSyBPvN2LK5zayUy3_5IAa02q_RzReiCrdxc")
     
-<<<<<<< HEAD
-    new_db = FAISS.load_local("static/faiss_index", embeddings,allow_dangerous_deserialization=True)
-=======
     new_db = FAISS.load_local("/home/h4636oh/Desktop/Git/KnowMyCollege/static/faiss_index", embeddings,allow_dangerous_deserialization=True)
->>>>>>> 031ac9dd5aa8e64ca4770a5113b6a5413c87b2b2
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
@@ -72,17 +68,6 @@ def user_input(user_question):
     print(response)
     return response
 
-<<<<<<< HEAD
-loader = CSVLoader(file_path="Database.csv")
-data = loader.load()
-
-
-def user_input_csv(user_question):
-    embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
-    
-    new_db = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
-    docs = new_db.similarity_search(user_question)
-=======
 
 
 # def user_input_csv(user_question):
@@ -90,7 +75,6 @@ def user_input_csv(user_question):
     
 #     #new_db = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
 #     #docs = new_db.similarity_search(user_question)
->>>>>>> 031ac9dd5aa8e64ca4770a5113b6a5413c87b2b2
 
 #     chain = get_conversational_chain_csv()
 
@@ -106,11 +90,7 @@ def user_input_csv(user_question):
 
 def main():
     question="which college has best placement and provide data supporting it"
-<<<<<<< HEAD
-    
-=======
     # ans=user_input_csv(question)
->>>>>>> 031ac9dd5aa8e64ca4770a5113b6a5413c87b2b2
     
 if __name__=="__main__":
     main()    
