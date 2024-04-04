@@ -191,7 +191,7 @@ body {
 .table-container::-webkit-scrollbar {
 	width: 0;
 	height: 0;
-}  
+}
 
 table {
 	position: relative;
@@ -222,6 +222,10 @@ tbody {
 	box-shadow: inset 0px 0px 10px var(--n0);
 }
 
+.rankNO {
+	margin-right: 10px;
+}
+
 td {
 	padding: 8px;
 	text-align: center;
@@ -237,12 +241,13 @@ tbody tr {
 	border-bottom: 3px var(--n3) solid;
 }
 
-td:last-of-type, th:last-of-type {
-	border-right: 0px;	
+td:last-of-type,
+th:last-of-type {
+	border-right: 0px;
 }
 
 tbody tr:last-of-type {
-	border-bottom: 0px;	
+	border-bottom: 0px;
 }
 
 /* Chatbot */
@@ -352,7 +357,6 @@ tbody tr:last-of-type {
 	border: 3px var(--n6) solid;
 	box-shadow: inset 0px 0px 10px var(--n6), 0px 0px 10px var(--n6);
 }
-
 
 /* Footer Bar */
 

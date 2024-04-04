@@ -2,12 +2,18 @@ from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 # import gunicorn 
 from response import user_input
+<<<<<<< HEAD
+
+# Taking the Data Base
+file_path = "/home/sdnt/repos/KnowMyCollege/static/DataBase.csv"
+=======
 import os
 
 # Taking the Data Base
 app = Flask(__name__, static_folder='static')
 
 file_path = os.path.join(app.root_path, 'static/DataBase.csv')
+>>>>>>> 031ac9dd5aa8e64ca4770a5113b6a5413c87b2b2
 df = pd.read_csv(file_path)
 
 # function for Data Base
@@ -102,6 +108,13 @@ def home_page():
     return render_template('./index.html')
 
 
+#college comparison
+@app.route('/process_selection', methods=['POST'])
+def process_selection():
+    selected_data = request.json
+    # Process the selected data here
+    print(selected_data)  # This will print the received data in the console
+    return 'Data received successfully', 200
 
 campus_size_value = None  # Define a global variable
 
