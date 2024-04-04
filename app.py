@@ -109,7 +109,9 @@ def get_branches_and_closing(college_name):
         main_branches = college_data['Branch'].unique().tolist()
         closing_ranks = college_data[college_data['Branch'] == college_data['Parent Branch']]['CLOSING'].tolist()
         return main_branches, closing_ranks
-
+First_one=[]
+Second_one=[]
+Para=['Placement','Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
 def comper(selected_data):
     ranks = [entry['rank'] for entry in selected_data]
     colleges = [entry['college'] for entry in selected_data]
@@ -117,6 +119,8 @@ def comper(selected_data):
     college_Second=colleges[1]
     a=int(ranks[0])-1
     b=int(ranks[1])-1
+    First_one.clear()
+    Second_one.clear()
     First_one.append(college_First)
     Second_one.append(college_Second)
     
@@ -139,43 +143,14 @@ Final_List = [[],[]]
 
 
 
-# First_one=[]
-# Second_one=[]
 
-#college comparison
-# @app.route('/process_selection', methods=['POST'])
-# def process_selection():
-#     selected_data = request.json
-#     # Process the selected data here
-#     print(selected_data)  # This will print the received data in the console
-    
-#     ranks = [entry['rank'] for entry in selected_data]
-#     colleges = [entry['college'] for entry in selected_data]
-#     college_First=colleges[0]
-#     college_Second=colleges[1]
-#     a=int(ranks[0])-1
-#     b=int(ranks[1])-1
 
-#     print(a)
-#     print(b)
-#     for j in range(3,8):
-        
-#         First_one.append(j)
-#         # Second_one.append(Final_List[b][j])
-#     print(Second_one)
-#     return "DA" , 200
-
-First_one=[]
-Second_one=[]
-Para=['ff','Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
-#college comparison
-xxx = []
 @app.route('/process_selection', methods=['POST'])
 def process_selection():
     selected_data = request.json
     comper(selected_data) # This will print the received data in the console
     return "DA" ,200
-print(First_one)
+
 
 
 #
@@ -184,23 +159,7 @@ print(First_one)
 @app.route('/compare')
 def compare_page():
     print("hello")
-    
-    # ranks = [entry['rank'] for entry in selected_data]
-    # colleges = [entry['college'] for entry in selected_data]
-    # college_First=colleges[0]
-    # college_Second=colleges[1]
-    # a=int(ranks[0])-1
-    # b=int(ranks[1])-1
-    
-    
-    # print(a)
-    # print(b)
-    # for j in range(3,8):
-    #     First_one.append(Final_List[a][j])
-    #     Second_one.append(Final_List[b][j])
-    
-    # print(First_one)
-    # my_list = Final_List
+    print(First_one)
     return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
 
 
@@ -281,9 +240,6 @@ def college_page():
     return render_template('college.html', my_list=my_list)
 
 
-@app.route('/ai')
-def ai_page():
-    return render_template('./ai.html')
 
 messages = [
         {"sender": "bot", "content": "Welcome to the chatbot!"},
@@ -304,31 +260,7 @@ def ai_chatbot():
         # Append the bot's response to the messages list
         messages.append({'sender': 'bot', 'content': bot_response})
     return render_template('aichatbot.html', messages=messages)
-@app.route('/ai_colleges')
-def ai_colleges():
-    return render_template('ai_colleges.html')
-@app.route('/ai_list')
-def ai_list():
-    return render_template('ai_list.html')
-# messagescsv = [
-#         {"sender": "bot", "content": "Welcome to the chatbot!"},
-#         {"sender": "bot", "content": "How can I assist you today?"}
-#     ]
-# @app.route('/ai_chatbot_list', methods=['GET', 'POST'])
-# def ai_chatbot_list():
-#     global messagescsv
-#     if request.method == 'POST':
-#         # Get the user's question from the form
-#         question = request.form.get('question')
-#         # Append the user's question to the messages list
-#         messagescsv.append({'sender': 'user', 'content': question})
-#         # Process the question and generate a bot response (dummy response for demonstration)
-#         bot_response_temp = user_input_csv(question)
-#         print("Perepere prerper")
-#         bot_response=bot_response_temp["output_text"]
-#         # Append the bot's response to the messages list
-#         messagescsv.append({'sender': 'bot', 'content': bot_response})
-#     return render_template('ai_chatbot_list.html', messages=messagescsv)
+
 
 @app.route('/college/<college_name>', methods=['GET'])
 def college_info(college_name):
