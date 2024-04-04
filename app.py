@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 # import gunicorn 
 from response import user_input
-
 import os
 
 # Taking the Data Base
