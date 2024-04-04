@@ -1,0 +1,277 @@
+/* Importing Fonts */
+@font-face {
+	font-family: NorseBold;
+	src: url(./fonts/Norsebold.otf);
+}
+
+/* Color Scheme - Nord */
+:root {
+	--n0: #2e3440;
+	--n0-tp: rgba(46, 52, 64, 0.7);
+	--n0-ltp: rgba(46, 52, 64, 0.9);
+	--n1: #3b4252;
+	--n2: #3b4252;
+	--n3: #4c566a;
+	--n4: #d8dee9;
+	--n5: #e5e9f0;
+	--n6: #eceff4;
+	--n7: #8fbcbb;
+	--n8: #88c0d0;
+	--n9: #81a1c1;
+	--n10: #5e81ac;
+	--n11: #bf616a;
+	--n12: #d08770;
+	--n13: #ebcb8b;
+	--n14: #a3be8c;
+	--n15: #b48ead;
+}
+
+/* Global Properties */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: "Iosevka Web";
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+    background: url(./images/backgound.jpg);
+    backdrop-filter: blur(5px);
+	/* scrollbar-width: none;
+    -ms-overflow-style: none; */
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+::selection {
+	background: var(--n0);
+	color: var(--n4);
+}
+
+/* Header Bar */
+
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	padding: 8px;
+	background-color: var(--n3);
+	justify-content: space-between;
+	align-items: center;
+	color: var(--n6);
+	font-weight: 700;
+	font-size: 20px;
+	z-index: 1;
+	box-shadow: 0px 5px 10px var(--n0);
+}
+
+.logo a {
+	text-decoration: none;
+	font-size: 28px;
+	font-weight: 900;
+	font-family: NorseBold;
+	letter-spacing: 1px;
+	color: var(--n6);
+	text-shadow: 2px 2px 2px var(--n0);
+}
+
+.logo-circle-red {
+	background-color: var(--n11);
+	color: var(--n6);
+	padding: 4px 11px;
+	border-radius: 100%;
+}
+
+.logo-circle-blue {
+	background-color: var(--n8);
+	color: var(--n6);
+	padding: 4px 11px;
+	border-radius: 100%;
+}
+
+.logo-circle-green {
+	background-color: var(--n14);
+	color: var(--n6);
+	padding: 4px 11px;
+	border-radius: 100%;
+}
+
+.logo-name-red {
+	color: var(--n11);
+	padding-right: 8px;
+}
+
+.logo-name-blue {
+	color: var(--n8);
+	padding-right: 8px;
+}
+
+.logo-name-green {
+	color: var(--n14);
+	padding-right: 8px;
+}
+
+.header-links ul,
+.header-links a {
+	display: flex;
+	gap: 8px;
+	list-style-type: none;
+	text-decoration: none;
+	color: var(--n6);
+	align-items: center;
+	justify-content: flex-end;
+	font-family: NorseBold;
+	transition-duration: 0.3s;
+}
+.header-links a {
+	background-color: var(--n1);
+	padding: 8px 16px;
+}
+
+.header-links li:hover a {
+	padding: 8px 16px;
+	color: var(--n3);
+	font-weight: bold;
+	font-family: NorseBold;
+	transition-duration: 0.3s;
+	box-shadow: 0px 0px 10px var(--n0);
+	background-color: var(--n6);
+}
+
+.header-links #header-collegelist {
+	background-color: var(--n6);
+	color: var(--n3);
+	padding: 8px 14px;
+	font-family: NorseBold;
+	font-weight: bold;
+	margin-left: 0px;
+	transition-duration: 0.3s;
+}
+
+.header-links #header-collegelist:hover {
+	background-color: var(--n11);
+	color: var(--n6);
+	box-shadow: 0px 0px 10px var(--n0);
+}
+
+.header-links #header-filltheform {
+	background-color: var(--n6);
+	color: var(--n3);
+	padding: 8px 14px;
+	font-family: NorseBold;
+	font-weight: bold;
+	transition-duration: 0.3s;
+}
+
+.header-links #header-filltheform:hover {
+	font-weight: bold;
+	background-color: var(--n11);
+	color: var(--n6);
+	box-shadow: 0px 0px 10px var(--n0);
+}
+
+/* Footer Bar */
+
+.footer-container {
+	background-image: url(./images/backgound.jpg);
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	padding: 32px 0px;
+	background-color: var(--n0-ltp);
+}
+
+.footer .about-card,
+.footer .contact-card {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 32px;
+	font-size: 20px;
+	max-width: 800px;
+	border: 3px var(--n2) solid;
+	border-radius: 10px;
+	color: var(--n6);
+	background-color: var(--n2);
+	box-shadow: inset 0px 0px 10px var(--n0);
+	text-shadow: 2px 2px 2px var(--n0);
+}
+
+.footer .about-card-heading,
+.footer .contact-card-heading {
+	font-size: 28px;
+	font-weight: 700;
+	font-family: NorseBold;
+}
+
+.footer .contact-card-content i {
+	margin-right: 10px;
+}
+
+.footer .about-card-content a {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--n6);
+}
+
+.footer .about-card-content a:hover {
+	text-decoration: underline;
+	font-weight: 700;
+	color: var(--n13);
+}
+
+.contact-card ul {
+	list-style-type: none;
+}
+
+.footer .contact-card-content a {
+	text-decoration: none;
+	color: var(--n6);
+}
+
+.footer .contact-card-content a:hover {
+	text-decoration: underline;
+	color: var(--n13);
+}
+
+.main {
+    background-color: var(--n0-tp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 52px;
+    flex-direction: column;
+}
+
+/* Chatbox */
+
+.chatbox-container {
+    background-color: var(--n3);
+    color: var(--n6);
+    padding: 32px;
+    border: 5px var(--n3) solid;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 10px var(--n0);
+}
+
+.chatbox-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    font-family: NorseBold;
+    margin-bottom: 32px;
+}
+

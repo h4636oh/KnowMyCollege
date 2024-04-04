@@ -1,920 +1,823 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>KnowMyCollege Form</title>
-		<link rel="stylesheet" href="static/form.css" />
-		<link
-			href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css"
-			rel="stylesheet"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			href="static/images/grad_hat_white.png"
-		/>
-		<script
-			src="https://kit.fontawesome.com/681ff4ba53.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
-	<body>
-		<!-- Background Effect -->
 
-		<div class="body">
-			<!-- Just for Moving to the Top of Site -->
-			<div id="top"></div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>KnowMyCollege Form</title>
+	<link rel="stylesheet" href="static/form.css" />
+	<link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+	<link rel="icon" type="image/png" href="static/images/grad_hat_white.png" />
+	<script src="https://kit.fontawesome.com/681ff4ba53.js" crossorigin="anonymous"></script>
+</head>
 
-			<!-- HeaderBar Begins -->
+<body>
+	<!-- Background Effect -->
 
-			<div class="header" id="header">
-				<!-- Logo(KnowMyCollege) of the Website -->
-				<div class="logo">
-					<!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
-					<a href="index#top">
-						Know My College
-						<!-- <span class="logo-circle-red">K</span> -->
-						<!-- <span class="logo-name-red">Know</span> -->
-						<!-- <span class="logo-circle-blue">M</span> -->
-						<!-- <span class="logo-name-blue">My</span> -->
-						<!-- <span class="logo-circle-green">C</span> -->
-						<!-- <span class="logo-name-green">College</span> -->
-					</a>
-				</div>
+	<div class="body">
+		<!-- Just for Moving to the Top of Site -->
+		<div id="top"></div>
 
-				<!-- Links Appearing on the Right Side of the HeaderBar -->
-				<div class="header-links">
-					<ul>
-						<li><a href="index/#top">Home</a></li>
-						<li><a href="#footer">About Us</a></li>
-						<span style="font-size: 28px; font-family: NorseBold"
-							>~</span
-						>
-						<li><a id="header-reset" href="form">reset</a></li>
-					</ul>
-				</div>
+		<!-- HeaderBar Begins -->
+
+		<div class="header" id="header">
+			<!-- Logo(KnowMyCollege) of the Website -->
+			<div class="logo">
+				<!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
+				<a href="index#top">
+					Know My College
+					<!-- <span class="logo-circle-red">K</span> -->
+					<!-- <span class="logo-name-red">Know</span> -->
+					<!-- <span class="logo-circle-blue">M</span> -->
+					<!-- <span class="logo-name-blue">My</span> -->
+					<!-- <span class="logo-circle-green">C</span> -->
+					<!-- <span class="logo-name-green">College</span> -->
+				</a>
 			</div>
 
-			<!-- HeaderBar Ends -->
-
-			<!-- Form Begins -->
-
-			<div class="form-container">
-				<form id="form" class="form" method="post">
-					<div class="heading">~ Fill The Form ~</div>
-					<div class="rank">
-						<label for="rankAIR" required
-							>How was your JEE-Advanced?</label
-						>
-						<input
-							type="number"
-							id="rankAIR"
-							name="rankAIR"
-							placeholder="Enter Advanced Rank"
-							required
-						/>
-					</div>
-
-					<div class="zth">
-						<label for="placementPref" required
-							>How much does Placement/Package factor into your
-							choice?</label
-						>
-						<input
-							type="range"
-							id="placementPref"
-							name="placementPref"
-						/>
-					</div>
-
-					<div class="zth">
-						<label for="campusSize" required
-							>How much does the size of the Campus factor into
-							your choice?</label
-						>
-						<input type="range" id="campusSize" name="campusSize" />
-					</div>
-
-					<div class="zth">
-						<label for="codingPref" required
-							>How much does coding culture factor into your
-							choice?</label
-						>
-						<input type="range" id="codingPref" name="codingPref" />
-					</div>
-
-					<div class="zth">
-						<label for="culturalPref" required
-							>How much do cultural events matter to you?</label
-						>
-						<input
-							type="range"
-							id="culturalPref"
-							name="culturalPref"
-						/>
-					</div>
-
-					<div class="zth">
-						<label for="tagPref" required
-							>How much does college tag matter to you?</label
-						>
-						<input type="range" id="tagPref" name="tagPref" />
-					</div>
-
-					<div class="zth">
-						<label for="startupPref" required
-							>How much do you care about the college being start
-							up friendly?</label
-						>
-						<input
-							type="range"
-							id="startupPref"
-							name="startupPref"
-						/>
-					</div>
-
-					<div class="highstd">
-						<label for="higherStudiesPref" required
-							>Do you wish to pursue higher education?</label
-						>
-						<div class="op">
-							<input
-								type="radio"
-								id="yesOption"
-								name="higherStudiesPref"
-								value="yes"
-								required
-							/>
-							<label for="yesOption" required>Yes</label>
-						</div>
-						<div class="op">
-							<input
-								type="radio"
-								id="noOption"
-								name="higherStudiesPref"
-								value="no"
-								required
-							/>
-							<label for="noOption" required>No</label>
-						</div>
-					</div>
-
-					<div class="preflist-container">
-						<div class="preflist">
-							<label for="statePref" required
-								>Rank Your Preferred States:</label
-							>
-							<select id="choice1" name="choice1">
-								<option value>
-									Select Your 1st Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice2" name="choice2">
-								<option value>
-									Select Your 2nd Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice3" name="choice3">
-								<option value>
-									Select Your 3rd Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice4" name="choice4">
-								<option value>
-									Select Your 4th Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice5" name="choice5">
-								<option value>
-									Select Your 5th Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice6" name="choice6">
-								<option value>
-									Select Your 6th Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice7" name="choice7">
-								<option value>
-									Select Your 7th Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-							<select id="choice8" name="choice8">
-								<option value>
-									Select Your 8th Preference
-								</option>
-								<option value="Andhra Pradesh">
-									Andhra Pradesh
-								</option>
-								<option value="Arunachal Pradesh">
-									Arunachal Pradesh
-								</option>
-								<option value="Assam">Assam</option>
-								<option value="Bihar">Bihar</option>
-								<option value="Chhattisgarh">
-									Chhattisgarh
-								</option>
-								<option value="Goa">Goa</option>
-								<option value="Gujarat">Gujarat</option>
-								<option value="Haryana">Haryana</option>
-								<option value="Himachal Pradesh">
-									Himachal Pradesh
-								</option>
-								<option value="Jammu and Kashmir">
-									Jammu and Kashmir
-								</option>
-								<option value="Jharkhand">Jharkhand</option>
-								<option value="Karnataka">Karnataka</option>
-								<option value="Kerala">Kerala</option>
-								<option value="Madhya Pradesh">
-									Madhya Pradesh
-								</option>
-								<option value="Maharashtra">Maharashtra</option>
-								<option value="Manipur">Manipur</option>
-								<option value="Meghalaya">Meghalaya</option>
-								<option value="Mizoram">Mizoram</option>
-								<option value="Nagaland">Nagaland</option>
-								<option value="Odisha">Odisha</option>
-								<option value="Punjab">Punjab</option>
-								<option value="Rajasthan">Rajasthan</option>
-								<option value="Sikkim">Sikkim</option>
-								<option value="Tamil Nadu">Tamil Nadu</option>
-								<option value="Telangana">Telangana</option>
-								<option value="Tripura">Tripura</option>
-								<option value="Uttar Pradesh">
-									Uttar Pradesh
-								</option>
-								<option value="Uttarakhand">Uttarakhand</option>
-								<option value="West Bengal">West Bengal</option>
-							</select>
-						</div>
-
-						<div class="preflist">
-							<label for="brachPref" required
-								>Rank Your Preferred Branches:</label
-							>
-							<select id="preference1" name="preference1">
-								<option value>
-									Select Your 1st Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference2" name="preference2">
-								<option value>
-									Select Your 2nd Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference3" name="preference3">
-								<option value>
-									Select Your 3rd Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference4" name="preference4">
-								<option value>
-									Select Your 4th Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference5" name="preference5">
-								<option value>
-									Select Your 5th Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference6" name="preference6">
-								<option value>
-									Select Your 6th Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference7" name="preference7">
-								<option value>
-									Select Your 7th Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-							<select id="preference8" name="preference8">
-								<option value>
-									Select Your 8th Preference
-								</option>
-								<option value="MECHANICAL ENGINEERING">
-									MECHANICAL ENGINEERING
-								</option>
-								<option value="BIOTECHNOLOGY">
-									BIOTECHNOLOGY
-								</option>
-								<option value="BASIC SCIENCES">
-									BASIC SCIENCES
-								</option>
-								<option value="CIVIL ENGINEERING">
-									CIVIL ENGINEERING
-								</option>
-								<option value="COMPUTER SCIENCE & ENGINEERING">
-									COMPUTER SCIENCE & ENGINEERING
-								</option>
-								<option value="ELECTRICAL ENGINEERING">
-									ELECTRICAL ENGINEERING
-								</option>
-								<option
-									value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG."
-								>
-									ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
-								</option>
-								<option value="ECONOMICS">ECONOMICS</option>
-								<option value="METALLURGICAL ENGINEERING">
-									METALLURGICAL ENGINEERING
-								</option>
-							</select>
-						</div>
-					</div>
-					<div class="submit-container">
-						<button type="submit" class="submit" value="submit">
-							Submit
-						</button>
-					</div>
-				</form>
+			<!-- Links Appearing on the Right Side of the HeaderBar -->
+			<div class="header-links">
+				<ul>
+					<li><a href="index/#top">Home</a></li>
+					<li><a href="#footer">About Us</a></li>
+					<span style="font-size: 28px; font-family: NorseBold">~</span>
+					<li><a id="header-reset" href="form">reset</a></li>
+				</ul>
 			</div>
-
-			<!-- Form Ends -->
-
-			<!-- Footer Begins -->
-
-			<div class="footer-container">
-				<div class="footer" id="footer">
-					<div class="about-card">
-						<div class="about-card-heading">About Us</div>
-						<div class="about-card-content">
-							We are a team of 4 people from
-							<a class="iiitp-link" href="https://iiitp.ac.in">
-								<!-- <i class="fa-solid fa-graduation-cap"></i> -->
-								Indian Institute of Information Technology,
-								Pune</a
-							>.<br />
-							This is just a hobby project, but we try to keep the
-							data up to date. If you find any bugs or have any
-							suggestions then open a issue at our
-							<a
-								class="github-link"
-								href="https://github.com/h4636oh/KnowMyCollege/issues/new"
-							>
-								<!-- <i class="fa-brands fa-github"></i> -->
-								Github Repo</a
-							>.<br />
-							Just to tell you we hate Skiddies, so don't be one
-							and be respectful.
-						</div>
-					</div>
-					<div class="contact-card">
-						<div class="contact-card-heading">Contact Us</div>
-						<div class="contact-card-content">
-							<ul>
-								<li>
-									<i class="fa-regular fa-envelope"></i>
-									<a
-										href="mailto:fakeh4@tuta.io"
-										target="_blank"
-										rel="noopener noreferrer"
-										>Fakeh4@tuta.io</a
-									>
-								</li>
-								<li>
-									<i class="fa-brands fa-github"></i>
-									<a
-										href="https://github.com/h4636oh/KnowMyCollege"
-										target="_blank"
-										rel="noopener noreferrer"
-										>KnowMyCollege</a
-									>
-								</li>
-								<li>
-									<i class="fa-brands fa-mastodon"></i>
-									<a
-										href="https://mastodon.social/getting-started"
-										target="_blank"
-										rel="noopener noreferrer"
-										>KnowMyCollege</a
-									>
-								</li>
-								<li>
-									<i class="fa-brands fa-linkedin"></i>
-									<a
-										href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-										target="_blank"
-										rel="noopener noreferrer"
-										>~~KnowMyCollege~~</a
-									>
-								</li>
-								<li>
-									<i class="fa-brands fa-instagram"></i>
-									<a
-										href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-										target="_blank"
-										rel="noopener noreferrer"
-										>~~KnowMyCollege~~</a
-									>
-								</li>
-								<li>
-									<i class="fa-brands fa-x-twitter"></i>
-									<a
-										href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-										target="_blank"
-										rel="noopener noreferrer"
-										>~~KnowMyCollege~~</a
-									>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Footer Ends -->
 		</div>
-	</body>
+
+		<!-- HeaderBar Ends -->
+
+		<!-- Form Begins -->
+
+		<div class="form-container">
+			<form id="form" class="form" method="post">
+				<div class="heading">~ Fill The Form ~</div>
+				<div class="rank">
+					<label for="rankAIR" required>How was your JEE-Advanced?</label>
+					<input type="number" id="rankAIR" name="rankAIR" placeholder="Enter Advanced Rank" required />
+				</div>
+
+				<div class="zth">
+					<label for="placementPref" required>How much does Placement/Package factor
+						into your
+						choice?</label>
+					<input type="range" id="placementPref" name="placementPref" />
+				</div>
+
+				<div class="zth">
+					<label for="campusSize" required>How much does the size of the Campus
+						factor into
+						your choice?</label>
+					<input type="range" id="campusSize" name="campusSize" />
+				</div>
+
+				<div class="zth">
+					<label for="codingPref" required>How much does coding culture factor into
+						your
+						choice?</label>
+					<input type="range" id="codingPref" name="codingPref" />
+				</div>
+
+				<div class="zth">
+					<label for="culturalPref" required>How much do cultural events matter to
+						you?</label>
+					<input type="range" id="culturalPref" name="culturalPref" />
+				</div>
+
+				<div class="zth">
+					<label for="tagPref" required>How much does college tag matter to
+						you?</label>
+					<input type="range" id="tagPref" name="tagPref" />
+				</div>
+
+				<div class="zth">
+					<label for="startupPref" required>How much do you care about the college
+						being start
+						up friendly?</label>
+					<input type="range" id="startupPref" name="startupPref" />
+				</div>
+
+				<div class="highstd">
+					<label for="higherStudiesPref" required>Do you wish to pursue higher
+						education?</label>
+					<div class="op">
+						<input type="radio" id="yesOption" name="higherStudiesPref" value="yes" required />
+						<label for="yesOption" required>Yes</label>
+					</div>
+					<div class="op">
+						<input type="radio" id="noOption" name="higherStudiesPref" value="no" required />
+						<label for="noOption" required>No</label>
+					</div>
+				</div>
+
+				<div class="preflist-container">
+					<div class="preflist">
+						<label for="statePref" required>Rank Your Preferred States:</label>
+						<select id="choice1" name="choice1">
+							<option value>
+								Select Your 1st Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice2" name="choice2">
+							<option value>
+								Select Your 2nd Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice3" name="choice3">
+							<option value>
+								Select Your 3rd Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice4" name="choice4">
+							<option value>
+								Select Your 4th Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice5" name="choice5">
+							<option value>
+								Select Your 5th Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice6" name="choice6">
+							<option value>
+								Select Your 6th Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice7" name="choice7">
+							<option value>
+								Select Your 7th Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<select id="choice8" name="choice8">
+							<option value>
+								Select Your 8th Preference
+							</option>
+							<option value="Andhra Pradesh">
+								Andhra Pradesh
+							</option>
+							<option value="Arunachal Pradesh">
+								Arunachal Pradesh
+							</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">
+								Chhattisgarh
+							</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">
+								Himachal Pradesh
+							</option>
+							<option value="Jammu and Kashmir">
+								Jammu and Kashmir
+							</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">
+								Madhya Pradesh
+							</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">
+								Uttar Pradesh
+							</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+					</div>
+
+					<div class="preflist">
+						<label for="brachPref" required>Rank Your Preferred Branches:</label>
+						<select id="preference1" name="preference1">
+							<option value>
+								Select Your 1st Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference2" name="preference2">
+							<option value>
+								Select Your 2nd Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference3" name="preference3">
+							<option value>
+								Select Your 3rd Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference4" name="preference4">
+							<option value>
+								Select Your 4th Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference5" name="preference5">
+							<option value>
+								Select Your 5th Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference6" name="preference6">
+							<option value>
+								Select Your 6th Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference7" name="preference7">
+							<option value>
+								Select Your 7th Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+						<select id="preference8" name="preference8">
+							<option value>
+								Select Your 8th Preference
+							</option>
+							<option value="MECHANICAL ENGINEERING">
+								MECHANICAL ENGINEERING
+							</option>
+							<option value="BIOTECHNOLOGY">
+								BIOTECHNOLOGY
+							</option>
+							<option value="BASIC SCIENCES">
+								BASIC SCIENCES
+							</option>
+							<option value="CIVIL ENGINEERING">
+								CIVIL ENGINEERING
+							</option>
+							<option value="COMPUTER SCIENCE & ENGINEERING">
+								COMPUTER SCIENCE & ENGINEERING
+							</option>
+							<option value="ELECTRICAL ENGINEERING">
+								ELECTRICAL ENGINEERING
+							</option>
+							<option value="ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.">
+								ELECTRONICS & ELECTRICAL COMMUNICATION ENGG.
+							</option>
+							<option value="ECONOMICS">ECONOMICS</option>
+							<option value="METALLURGICAL ENGINEERING">
+								METALLURGICAL ENGINEERING
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="submit-container">
+					<button type="submit" class="submit" value="submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- Form Ends -->
+
+		<!-- Footer Begins -->
+
+		<div class="footer-container">
+			<div class="footer" id="footer">
+				<div class="about-card">
+					<div class="about-card-heading">About Us</div>
+					<div class="about-card-content">
+						We are a team of 4 people from
+						<a class="iiitp-link" href="https://iiitp.ac.in">
+							<!-- <i class="fa-solid fa-graduation-cap"></i> -->
+							Indian Institute of Information Technology,
+							Pune</a>.<br />
+						This is just a hobby project, but we try to keep the
+						data up to date. If you find any bugs or have any
+						suggestions then open a issue at our
+						<a class="github-link" href="https://github.com/h4636oh/KnowMyCollege/issues/new">
+							<!-- <i class="fa-brands fa-github"></i> -->
+							Github Repo</a>.<br />
+						Just to tell you we hate Skiddies, so don't be one
+						and be respectful.
+					</div>
+				</div>
+				<div class="contact-card">
+					<div class="contact-card-heading">Contact Us</div>
+					<div class="contact-card-content">
+						<ul>
+							<li>
+								<i class="fa-regular fa-envelope"></i>
+								<a href="mailto:fakeh4@tuta.io" target="_blank"
+									rel="noopener noreferrer">Fakeh4@tuta.io</a>
+							</li>
+							<li>
+								<i class="fa-brands fa-github"></i>
+								<a href="https://github.com/h4636oh/KnowMyCollege" target="_blank"
+									rel="noopener noreferrer">KnowMyCollege</a>
+							</li>
+							<li>
+								<i class="fa-brands fa-mastodon"></i>
+								<a href="https://mastodon.social/getting-started" target="_blank"
+									rel="noopener noreferrer">KnowMyCollege</a>
+							</li>
+							<li>
+								<i class="fa-brands fa-linkedin"></i>
+								<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+									rel="noopener noreferrer">~~KnowMyCollege~~</a>
+							</li>
+							<li>
+								<i class="fa-brands fa-instagram"></i>
+								<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+									rel="noopener noreferrer">~~KnowMyCollege~~</a>
+							</li>
+							<li>
+								<i class="fa-brands fa-x-twitter"></i>
+								<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+									rel="noopener noreferrer">~~KnowMyCollege~~</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer Ends -->
+	</div>
+</body>
+
 </html>
