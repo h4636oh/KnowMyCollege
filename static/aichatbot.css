@@ -261,7 +261,8 @@ body::-webkit-scrollbar {
 .chatbox-container {
     background-color: var(--n3);
     color: var(--n6);
-    padding: 32px;
+    padding: 15px;
+	margin: 0px 500px;
     border: 5px var(--n3) solid;
     border-radius: 15px;
     box-shadow: inset 0px 0px 10px var(--n0);
@@ -272,28 +273,117 @@ body::-webkit-scrollbar {
     font-size: 36px;
     font-weight: 900;
     font-family: NorseBold;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 
 .chatbox {
 	background-color: var(--n2);
 	border: 3px var(--n2) solid;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: inset 0px 0px 10px var(--n0);
 	padding: 16px;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	width: 900px;
+	height: 630px;
+	overflow-y: auto;
+	margin-bottom: 16px;
+	scrollbar-width: 0px;
+}
+
+.chatbox::-webkit-scrollbar {
+	height: 0px;
+	width: 0px;
 }
 
 .message {
-	
+	padding: 8xp 12px;
+	font-size: 20px;
 }
 
 .chatbox .message.bot {
+	align-self: flex-start;
+	display: flex;
+	gap: 8px;
+}
+
+.chatbox .content {
+	padding: 4px 8px;
+	border-radius: 5px;
+	font-weight: 500;
+	text-shadow: 1px 1px 2px var(--n0);
+	max-width: 500px;
+	word-wrap: break-word;
+}
+
+.chatbox .message.bot .content {
 	background-color: var(--n14);
 }
 
+.chatbox .message.bot i {
+	background-color: var(--n14);
+	color: var(--n6);
+	padding: 8px 6px;
+	border-radius: 100%;
+	text-shadow: 2px 2px 2px var(--n0);
+	align-self: flex-end;
+}
+
 .chatbox .message.user {
+	align-self: flex-end;
+	display: flex;
+	gap: 8px;
+}
+
+.chatbox .message.user i {
 	background-color: var(--n10);
+	color: var(--n6);
+	padding: 8px 10px;
+	border-radius: 100%;
+	text-shadow: 2px 2px 2px var(--n0);
+	align-self: flex-end;
+}
+
+.chatbox .message.user .content {
+	background-color: var(--n10);
+}
+
+.chatbox-container form {
+	display: flex;
+	width: 100%;
+	gap: 16px;
+}
+
+.chatbox-container input[type=text] {
+	width: 100%;
+	background-color: var(--n2);
+	border: 3px var(--n2) solid;
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 5px var(--n0);
+	padding: 4px 8px;
+	font-size: 20px;
+	outline: none;
+	color: var(--n6);
+	font-weight: 500px;
+	font-family: "Iosveka Web";
+	text-shadow: 2px 2px 2px var(--n0);
+}
+
+.chatbox-container button {
+	background-color: var(--n15);
+	padding: 4px 8px;
+	color: var(--n6);
+	border: 3px var(--n15) solid;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: 700;
+	font-family: "Iosevka Web";
+	transition-duration: 0.3s;
+	text-shadow: 2px 2px 2px var(--n0);
+}
+
+.chatbox-container button:hover {
+	box-shadow: inset 0px 0px 5px var(--n0);
+	text-shadow: none;
 }

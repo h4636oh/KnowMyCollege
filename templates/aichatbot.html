@@ -40,15 +40,13 @@
         <div class="header-links">
             <ul>
                 <li><a href="#top">Home</a></li>
-                <li><a href="#faqs">FAQs</a></li>
-                <li><a href="#contactform">Contact Us</a></li>
                 <li><a href="#footer">About Us</a></li>
                 <span style="font-size: 28px; font-family: NorseBold">~</span>
                 <li>
                     <a id="header-collegelist" href="collegelist">Colleges</a>
                 </li>
                 <li>
-                    <a id="header-filltheform" href="form">Fill The Form</a>
+                    <a id="header-filltheform" href="form">Refill The Form</a>
                 </li>
             </ul>
         </div>
@@ -69,13 +67,14 @@
                     <div class="message {{ message.sender }}">
                         {% if message.sender == "bot" %}
                         <i class="fa-solid fa-robot"></i>
-                        <span class="content">{{ message.content }}</span>
+                        <div class="content">{{ message.content }}</div>
                         {% else %}
-                        <span class="content">{{ message.content }}</span>
+                        <div class="content">{{ message.content }}</div>
                         <i class="fa-solid fa-user"></i>
                         {% endif %}
                     </div>
                 {% endfor %}
+                <!-- <div id="chatbot-end"></div> -->
             </div>
             
             <form id="chat-form" action="/ai_chatbot" method="post">
@@ -154,9 +153,8 @@
     <!-- Footer Ends -->
 
 
-
     
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             // Function to handle scrolling
             $("#chatbox").on("scroll", function () {
@@ -169,6 +167,9 @@
                 }
             });
         });
-    </script>
+    </script> -->
+
+
+
 </body>
 </html>
