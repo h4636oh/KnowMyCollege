@@ -512,6 +512,7 @@ body::-webkit-scrollbar {
 	display: flex;
 	justify-content: space-between;
 	color: var(--n6);
+	font-weight: 600;
 }
 
 .faq-arrow {
@@ -523,6 +524,7 @@ body::-webkit-scrollbar {
 	display: none;
 	transition: display 3s linear;
 	color: var(--n4);
+	/* font-weight: 500; */
 }
 
 /* Contact Form */
