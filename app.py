@@ -112,7 +112,7 @@ First_one=[]
 Second_one=[]
 Name1=""
 Name2=""
-Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+Para=['Placement','Coding Culture','Campus','Cultural Activity','Entrepreneurship Culture']
 def comper(selected_data):
     ranks = [entry['rank'] for entry in selected_data]
     colleges = [entry['college'] for entry in selected_data]

@@ -174,6 +174,7 @@ body {
 .main {
 	background-color: var(--n0-tp);
 	position: relative;
+	padding: 126px;
 }
 
 /* Table */
@@ -246,10 +247,10 @@ tbody tr:last-of-type {
 	border-bottom: 0px;
 }
 
+/* 
 colgroup col {
-	font-family: NorseBold;
-	
-}
+
+} */
 
 
 /* Chatbot */
