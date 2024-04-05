@@ -149,7 +149,7 @@ Final_List = [[],[]]
 
 @app.route('/process_selection', methods=['POST','GET'])
 def process_selection():
-    if request.method == "POST":
+    if request.method == "POST":    
         selected_data = request.json
         comper(selected_data) 
         return redirect('/compare') 
@@ -161,12 +161,12 @@ def process_selection():
 
 
 
-@app.route('/compare')
+@app.route('/compare', methods=['POST','GET'])
 def compare_page():
-    
         print("hello")
         print(First_one)
-        return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para,Name1=Name1,Name2=Name2)
+        # return render_template('./compareresult.html')
+        return render_template('./compareresult.html', First_one=First_one, Second_one=Second_one, Para=Para,Name1=Name1,Name2=Name2)
         
         
 

@@ -368,6 +368,7 @@ tbody tr:last-of-type {
 	display: flex;
 	justify-content: center;
 	gap: 32px;
+	margin-top: auto;
 	padding: 32px 0px;
 	background-color: var(--n0-ltp);
 	backdrop-filter: blur(5px);
