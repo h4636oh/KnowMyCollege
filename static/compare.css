@@ -180,7 +180,7 @@ body {
 
 .table-container {
 	max-height: 773px;
-	margin: 52px 300px;
+	margin: auto 300px;
 	background-color: var(--n0);
 	overflow-y: auto;
 	scrollbar-width: none;
@@ -222,10 +222,6 @@ tbody {
 	box-shadow: inset 0px 0px 10px var(--n0);
 }
 
-.rankNO {
-	margin-right: 10px;
-}
-
 td {
 	padding: 8px;
 	text-align: center;
@@ -249,6 +245,12 @@ th:last-of-type {
 tbody tr:last-of-type {
 	border-bottom: 0px;
 }
+
+colgroup col {
+	font-family: NorseBold;
+	
+}
+
 
 /* Chatbot */
 

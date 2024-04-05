@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="static/compare.css" />
-		<title>KnowMyCollege List</title>
+		<title>KnowMyCollege Comparison</title>
 		<link
 			href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css"
 			rel="stylesheet"
@@ -26,7 +26,7 @@
 			<!-- Logo(KnowMyCollege) of the Website -->
 			<div class="logo">
 				<!-- <img src="static/imgaes/grad_hat_white.png" alt=""> -->
-				<a href="#top">
+				<a href="home">
 					Know My College
 					<!-- <span class="logo-circle-red">K</span> -->
 					<!-- <span class="logo-name-red">Know</span> -->
@@ -75,12 +75,15 @@
 				<table>
 					<thead>
 						<tr>
-                            <th scope="col" style="width: 55%">Criteria</th>
-							<th scope="col" style="width: 7%">First Selection</th>
-							<th scope="col" style="width: 25%">Second Selection</th>
+                            <th scope="col" style="width: 40%">Criteria</th>
+							<th scope="col" style="width: 30%">{{ Name1 }}</th>
+							<th scope="col" style="width: 30%">{{ Name2 }}</th>
 						</tr>
 					</thead>
 					<tbody>
+						<colgroup>
+							<col span="1" style="background-color: var(--n2);">
+						  </colgroup>						
 						{% for i in range(5) %}
 						<tr>
 							<td style="width: 7%">{{ Para[i]}}</td>
@@ -107,18 +110,16 @@
 						We are a team of 4 people from
 						<a class="iiitp-link" href="https://iiitp.ac.in">
 							<!-- <i class="fa-solid fa-graduation-cap"></i> -->
-							Indian Institute of Information Technology, Pune</a
-						>.<br />
-						This is a hobby project, but we try to keep the data up
-						to date. If you find any bugs or have any suggestions
-						then open a issue at our
-						<a
-							class="github-link"
-							href="https://github.com/h4636oh/KnowMyCollege/issues/new"
-						>
+							Indian Institute of Information Technology,
+							Pune</a>.<br />
+						This is just a hobby project, but we try to keep the
+						data up to date. If you find any bugs or have any
+						suggestions then open a issue at our
+						<a class="github-link" href="https://github.com/h4636oh/KnowMyCollege/issues/new">
 							<!-- <i class="fa-brands fa-github"></i> -->
-							Github Repo</a
-						>.<br />
+							Github Repo</a>.<br />
+						Just to tell you we hate Skiddies, so don't be one
+						and be respectful.
 					</div>
 				</div>
 				<div class="contact-card">
