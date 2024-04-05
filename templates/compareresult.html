@@ -61,31 +61,11 @@
 		<div class="main">
 			<!-- AI Chatbot Button Begins -->
 
-			<div class="chatbox-clicker" onclick="chatbotpopuptoggle()">
-				<i class="fa-solid fa-message">
-					<p>AI</p>
-				</i>
-			</div>
-
 			<!-- AI Chatbot Button Begins -->
 
 			<!-- AI Chatbot Prompt Begins-->
 
-			<div class="chat-options-container">
-				<div class="chat-options-heading">
-					<p>WHAT DO WHAT TO DISCUSS ABOUT ?</p>
-					<i
-						class="fa-solid fa-circle-xmark"
-						onclick="chatbotpopuptoggle()"
-					></i>
-				</div>
-				<div class="chat-options">
-					<a class="chat-option" href="">Generated <br />Rank List</a>
-					<a class="chat-option" href=""
-						>College's <br />Information</a
-					>
-				</div>
-			</div>
+			
 
 			<!-- AI Chatbot Prompt Begins-->
 
@@ -96,12 +76,12 @@
 					<thead>
 						<tr>
                             <th scope="col" style="width: 55%">Criteria</th>
-							<th scope="col" style="width: 7%">{{First_one[0]}}</th>
-							<th scope="col" style="width: 25%">{{Second_one[0]}}</th>
+							<th scope="col" style="width: 7%">First Selection</th>
+							<th scope="col" style="width: 25%">Second Selection</th>
 						</tr>
 					</thead>
 					<tbody>
-						{% for i in range(1,6) %}
+						{% for i in range(5) %}
 						<tr>
 							<td style="width: 7%">{{ Para[i]}}</td>
 							<td style="width: 25%">{{ First_one[i] }}</td>
@@ -209,74 +189,7 @@
 
 		<!-- PopUp Script Begins -->
 
-		<script>
-			function chatbotpopuptoggle() {
-				let popup = document.querySelector(".chat-options-container");
-				let button = document.querySelector(".chatbox-clicker");
-
-				if (popup.style.display == "flex") {
-					popup.style.display = "none";
-					button.style.display = "block";
-				} else {
-					popup.style.display = "flex";
-					button.style.display = "none";
-				}
-			}
-
-			function checkSelected() {
-				let checkboxes = document.querySelectorAll(
-					'input[type="checkbox"]:checked'
-				);
-				if (checkboxes.length >= 2) {
-					document.getElementById("submitBtn").style.display ="block";
-					document.querySelectorAll('input[type="checkbox"]:not(:checked)').forEach(function(checkbox) {
-                    checkbox.disabled = true;
-                });
-				} else {
-					document.getElementById("submitBtn").style.display = "none";
-					document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
-                    checkbox.disabled = false;
-					});
-				}
-			}
-
-			function submitSelection() {
-				console.log("succ");
-
-				let selectedData = [];
-            	let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            	checkboxes.forEach(function(checkbox) {
-                let row = checkbox.closest('tr');
-                let rank = row.cells[0].textContent;
-                let college = row.cells[1].textContent;
-                let branch = row.cells[2].textContent;
-                let score = row.cells[3].textContent;
-
-				console.log(rank);
-                selectedData.push({ rank: rank, college: college, branch: branch, score: score });
-				});
-				fetch('/process_selection', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(selectedData),
-				})
-				.then(response => {
-					if (response.ok) {
-						console.log('Data sent successfully');
-					} else {
-						console.error('Failed to send data');
-					}
-				})
-				.catch(error => {
-					console.error('Error:', error);
-				});
-			}
-
-			
-		</script>
-
+		
 		<!-- PopUp Script Ends -->
 	</body>
 </html>

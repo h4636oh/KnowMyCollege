@@ -93,8 +93,7 @@ def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_st
             coding.append(Co)
             campus.append(Ca)
             cultural.append(CU)
-            entrupr.append(en)
-            
+            entrupr.append(en)            
             
             Values.append(V6)
     
@@ -111,7 +110,9 @@ def get_branches_and_closing(college_name):
         return main_branches, closing_ranks
 First_one=[]
 Second_one=[]
-Para=['Placement','Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
+Name1=""
+Name2=""
+Para=['Placement','Coding_Culture','Campus','Cultural Activity','Entrepreneurship Culture']
 def comper(selected_data):
     ranks = [entry['rank'] for entry in selected_data]
     colleges = [entry['college'] for entry in selected_data]
@@ -121,8 +122,9 @@ def comper(selected_data):
     b=int(ranks[1])-1
     First_one.clear()
     Second_one.clear()
-    First_one.append(college_First)
-    Second_one.append(college_Second)
+    Name1=college_First
+    Name2=college_Second
+    print(Name1)
     
     print(a)
     print(b)
@@ -149,9 +151,10 @@ Final_List = [[],[]]
 def process_selection():
     if request.method == "POST":
         selected_data = request.json
-        comper(selected_data) # This will print the received data in the console
-        return "ab",200        
-    return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
+        comper(selected_data) 
+        return redirect('/compare') 
+    print("zzz")
+    return redirect('/compare') 
 
 
 
@@ -163,7 +166,7 @@ def compare_page():
     
         print("hello")
         print(First_one)
-        return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
+        return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para,Name1=Name1,Name2=Name2)
         
         
 
