@@ -132,6 +132,12 @@ def comper(selected_data):
         
         First_one.append(Final_List[a][j])
         Second_one.append(Final_List[b][j])
+
+
+    First_one.append(Name1)
+    Second_one.append(Name2)
+
+
     print(First_one)
 
 
@@ -146,7 +152,7 @@ Final_List = [[],[]]
 
 
 
-
+ 
 @app.route('/process_selection', methods=['POST','GET'])
 def process_selection():
     if request.method == "POST":    
@@ -164,7 +170,7 @@ def process_selection():
 @app.route('/compare', methods=['POST','GET'])
 def compare_page():
         print("hello")
-        print(First_one)
+        print(Name1)
         # return render_template('./compareresult.html')
         return render_template('./compareresult.html', First_one=First_one, Second_one=Second_one, Para=Para,Name1=Name1,Name2=Name2)
         
