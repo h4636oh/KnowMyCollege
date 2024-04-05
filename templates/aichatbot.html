@@ -67,13 +67,14 @@
                     <div class="message {{ message.sender }}">
                         {% if message.sender == "bot" %}
                         <i class="fa-solid fa-robot"></i>
-                        <span class="content">{{ message.content }}</span>
+                        <div class="content">{{ message.content }}</div>
                         {% else %}
-                        <span class="content">{{ message.content }}</span>
+                        <div class="content">{{ message.content }}</div>
                         <i class="fa-solid fa-user"></i>
                         {% endif %}
                     </div>
                 {% endfor %}
+                <!-- <div id="chatbot-end"></div> -->
             </div>
             
             <form id="chat-form" action="/ai_chatbot" method="post">
@@ -152,9 +153,8 @@
     <!-- Footer Ends -->
 
 
-
     
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             // Function to handle scrolling
             $("#chatbox").on("scroll", function () {
@@ -167,6 +167,9 @@
                 }
             });
         });
-    </script>
+    </script> -->
+
+
+
 </body>
 </html>
