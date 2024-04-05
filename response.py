@@ -91,7 +91,7 @@ def user_input(user_question):
 
 def main():
     question="which college has best placement and provide data supporting it"
-    # ans=user_input_csv(question)
+    ans=user_input(question)
     
 if __name__=="__main__":
     main()    
