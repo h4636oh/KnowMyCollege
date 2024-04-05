@@ -95,37 +95,25 @@
 				<table>
 					<thead>
 						<tr>
-							<th scope="col" style="width: 7%">Rank</th>
+							<th scope="col" style="width: 9%">Rank</th>
 							<th scope="col" style="width: 25%">College</th>
 							<th scope="col" style="width: 55%">Branch</th>
-							<th scope="col" style="width: 13%">Score</th>
-							<th scope="col" style="width: 13%">Select</th>
+							<th scope="col" style="width: 11%">Score</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for college in my_list %}
 						<tr>
-							<td style="width: 7%">{{ college[0] }}</td>
+							<td style="width: 9%"><input type="checkbox" name="test1" onclick="checkSelected()"/>{{ college[0] }}</td>
 							<td style="width: 25%">{{ college[1] }}</td>
 							<td style="width: 55%">{{ college[2] }}</td>
-							<td style="width: 13%">{{ college[3] }}</td>
-							<td style="width: 13%">
-								<input type="checkbox" name="test1"  onclick="checkSelected()"/>
-							</td>
+							<td style="width: 11%">{{ college[3] }}</td>
 						</tr>
 						{% endfor %}
 					</tbody>
 				</table>
 			</div>
-			<button id="submitBtn" style="display: none;" onclick="submitSelection()">Submit Selection</button></div>
-			<button id="submitBtn" onclick="redirectToCompare()">Submit Selection</button>
-
-			<script>
-    			function redirectToCompare() {
-        			// Redirect to compare.html
-        			window.location.href = 'compare.html';
-    			}
-			</script>
+			<button id="submitBtn" style="display: none;" onclick="submitSelection()">Submit Selection</button>
 
 			<!-- Table Ends -->
 		</div>
@@ -287,6 +275,9 @@
 				.catch(error => {
 					console.error('Error:', error);
 				});
+
+				window.location.href = 'compare';
+				
 			}
 
 			
