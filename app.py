@@ -145,22 +145,27 @@ Final_List = [[],[]]
 
 
 
-@app.route('/process_selection', methods=['POST'])
+@app.route('/process_selection', methods=['POST','GET'])
 def process_selection():
-    selected_data = request.json
-    comper(selected_data) # This will print the received data in the console
-    return "DA" ,200
+    if request.method == "POST":
+        selected_data = request.json
+        comper(selected_data) # This will print the received data in the console
+        return "ab",200        
+    return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
 
 
 
-#
+
 
 
 @app.route('/compare')
 def compare_page():
-    print("hello")
-    print(First_one)
-    return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
+    
+        print("hello")
+        print(First_one)
+        return render_template('/compare.html', First_one=First_one, Second_one=Second_one, Para=Para)
+        
+        
 
 
         
