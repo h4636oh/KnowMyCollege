@@ -69,6 +69,10 @@
 
 			<!-- AI Chatbot Button Begins -->
 
+			<div id="submitBtn" style="display: none;" onclick="submitSelection()">
+				<i class="fa-solid fa-code-compare"></i>
+			</div>
+
 			<!-- AI Chatbot Prompt Begins-->
 
 			<div class="chat-options-container">
@@ -81,9 +85,7 @@
 				</div>
 				<div class="chat-options">
 					<a class="chat-option" href="">Generated <br />Rank List</a>
-					<a class="chat-option" href=""
-						>College's <br />Information</a
-					>
+					<a class="chat-option" href="ai_chatbot">College's <br />Information</a>
 				</div>
 			</div>
 
@@ -113,7 +115,6 @@
 					</tbody>
 				</table>
 			</div>
-			<button id="submitBtn" style="display: none;" onclick="submitSelection()">Submit Selection</button>
 
 			<!-- Table Ends -->
 		</div>
@@ -277,7 +278,7 @@
 				});
 
 				window.location.href = 'compare';
-				
+
 			}
 
 			
