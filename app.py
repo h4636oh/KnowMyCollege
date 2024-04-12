@@ -12,94 +12,92 @@ df = pd.read_csv(file_path)
 
 # function for Data Base
 def Value(rankAIR, df, placement_pref, coding_pref, campus_size_value, higher_studies_pref, states,Cultural_Pref,Branches,brand_value,Entra ):
+    # A List to store all the Values after addition
     totals = []
+    # iterreting through dataframe by row 
     for index, row in df.iterrows():
         total = 0
-        value1 = row['Placement ']
-        value2 = row['Coding_Culture']
-        value3 = row['Campus']
-        value4_temp = row['Higher Education']
+        Placement_value = row['Placement ']
+        Coding_Culture = row['Coding_Culture']
+        Campus = row['Campus']
+        Higher_Education_Value = row['Higher Education']
         
-        value4=0
+        
+        Higher_Education_Pref=0
         if higher_studies_pref == 'y':
-            value4 += 100
-        else:
-            value4 += 0
+            Higher_Education_Pref += 100
+        
 
-        value5 = 0
-        arr = [100, 81, 64, 49, 36,25,16,9]
+        Location_Pref = 0
+        States_Val = [100, 81, 64, 49, 36,25,16,9]
         for i in range(len(states)):
             if states[i] == row['STATE']:
-                value5 = arr[i]
+                Location_Pref += States_Val[i]
                 
-        value6 = row['Cultural_Activity'] 
+        Cultural_Activity = row['Cultural_Activity'] 
         
-        value7= row['Parent Branch']
-        value7_f=0
-        arr2=[100,88,76,64,52,40,28,16]
+        Branch= row['Parent Branch']
+        Branch_Pref=0
+        Branch_Priority=[100,88,76,64,52,40,28,16]
         
         for i in range(len(Branches)):
-            if value7== Branches[i]:
-                value7_f+=arr2[i]
+            if Branch== Branches[i]:
+                Branch_Pref+=Branch_Priority[i]
                 
-        value8= row['Brand_Value']
-        value9= row['Entrepreneurship_Culture']
+        Brand_Value = row['Brand_Value']
+        Entrepreneurship_Culture= row['Entrepreneurship_Culture']
         
                 
-                   
-        
-
-        total += int(placement_pref) * int(value1)*3
-        total += int(coding_pref) * value2*2
-        total += int(campus_size_value) * value3*0.5
-        total += int(value4_temp) * value4
-        total += int(value5)
-        total += int(value6)*int(Cultural_Pref)*2
-        total += value7_f*5
-        total += value8*int(brand_value)*1
-        total += value9*int(Entra)*4
+        total += int(placement_pref) * Placement_value*3
+        total += int(coding_pref) * Coding_Culture*2
+        total += int(campus_size_value) * Campus*0.5
+        total += int(Higher_Education_Value) * Higher_Education_Pref
+        total += int(Location_Pref)
+        total += int(Cultural_Activity)*int(Cultural_Pref)*2
+        total += Branch_Pref*5
+        total += Brand_Value*int(brand_value)*1
+        total += Entrepreneurship_Culture*int(Entra)*4
         totals.append(total)
-    LIST=[]
-    df['Total'] = totals
-    # filtered_df = df[df['Rank_Cutoff'] <= int(rankAIR)]
+    #sorting DataFrame by Total
+    df['Total'] = totals   
     sorted_df = df.sort_values(by='Total', ascending=False)
-    # sorted_df = df.sort_values(by='Total', ascending=False)
+    # crating List which we want Latter
     Values=[]
     college_names=[]
     Branch_names=[]
     Placement=[]
     coding=[]
     campus=[]
-    cultural=[]
-    entrupr=['Entrepreneurship_Culture']
+    cultural=[]   
+    Entrepreneurship=[]
+    # Iterrating through the DataFrame 
     for index, row in sorted_df.iterrows():
         college_name = row['College Name']
         Branch_name = row['Branch']
-        PLA=row['Placement ']
-        Co=row['Coding_Culture']
-        Ca=row['Campus']
-        CU=row['Cultural_Activity']
-        en=row['Entrepreneurship_Culture']
-        V6= row['Total']
-        V6=V6/500
-        V6=round(V6,1)
+        Placement_Value=row['Placement ']
+        Coding_Culture=row['Coding_Culture']
+        Campus=row['Campus']
+        Cultural_Activity=row['Cultural_Activity']
+        Entrepreneurship_Culture=row['Entrepreneurship_Culture']
+        Total_sum= row['Total']
+        Total_sum=Total_sum/500
+        Total_sum=round(Total_sum,1)                
+        Closing= row['CLOSING']
         
-        
-        V4= row['CLOSING']
-        if int(rankAIR)-2000<= V4:
+        # if its Closing rank is less than the canditaes AIR with some relaxation appending it to list
+        if int(rankAIR)-2000<= Closing:
             college_names.append(college_name)
             Branch_names.append(Branch_name)
-            Placement.append(PLA)
-            coding.append(Co)
-            campus.append(Ca)
-            cultural.append(CU)
-            entrupr.append(en)            
-            
-            Values.append(V6)
+            Placement.append(Placement_Value)
+            coding.append(Coding_Culture)
+            campus.append(Campus)
+            cultural.append(Cultural_Activity)
+            Entrepreneurship.append(Entrepreneurship_Culture)                        
+            Values.append(Total_sum)
     
-    return college_names,Branch_names,Values,Placement,coding,campus,cultural,entrupr
+    return college_names,Branch_names,Values,Placement,coding,campus,cultural,Entrepreneurship
 
-
+# Funtion to get Closing Rank of Colleges 
 def get_branches_and_closing(college_name):
     college_data = df[df['College Name'] == college_name]
     if college_data.empty:
@@ -108,37 +106,37 @@ def get_branches_and_closing(college_name):
         main_branches = college_data['Branch'].unique().tolist()
         closing_ranks = college_data[college_data['Branch'] == college_data['Parent Branch']]['CLOSING'].tolist()
         return main_branches, closing_ranks
-First_one=[]
-Second_one=[]
+
+# Global Variabel For compare two colleges 
+First_College=[]
+Second_College=[]
 Name1=""
 Name2=""
 Para=['Placement','Coding Culture','Campus','Cultural Activity','Entrepreneurship Culture']
-def comper(selected_data):
+
+# Function TO compare 2 colleges
+def compare(selected_data):
     ranks = [entry['rank'] for entry in selected_data]
     colleges = [entry['college'] for entry in selected_data]
-    college_First=colleges[0]
-    college_Second=colleges[1]
+    First_college_name=colleges[0]
+    Second_college_name=colleges[1]
     a=int(ranks[0])-1
     b=int(ranks[1])-1
-    First_one.clear()
-    Second_one.clear()
-    Name1=college_First
-    Name2=college_Second
-    print(Name1)
+    First_College.clear()
+    Second_College.clear()
     
-    print(a)
-    print(b)
+    #function to append values from Final List
     for j in range(3,8):
         
-        First_one.append(Final_List[a][j])
-        Second_one.append(Final_List[b][j])
+        First_College.append(Final_List[a][j])
+        Second_College.append(Final_List[b][j])
 
 
-    First_one.append(Name1)
-    Second_one.append(Name2)
+    First_College.append(First_college_name)
+    Second_College.append(Second_college_name)
 
 
-    print(First_one)
+    
 
 
 
@@ -147,17 +145,12 @@ def comper(selected_data):
 def home_page():
     return render_template('./index.html')
 
-Final_List = [[],[]]
-
-
-
-
  
 @app.route('/process_selection', methods=['POST','GET'])
 def process_selection():
     if request.method == "POST":    
         selected_data = request.json
-        comper(selected_data) 
+        compare(selected_data) 
         return redirect('/compare') 
     print("zzz")
     return redirect('/compare') 
@@ -169,18 +162,10 @@ def process_selection():
 
 @app.route('/compare', methods=['POST','GET'])
 def compare_page():
-        print("hello")
-        print(Name1)
-        # return render_template('./compareresult.html')
-        return render_template('./compareresult.html', First_one=First_one, Second_one=Second_one, Para=Para,Name1=Name1,Name2=Name2)
         
+        return render_template('./compareresult.html', First_one=First_College, Second_one=Second_College, Para=Para,Name1=Name1,Name2=Name2)
         
-
-
-        
-    
-        
-
+            
 campus_size_value = None  # Define a global variable
 
 Final_List = [[],[]]
