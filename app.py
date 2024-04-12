@@ -170,72 +170,49 @@ Final_List = [[],[]]
 def form():
     global campus_size_value 
     if request.method == "POST":
-
-        rankAIR = placement_pref = request.form.get("rankAIR")
-        print("Rank:", rankAIR) 
-
-        placement_pref = request.form.get("placementPref")
-        print("Placement Preference:", placement_pref) 
-
+        #function to get values from form.html
+        rankAIR = request.form.get("rankAIR")
+        placement_pref = request.form.get("placementPref") 
         coding_pref = request.form.get("codingPref")
-        print("Coding Preference:", coding_pref) 
-
         campus_size_value = request.form.get("campusSize")
-        print("Campus Size:", campus_size_value) 
-
         higher_studies_pref = request.form.get("higherStudiesPref")
-        print("Higher Studies Preference:", higher_studies_pref) 
-
-        tag_pref = request.form.get("codingPref")
-        print("codingPref:", tag_pref) 
-        
-        culturalPref = request.form.get("culturalPref")
-        print("culturalPref:", culturalPref) 
-
-        startupPref = request.form.get("startupPref")
-        print("startupPref:", startupPref) 
+        tag_pref = request.form.get("codingPref")        
+        culturalPref = request.form.get("culturalPref")  
+        startupPref = request.form.get("startupPref")        
 
         states = []
         for i in range(1, 9):
             state = request.form.get(f'choice{i}')
             if state:
                 states.append(state)
-        print("Your Selected Indian States:")
-        for state in states:
-            print(state)
-
-
-        preferences = []  # Initialize an empty list to store preferences
-
-        # Retrieve and store preferences 1 to 8
+        
+        preferences = [] 
         for i in range(1, 9):
             preference = request.form.get(f"preference{i}")
             if preference:
                 preferences.append(preference)
 
-        # Process the preferences as needed
-        print("Selected Preferences:", preferences)
+        #function to add values to final list
         college_names,Branch_names,Values,a,b,c,d,e=Value(rankAIR,df,placement_pref,coding_pref,campus_size_value,higher_studies_pref,states,culturalPref,preferences,tag_pref,startupPref)
         Final_List.clear()
         ctt = 1
         for i in range(len(college_names)):
             tempo = [ctt, college_names[i],Branch_names[i],Values[i],a[i],b[i],c[i],d[i],e[i]]
             Final_List.append(tempo)
-            ctt+=1
-        
-        print(Final_List)      
+            ctt+=1        
+             
 
         return redirect('/college')
     return render_template('/form.html')
 
-
+#college route
 @app.route('/college')
 def college_page():
     my_list = Final_List
     return render_template('college.html', my_list=my_list)
 
 
-
+# local storing ai chatbot messege
 messages = [
         {"sender": "bot", "content": "Welcome to the chatbot!"},
         {"sender": "bot", "content": "How can I assist you today?"}
