@@ -139,40 +139,36 @@ def compare(selected_data):
     
 
 
-
+#Home Route  
 @app.route('/')
 @app.route('/home')
 def home_page():
     return render_template('./index.html')
 
- 
+# Route to compare 2 colleges 
 @app.route('/process_selection', methods=['POST','GET'])
 def process_selection():
     if request.method == "POST":    
         selected_data = request.json
         compare(selected_data) 
-        return redirect('/compare') 
-    print("zzz")
+        return redirect('/compare')     
     return redirect('/compare') 
 
 
-
-
-
-
+#route to compare 2 colleges
 @app.route('/compare', methods=['POST','GET'])
 def compare_page():
         
         return render_template('./compareresult.html', First_one=First_College, Second_one=Second_College, Para=Para,Name1=Name1,Name2=Name2)
         
             
-campus_size_value = None  # Define a global variable
-
+campus_size_value = None 
+#floble LIST to acces it from any were
 Final_List = [[],[]]
-
+# form page to get values from user
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    global campus_size_value  # Access the global variable
+    global campus_size_value 
     if request.method == "POST":
 
         rankAIR = placement_pref = request.form.get("rankAIR")
