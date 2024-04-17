@@ -46,7 +46,7 @@ def get_conversational_chain_csv():
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro",temperature=0.3,google_api_key="AIzaSyBPvN2LK5zayUy3_5IAa02q_RzReiCrdxc")
+    model = ChatGoogleGenerativeAI(model="gemini-pro",temperature=0.7,google_api_key="AIzaSyBPvN2LK5zayUy3_5IAa02q_RzReiCrdxc")
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
@@ -90,7 +90,7 @@ def user_input(user_question):
 
 
 def main():
-    question="which college has best placement and provide data supporting it"
+    question="How are fest at IIT Kanpur"
     ans=user_input(question)
     
 if __name__=="__main__":
